@@ -74,23 +74,6 @@ PLUGINS = {
     'ozone':    r"C:\Program Files\Common Files\VST3\iZotope\Ozone 9 Elements.vst3",
 }
 
-# ============================================================
-# V14 PROCESS-LEVEL WARMUP — fix Pro-Q 3 first-call-silence bug
-# ------------------------------------------------------------
-# Pro-Q 3's VST3 wrapper has a process-level init quirk: the FIRST audio
-# call after the Python process starts loading any VST3 returns silence
-# (RMS -240 dB). Subsequent fresh load_plugin instances all work fine.
-# Confirmed by bisect: trials 1 silent, 2-5 all -20.13 dB on identical setup.
-# Solution: do a throwaway warmup pass on noise at module load.
-# ============================================================
-def _warm_vst3_host():
-    try:
-        _warm = load_plugin(PLUGINS['proq3'])
-        _noise = (np.random.randn(44100, 2) * 0.05).astype(np.float32)
-        _ = Pedalboard([_warm])(_noise, 44100)
-    except Exception:
-        pass
-_warm_vst3_host()
 
 # ============================================================
 # STYLE LIBRARY (same as v2, engineer-sourced)
@@ -99,7 +82,7 @@ STYLES = {
     'ny_drill': {
         'description': 'NY Drill — Sleepy Hallow / Kyle Richh',
         'autotune': {'retune': 0, 'humanize': 0, 'flex': 0},
-        'vocal_hp': 120, 'vocal_cuts': [(-2.5, 300, 1.2), (-1.5, 900, 1.5)],
+        'vocal_hp': 85, 'vocal_cuts': [(-2.5, 300, 1.2), (-1.5, 900, 1.5)],  # V15: 120 -> 85 (chest restoration)
         'vocal_boosts': [(2.5, 3000, 0.9), (3.5, 12000, 0.7)],
         'deess_thresh': -22,
         'verb': {'mode': 'Room', 'decay': 0.8, 'predelay': 25, 'mix_pct': 100,
@@ -112,7 +95,7 @@ STYLES = {
     'uk_drill': {
         'description': 'UK Drill — Central Cee / Headie One',
         'autotune': {'retune': 10, 'humanize': 10, 'flex': 10},
-        'vocal_hp': 120, 'vocal_cuts': [(-2.5, 300, 1.2), (-1.5, 900, 1.5)],
+        'vocal_hp': 85, 'vocal_cuts': [(-2.5, 300, 1.2), (-1.5, 900, 1.5)],  # V15: 120 -> 85 (chest restoration)
         'vocal_boosts': [(2.0, 3000, 0.9), (3.0, 11000, 0.7)],
         'deess_thresh': -22,
         'verb': {'mode': 'Plate', 'decay': 1.0, 'predelay': 25, 'mix_pct': 100,
@@ -709,67 +692,6 @@ def atmosphere_bus(lead_vocal, sr, bpm=144):
     atmosphere = room_wet + plate_wet + hall_wet + ping_pong
     return atmosphere
 
-# ============================================================
-# SURGICAL LEAD PASS — minimal EQ on pre-mixed vocals (Glue Mode)
-# Per V12 Surgical EQ Protocol:
-#   - 2 dynamic bands at 3-5 kHz and 7-9 kHz (harshness tamers)
-#   - 1 narrow static cut @ 350 Hz, -1.5 dB max (boxiness, preserves chest)
-#   - Linear Phase mode (parallel-safe — vocal sums with reverb/BV without phase smear)
-# ============================================================
-def surgical_lead_pass(vocal, sr):
-    """
-    Minimal EQ correction for pre-mixed lead vocals in Glue Mode.
-    Uses Pro-Q 3 dynamic bands + narrow static boxiness cut.
-    """
-    q3 = load_plugin(PLUGINS['proq3'])
-
-    # V14 BUG FIX: DO NOT SET processing_mode AT ALL.
-    # Empirical finding: touching Pro-Q 3's processing_mode param via pedalboard
-    # (even setting it to the same default value 'Zero Latency') causes the
-    # plugin to mute its output entirely (RMS -240 dB). The default is already
-    # Zero Latency — leaving it alone produces correct behavior.
-    # This was the V12/V13 vocal-disappearance bug. Lead vocal: confirmed restored.
-
-    # Helper to enable dynamic band
-    def set_dyn_band(n, freq, q, threshold_db, dyn_range_db):
-        setattr(q3, f'band_{n}_used', 'Used')
-        setattr(q3, f'band_{n}_enabled', True)
-        setattr(q3, f'band_{n}_shape', 'Bell')
-        setattr(q3, f'band_{n}_frequency', float(freq))
-        setattr(q3, f'band_{n}_gain', 0.0)  # static gain 0 — only dynamic moves
-        setattr(q3, f'band_{n}_q', float(q))
-        setattr(q3, f'band_{n}_dynamics_enabled', 'Dynamics Enabled')
-        # Threshold sets when the dynamic engages. dynamic_range is amount of cut.
-        try: setattr(q3, f'band_{n}_threshold', float(threshold_db))
-        except: pass
-        try: setattr(q3, f'band_{n}_dynamic_range', float(dyn_range_db))
-        except: pass
-
-    # Band 1: dynamic harshness #1 (3-5 kHz typical mouth resonance / harsh A vowels)
-    set_dyn_band(1, freq=4000, q=1.5, threshold_db=-20, dyn_range_db=-2.5)
-    # Band 2: dynamic harshness #2 (7-9 kHz sibilance overflow / cymbal-clash range)
-    set_dyn_band(2, freq=8000, q=1.5, threshold_db=-22, dyn_range_db=-2.5)
-    # Band 3: STATIC narrow boxiness cut (350 Hz, Q 2.0, -1.5 dB max)
-    setattr(q3, f'band_3_used', 'Used')
-    setattr(q3, f'band_3_enabled', True)
-    setattr(q3, f'band_3_shape', 'Bell')
-    setattr(q3, f'band_3_frequency', 350.0)
-    setattr(q3, f'band_3_gain', -1.5)
-    setattr(q3, f'band_3_q', 2.0)
-
-    print(f"     Pro-Q3 surgical lead pass: dyn -2.5dB@4kHz, dyn -2.5dB@8kHz, static -1.5dB@350Hz (Q 2.0)")
-    # V14 CRITICAL FIX: Pro-Q 3 outputs SILENCE on the first call after load_plugin.
-    # Confirmed via testing: trial 1 = RMS -240 dB, trial 2-5 = RMS -20 dB.
-    # The plugin needs ONE warmup buffer to initialize. Prime it with a short
-    # throwaway pass before processing the real audio.
-    board = Pedalboard([q3])
-    # V14 FIX: Pro-Q 3 mutes the FIRST call after load_plugin.
-    # Zero-filled warmup buffer does NOT initialize the plugin (still outputs zeros).
-    # Use white noise warmup — primes the plugin's internal state correctly.
-    warmup = (np.random.randn(sr, 2) * 0.05).astype(np.float32)
-    _ = board(warmup, sr)  # discarded warmup call
-    return board(vocal.astype(np.float32), sr)
-
 def cite(key, brief=True):
     """Look up a citable source for a decision key. Returns None silently if no KB."""
     if not _KB_AVAILABLE: return None
@@ -860,11 +782,7 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
         VOCAL_STEM_DROP_DB = -2.0
         voc_processed = voc * (10 ** (VOCAL_STEM_DROP_DB / 20))
         print(f"  vocal stem dropped {VOCAL_STEM_DROP_DB:+.1f} dB (sit IN beat, not on top)")
-
-        # V14: Surgical pass restored after routing autopsy. See SURGICAL_LEAD_PASS
-        # for fix - Pro-Q3 threshold default 'Auto' was applying max range cuts.
-        print("\n  [V14] Surgical EQ pass on lead vocal (audited routing):")
-        voc_processed = surgical_lead_pass(voc_processed, sr)
+        # V15 ROLLBACK: surgical_lead_pass removed (was eating vocal). V11 baseline restored.
 
         # Apply only dynamic pocket on music (gentle)
         voc_mono = np.mean(voc_processed, axis=1)
@@ -1052,14 +970,13 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
     pre_rms_db = max(pre_rms_db, -60.0)  # clamp to prevent NaN cascade with silent mixes
     # V11: threshold = RMS + 1.5 (peaks only) — target -1 to -1.5 dB GR
     glue_threshold = max(pre_rms_db + 1.5, -50.0)
-    # V11: slow release 300ms (was 50ms) - invisible glue, max 1-1.5 dB GR
-    # Source: BeatsToRapOn "transparent VCA-style bus compressor (e.g., SSL G-)"
+    # V15: ratio 1.5:1 (was 2:1), release 250ms (was 300ms) per Tyler micro-tweak
     bus_glue = Pedalboard([
-        Compressor(threshold_db=glue_threshold, ratio=2.0, attack_ms=30.0, release_ms=300.0)
+        Compressor(threshold_db=glue_threshold, ratio=1.5, attack_ms=30.0, release_ms=250.0)
     ])
     mix = bus_glue(mix.astype(np.float32), sr)
     post_glue_rms = rdb(mix)
-    print(f"  Glue: 2:1, attack 30ms, release 300ms (V11 slow), threshold {glue_threshold:.1f} dB (= RMS-1)")
+    print(f"  Glue: 1.5:1 (V15), attack 30ms, release 250ms, threshold {glue_threshold:.1f} dB")
     print(f"  Pre/Post RMS: {pre_glue_rms:+.1f} -> {post_glue_rms:+.1f} ({post_glue_rms-pre_glue_rms:+.1f} dB GR)")
 
     # ====================================================
