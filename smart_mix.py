@@ -20,7 +20,7 @@ Usage:
 """
 import sys, os, json, numpy as np, soundfile as sf, pyloudnorm as pyln, librosa
 from pathlib import Path
-from pedalboard import Pedalboard, load_plugin
+from pedalboard import Pedalboard, load_plugin, Compressor
 from scipy.signal import butter, sosfilt
 
 REPO = Path(__file__).parent
@@ -405,12 +405,18 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
     S = STYLES[style]
 
     if glue_mode:
-        print(f"\n=== GLUE MODE (vocal already mixed) ===")
+        print(f"\n=== GLUE MODE v3.1 — anti-karaoke logic ===")
         print("  BYPASS: Auto-Tune, Pro-Q3, Vocal Comp, De-Esser, Reverb")
-        print("  KEEP:   Dynamic pocket on instrumental + gentle Ozone bus glue + LUFS match")
-        voc_processed = voc.copy()  # Pass vocal through untouched
+        print("  KEEP:   Drop vocal -2 dB + gentle pocket + Bus Glue Comp + Ozone")
 
-        # Apply only dynamic pocket on music
+        # ANTI-KARAOKE: drop the raw vocal stem BEFORE summing into the beat
+        # Per v3.1: "drop the raw vocal stem gain by -2.0 dB before it hits master"
+        # Let the master limiter raise overall level, not the vocal fader.
+        VOCAL_STEM_DROP_DB = -2.0
+        voc_processed = voc * (10 ** (VOCAL_STEM_DROP_DB / 20))
+        print(f"  vocal stem dropped {VOCAL_STEM_DROP_DB:+.1f} dB (sit IN beat, not on top)")
+
+        # Apply only dynamic pocket on music (gentle)
         voc_mono = np.mean(voc_processed, axis=1)
         sos_voc_bp = butter(4, [200, 4000], btype='bp', fs=sr, output='sos')
         voc_band = sosfilt(sos_voc_bp, voc_mono).astype(np.float32)
@@ -430,7 +436,6 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
         peak95 = np.percentile(smoothed, 95) + 1e-9
         env_norm = np.clip(smoothed / peak95, 0, 1)
         env_norm = np.where(env_norm > 0.10, env_norm, 0)
-        # Gentler pocket in glue mode (-3 dB max instead of -5)
         gentle_duck = min(3.0, S['pocket']['duck_db'])
         sos_pocket = butter(6, [S['pocket']['lo'], S['pocket']['hi']], btype='bp', fs=sr, output='sos')
         pocket_band = sosfilt(sos_pocket, mus, axis=0).astype(np.float32)
@@ -438,14 +443,17 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
         duck_lin = 10**((-gentle_duck*env_norm)/20)
         music_pocketed = rest_mus + pocket_band * duck_lin[:, None]
 
-        # Balance — vocal sits +3 dB above bed (less aggressive than full chain)
-        gentle_lead = min(3.0, S['vocal_lead_db'])
+        # ANTI-KARAOKE: sum at natural levels, no aggressive music attenuation.
+        # Default vocal_lead now -1.5 dB (vocal SLIGHTLY UNDER music — sits in pocket).
+        DEFAULT_LEAD_DB = -1.5
         voc_rms = rdb(voc_processed); mus_rms = rdb(music_pocketed)
         gap = voc_rms - mus_rms
-        bed_atten = -(gentle_lead - gap) if gap < gentle_lead else 0
+        bed_atten = -(DEFAULT_LEAD_DB - gap) if gap < DEFAULT_LEAD_DB else 0
+        # Cap how much we attenuate the beat — never more than -6 dB
+        bed_atten = max(bed_atten, -6.0)
         mus_balanced = music_pocketed * (10**(bed_atten/20))
         mix = voc_processed + mus_balanced
-        print(f"  pocket: -{gentle_duck} dB | vocal lead: +{gentle_lead} dB | bed atten: {bed_atten:+.1f}")
+        print(f"  pocket: -{gentle_duck} dB | vocal lead: {DEFAULT_LEAD_DB:+.1f} dB | bed atten: {bed_atten:+.1f} (capped at -6)")
     else:
         # FULL CHAIN
         print(f"\n=== FULL CHAIN (vocal is raw) ===")
@@ -495,8 +503,12 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
         verb = load_plugin(PLUGINS['verb'])
         configure_verb(verb, S['verb'])
         voc_wet_raw = Pedalboard([verb])(voc_dry, sr)
+        # v3.1: HP @ send_hp AND LP @ 6 kHz to darken reverb tail (push behind beat, not floating on top)
         sos_verb_hp = butter(4, S['verb']['send_hp'], btype='hp', fs=sr, output='sos')
-        voc_wet = sosfilt(sos_verb_hp, voc_wet_raw, axis=0).astype(np.float32)
+        sos_verb_lp = butter(4, 6000, btype='lp', fs=sr, output='sos')
+        voc_wet_hp = sosfilt(sos_verb_hp, voc_wet_raw, axis=0).astype(np.float32)
+        voc_wet = sosfilt(sos_verb_lp, voc_wet_hp, axis=0).astype(np.float32)
+        print(f"  reverb tail: HP @ {S['verb']['send_hp']} Hz + LP @ 6 kHz (darkened, behind beat)")
         # PDC: latency match dry vs wet
         voc_dry_pdc, voc_wet_pdc, pad = parallel_mix_with_pdc(voc_dry, voc_wet, [verb], sr)
         if pad > 0: print(f"  PDC: padded dry by {pad} samples ({pad/sr*1000:.1f} ms) to align with verb")
@@ -543,18 +555,51 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
     # PRE-MASTER NORMALIZE
     mix = mix * (10 ** ((-6.0 - db(mix))/20))
 
-    # OZONE MASTER (different settings for glue vs full)
-    print(f"\n=== OZONE 9 ELEMENTS MASTER ===")
+    # ====================================================
+    # BUS GLUE COMPRESSOR — forces vocal + beat to breathe together
+    # Per v3.1: 2:1 ratio, slow attack 30ms, fast release 50ms, -1 to -2 dB GR
+    # ====================================================
+    print(f"\n=== BUS GLUE COMPRESSOR ===")
+    pre_glue_rms = rdb(mix)
+    # Threshold sits ~6 dB above mix RMS so GR lands in -1 to -2 dB target range
+    pre_rms_db = rdb(mix)
+    glue_threshold = pre_rms_db + 4.0  # peaks +4 dB above RMS will trigger comp
+    bus_glue = Pedalboard([
+        Compressor(threshold_db=glue_threshold, ratio=2.0, attack_ms=30.0, release_ms=50.0)
+    ])
+    mix = bus_glue(mix.astype(np.float32), sr)
+    post_glue_rms = rdb(mix)
+    print(f"  Glue: 2:1, attack 30ms, release 50ms, threshold -12 dB")
+    print(f"  Pre/Post RMS: {pre_glue_rms:+.1f} -> {post_glue_rms:+.1f} ({post_glue_rms-pre_glue_rms:+.1f} dB)")
+
+    # ====================================================
+    # OZONE MASTER — v3.1 corrected EQ
+    # ====================================================
+    print(f"\n=== OZONE 9 ELEMENTS MASTER (v3.1 corrected) ===")
     ozone = load_plugin(PLUGINS['ozone'])
+    # Ozone band defaults: 1=100Hz, 2=240Hz, 3=540Hz, 4=1200Hz, 5=2700Hz, 6=5500Hz, 7=10kHz, 8=16kHz
     if glue_mode:
-        # Gentle glue settings — barely touch the needles
-        # Only Imager + Maximizer; skip aggressive EQ (vocal is already EQ'd)
-        ozone.img_width_percent = 10.0  # slight widening
-        ozone.max_threshold = -6.0  # gentle limit, much less aggressive
+        # v3.1 EQ: per Tyler's spec — band 1 @ 50 Hz: -2 dB, band 2 @ 240 Hz: +1.5 dB, 2.7k: 0
+        # CRITICAL: Ozone disables even-numbered bands by default. Must enable.
+        for side in ('l','r'):
+            p = f"eq_st_m_{side}"
+            # Enable all 4 bands we touch
+            for bn in (1, 2, 5, 7):
+                setattr(ozone, f"{p}_enable_{bn}", True)
+            # Reshape Band 1 from default 100 Hz down to 50 Hz to actually hit the sub
+            setattr(ozone, f"{p}_frequency_1_hz", 50.0)
+            setattr(ozone, f"{p}_gain_1_db", -2.0)    # sub cut
+            setattr(ozone, f"{p}_frequency_2_hz", 240.0)  # default already 240
+            setattr(ozone, f"{p}_gain_2_db", 1.5)     # bass body boost
+            setattr(ozone, f"{p}_gain_5_db", 0.0)     # 2.7k: ZERO (do not pierce vocal)
+            setattr(ozone, f"{p}_gain_7_db", 1.5)     # 10k: gentle air
+        ozone.img_width_percent = 22.0
+        ozone.max_threshold = -6.0
         ozone.max_ceiling = -1.0
         ozone.max_true_peak_limiting = True
-        print(f"  Glue mode: Imager +10%, Maximizer thr -6 dB (gentle)")
-        target_lufs = max(S['lufs_target'], -12.0)  # don't push too loud in glue mode
+        print(f"  Glue mode v3.1: EQ -2 dB @ 50 Hz, +1.5 dB @ 240 Hz, 0 @ 2.7k, +1.5 dB @ 10k")
+        print(f"  Imager +22% | Max thr -6 dB | bands 1+2+5+7 ENABLED")
+        target_lufs = max(S['lufs_target'], -12.0)
     else:
         eq = S['ozone_eq']
         for side in ('l','r'):
