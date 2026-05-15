@@ -20,7 +20,7 @@ Usage:
 """
 import sys, os, json, numpy as np, soundfile as sf, pyloudnorm as pyln, librosa
 from pathlib import Path
-from pedalboard import Pedalboard, load_plugin, Compressor
+from pedalboard import Pedalboard, load_plugin, Compressor, HighpassFilter, LowpassFilter, PeakFilter, HighShelfFilter, LowShelfFilter
 from scipy.signal import butter, sosfilt
 try:
     from knowledge_index import get_kb
@@ -457,15 +457,18 @@ def backing_vocal_bus(bv_audio, sr, mode='adlib', style='drill', is_ai=True):
     if is_ai:
         bv_audio = humanize_ai_vocal(bv_audio, sr, drive_db=2.0)
 
-    # ===== EQ via Pro-Q 3 — style-specific HP/LP + cuts =====
-    q3 = load_plugin(PLUGINS['proq3'])
-    set_band(q3, 1, 'Low Cut', S['hp'], slope='24 dB/oct')
-    g, f, q = S['mud_cut']
-    set_band(q3, 2, 'Bell', f, gain=g, q=q)
-    g, f, q = S['lead_hole']
-    set_band(q3, 3, 'Bell', f, gain=g, q=q)
-    set_band(q3, 4, 'High Cut', S['lp'], slope='24 dB/oct')
-    bv = Pedalboard([q3])(bv_audio, sr)
+    # ===== EQ via pedalboard built-ins — Pro-Q 3 unlicensed = demo-mute risk =====
+    # V16: Replaced FabFilter Pro-Q 3 with pedalboard's free EQ building blocks.
+    # Same surgical functionality, no license check, never silences.
+    mud_g, mud_f, mud_q = S['mud_cut']
+    hole_g, hole_f, hole_q = S['lead_hole']
+    bv_eq_chain = Pedalboard([
+        HighpassFilter(cutoff_frequency_hz=S['hp']),                    # HP @ style spec
+        PeakFilter(cutoff_frequency_hz=mud_f, gain_db=mud_g, q=mud_q),  # mud cut
+        PeakFilter(cutoff_frequency_hz=hole_f, gain_db=hole_g, q=hole_q),  # lead hole
+        LowpassFilter(cutoff_frequency_hz=S['lp']),                     # LP @ style spec
+    ])
+    bv = bv_eq_chain(bv_audio, sr)
 
     # ===== COMPRESSION — style-specific ratio + threshold = RMS-4 =====
     active = np.abs(bv).max(axis=1) > 1e-4
@@ -834,11 +837,10 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
         if not autotune_enabled:
             print(f"  Key confidence {feats['key_confidence']:.2f} < 1.10 -> Auto-Tune Chromatic mode (no key lock)")
 
-        # PRO-Q3 CUTS
-        q3_cuts = load_plugin(PLUGINS['proq3'])
-        set_band(q3_cuts, 1, 'Low Cut', S['vocal_hp'])
-        for i, (g, f, q) in enumerate(S['vocal_cuts']):
-            set_band(q3_cuts, i+2, 'Bell', f, gain=g, q=q)
+        # V16: PEDALBOARD BUILT-IN EQ (was Pro-Q 3, unlicensed/demo-mute issue)
+        q3_cuts_plugins = [HighpassFilter(cutoff_frequency_hz=S['vocal_hp'])]
+        for g, f, q in S['vocal_cuts']:
+            q3_cuts_plugins.append(PeakFilter(cutoff_frequency_hz=f, gain_db=g, q=q))
 
         # AUTO-TUNE PRO
         autotune = load_plugin(PLUGINS['autotune'])
@@ -861,13 +863,15 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
         if 'threshold_db' in deess.parameters:
             deess.threshold_db = float(S['deess_thresh'])
 
-        # PRO-Q3 BOOSTS
-        q3_boost = load_plugin(PLUGINS['proq3'])
-        for i, (g, f, q) in enumerate(S['vocal_boosts']):
-            shape = 'High Shelf' if f >= 8000 else 'Bell'
-            set_band(q3_boost, i+1, shape, f, gain=g, q=q)
+        # V16: PEDALBOARD BUILT-IN EQ BOOSTS (was Pro-Q 3)
+        q3_boost_plugins = []
+        for g, f, q in S['vocal_boosts']:
+            if f >= 8000:
+                q3_boost_plugins.append(HighShelfFilter(cutoff_frequency_hz=f, gain_db=g, q=q))
+            else:
+                q3_boost_plugins.append(PeakFilter(cutoff_frequency_hz=f, gain_db=g, q=q))
 
-        vocal_chain = Pedalboard([q3_cuts, autotune, vcomp, deess, q3_boost])
+        vocal_chain = Pedalboard(q3_cuts_plugins + [autotune, vcomp, deess] + q3_boost_plugins)
         voc_dry = vocal_chain(voc, sr)
 
         # VALHALLA — uses PDC for wet/dry mix
