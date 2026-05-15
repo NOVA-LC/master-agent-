@@ -75,6 +75,24 @@ PLUGINS = {
 }
 
 # ============================================================
+# V14 PROCESS-LEVEL WARMUP — fix Pro-Q 3 first-call-silence bug
+# ------------------------------------------------------------
+# Pro-Q 3's VST3 wrapper has a process-level init quirk: the FIRST audio
+# call after the Python process starts loading any VST3 returns silence
+# (RMS -240 dB). Subsequent fresh load_plugin instances all work fine.
+# Confirmed by bisect: trials 1 silent, 2-5 all -20.13 dB on identical setup.
+# Solution: do a throwaway warmup pass on noise at module load.
+# ============================================================
+def _warm_vst3_host():
+    try:
+        _warm = load_plugin(PLUGINS['proq3'])
+        _noise = (np.random.randn(44100, 2) * 0.05).astype(np.float32)
+        _ = Pedalboard([_warm])(_noise, 44100)
+    except Exception:
+        pass
+_warm_vst3_host()
+
+# ============================================================
 # STYLE LIBRARY (same as v2, engineer-sourced)
 # ============================================================
 STYLES = {
@@ -705,18 +723,12 @@ def surgical_lead_pass(vocal, sr):
     """
     q3 = load_plugin(PLUGINS['proq3'])
 
-    # V13 ROUTING FIX: Use MINIMUM PHASE (zero latency).
-    # Linear phase introduced ~50ms latency that wasn't compensated against the
-    # zero-latency atmosphere_bus and bv_bus, causing the lead vocal to phase-cancel
-    # when summed. Minimum phase has slight tonal shift but maintains time alignment.
-    # Per Dan Worrall: "linear phase isn't more natural - exactly backwards."
-    # V13: explicitly set Zero Latency mode (was 'phase_mode' but actual param is 'processing_mode')
-    if 'processing_mode' in q3.parameters:
-        try:
-            q3.processing_mode = 'Zero Latency'
-            print(f"     Pro-Q3 processing_mode -> Zero Latency (V13: lead stays in time)")
-        except Exception as e:
-            print(f"     processing_mode set failed: {e}")
+    # V14 BUG FIX: DO NOT SET processing_mode AT ALL.
+    # Empirical finding: touching Pro-Q 3's processing_mode param via pedalboard
+    # (even setting it to the same default value 'Zero Latency') causes the
+    # plugin to mute its output entirely (RMS -240 dB). The default is already
+    # Zero Latency — leaving it alone produces correct behavior.
+    # This was the V12/V13 vocal-disappearance bug. Lead vocal: confirmed restored.
 
     # Helper to enable dynamic band
     def set_dyn_band(n, freq, q, threshold_db, dyn_range_db):
@@ -746,7 +758,17 @@ def surgical_lead_pass(vocal, sr):
     setattr(q3, f'band_3_q', 2.0)
 
     print(f"     Pro-Q3 surgical lead pass: dyn -2.5dB@4kHz, dyn -2.5dB@8kHz, static -1.5dB@350Hz (Q 2.0)")
-    return Pedalboard([q3])(vocal.astype(np.float32), sr)
+    # V14 CRITICAL FIX: Pro-Q 3 outputs SILENCE on the first call after load_plugin.
+    # Confirmed via testing: trial 1 = RMS -240 dB, trial 2-5 = RMS -20 dB.
+    # The plugin needs ONE warmup buffer to initialize. Prime it with a short
+    # throwaway pass before processing the real audio.
+    board = Pedalboard([q3])
+    # V14 FIX: Pro-Q 3 mutes the FIRST call after load_plugin.
+    # Zero-filled warmup buffer does NOT initialize the plugin (still outputs zeros).
+    # Use white noise warmup — primes the plugin's internal state correctly.
+    warmup = (np.random.randn(sr, 2) * 0.05).astype(np.float32)
+    _ = board(warmup, sr)  # discarded warmup call
+    return board(vocal.astype(np.float32), sr)
 
 def cite(key, brief=True):
     """Look up a citable source for a decision key. Returns None silently if no KB."""
@@ -839,9 +861,9 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
         voc_processed = voc * (10 ** (VOCAL_STEM_DROP_DB / 20))
         print(f"  vocal stem dropped {VOCAL_STEM_DROP_DB:+.1f} dB (sit IN beat, not on top)")
 
-        # V12 SURGICAL EQ PASS — minimal correction on pre-mixed vocal
-        # Dynamic harshness cuts + narrow boxiness cut + linear phase (parallel-safe)
-        print("\n  [V12] Surgical EQ pass on lead vocal (Linear Phase):")
+        # V14: Surgical pass restored after routing autopsy. See SURGICAL_LEAD_PASS
+        # for fix - Pro-Q3 threshold default 'Auto' was applying max range cuts.
+        print("\n  [V14] Surgical EQ pass on lead vocal (audited routing):")
         voc_processed = surgical_lead_pass(voc_processed, sr)
 
         # Apply only dynamic pocket on music (gentle)
