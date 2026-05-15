@@ -561,16 +561,17 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
     # ====================================================
     print(f"\n=== BUS GLUE COMPRESSOR ===")
     pre_glue_rms = rdb(mix)
-    # Threshold sits ~6 dB above mix RMS so GR lands in -1 to -2 dB target range
+    # Per v3.1 directive: threshold = RMS - 3 dB. Guarantees we always catch peaks
+    # and land 1-2 dB GR. No static -12 threshold (that fails when RMS < -12).
     pre_rms_db = rdb(mix)
-    glue_threshold = pre_rms_db + 4.0  # peaks +4 dB above RMS will trigger comp
+    glue_threshold = pre_rms_db - 3.0
     bus_glue = Pedalboard([
         Compressor(threshold_db=glue_threshold, ratio=2.0, attack_ms=30.0, release_ms=50.0)
     ])
     mix = bus_glue(mix.astype(np.float32), sr)
     post_glue_rms = rdb(mix)
-    print(f"  Glue: 2:1, attack 30ms, release 50ms, threshold -12 dB")
-    print(f"  Pre/Post RMS: {pre_glue_rms:+.1f} -> {post_glue_rms:+.1f} ({post_glue_rms-pre_glue_rms:+.1f} dB)")
+    print(f"  Glue: 2:1, attack 30ms, release 50ms, threshold {glue_threshold:.1f} dB (= RMS-3)")
+    print(f"  Pre/Post RMS: {pre_glue_rms:+.1f} -> {post_glue_rms:+.1f} ({post_glue_rms-pre_glue_rms:+.1f} dB GR)")
 
     # ====================================================
     # OZONE MASTER — v3.1 corrected EQ
