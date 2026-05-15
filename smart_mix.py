@@ -1,5 +1,25 @@
 """
-SMART_MIX.py v3 — context-aware production mixing agent.
+SMART_MIX — context-aware production mixing agent.
+
+==============================================================================
+PRIME DIRECTIVE: ENHANCE, DO NOT GENERATE
+==============================================================================
+This agent processes and mixes HUMAN-RECORDED vocals only.
+
+It does NOT:
+  - Auto-generate ad-libs via ElevenLabs / Suno / any TTS or voice clone
+  - Add backing vocals the artist didn't record
+  - Insert AI-cloned vocals into a mix automatically
+
+ElevenLabs remains in the toolbag (gen_adlibs.py, place_adlibs.py exist
+as standalone tools) but is NEVER called from smart_mix.py automatically.
+
+Backing vocals are only mixed in when the user EXPLICITLY provides --bv=<path>
+pointing to a stem they themselves recorded or generated and approved.
+
+The agent's job is to enhance what the artist did. Period.
+==============================================================================
+
 
 UPGRADES IN v3:
   - Pre-Mix Detector: analyzes vocal crest factor + HP rolloff before processing.

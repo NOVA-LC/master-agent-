@@ -2,6 +2,21 @@
 
 Context-aware production mixing agent. Auto-detects song style from raw stems and applies an engineer-sourced chain.
 
+## Prime Directive: ENHANCE, DO NOT GENERATE
+
+This agent processes and mixes **human-recorded vocals only**.
+
+It will **never**:
+- Auto-generate ad-libs or harmonies via ElevenLabs/Suno/voice cloning
+- Add backing vocals the artist did not record
+- Insert AI-cloned vocals into a mix automatically
+
+ElevenLabs and similar generation tools remain available as **standalone tools** in the toolbag (`gen_adlibs.py`, `place_adlibs.py`) but are **never invoked from `smart_mix.py`**. Backing vocals are only mixed in when explicitly provided via `--bv=<path>` to a stem the artist recorded or approved.
+
+The agent's job is to enhance what the artist did. Period.
+
+---
+
 ## What it does
 
 1. **Analyze** music stem: tempo, key, spectral profile, onset density, sub-dominance
