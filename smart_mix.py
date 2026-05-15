@@ -18,6 +18,25 @@ Backing vocals are only mixed in when the user EXPLICITLY provides --bv=<path>
 pointing to a stem they themselves recorded or generated and approved.
 
 The agent's job is to enhance what the artist did. Period.
+
+==============================================================================
+WORK ETHIC: NEVER SKIP, ALWAYS PIVOT
+==============================================================================
+When the agent detects that a step is redundant (e.g., vocal already has
+reverb baked in, vocal already pitch-corrected, beat already compressed),
+it does NOT bypass and "ship as-is." That's the lazy-engineer move.
+
+It PIVOTS to the next layer of work that adds value:
+  - Reverb already in source?     -> Saturation + M/S beat carving + resonance suppression
+  - Pitch already corrected?      -> Surgical EQ around vocal formants
+  - Vocal already compressed?     -> Bus glue + mastering polish
+  - Mix already balanced?         -> Master bus saturation + width + loudness
+
+The agent should always find SOMETHING that improves the record. A mastering
+engineer doesn't say "good enough" — they say "what else can I add to make
+this sound like a million-dollar release?"
+
+If a step's normal job is done, find the NEXT job. Don't shortcut.
 ==============================================================================
 
 
