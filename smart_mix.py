@@ -457,20 +457,20 @@ def backing_vocal_bus(bv_audio, sr, mode='adlib', style='drill', is_ai=True):
     if is_ai:
         bv_audio = humanize_ai_vocal(bv_audio, sr, drive_db=2.0)
 
-    # ===== EQ via pedalboard built-ins — Pro-Q 3 unlicensed = demo-mute risk =====
-    # V16: Replaced FabFilter Pro-Q 3 with pedalboard's free EQ building blocks.
-    # Same surgical functionality, no license check, never silences.
-    mud_g, mud_f, mud_q = S['mud_cut']
-    hole_g, hole_f, hole_q = S['lead_hole']
+    # ===== V17 SIMPLIFIED BV EQ: just HP + LP (radio filter, no notches) =====
+    # Removed in V17: -2.5dB @ 400 Hz mud cut, -3dB @ 2.5kHz lead-hole notch.
+    # Those PeakFilter notches with high Q were causing ringing/whiney character
+    # and cumulative group delay (~5-12 ms at cutoffs). Just bandpass now.
+    # The "lead hole" is still created NATURALLY because BVs are tucked -8 dB
+    # under the lead — masking, not notching, does the carving work.
     bv_eq_chain = Pedalboard([
-        HighpassFilter(cutoff_frequency_hz=S['hp']),                    # HP @ style spec
-        PeakFilter(cutoff_frequency_hz=mud_f, gain_db=mud_g, q=mud_q),  # mud cut
-        PeakFilter(cutoff_frequency_hz=hole_f, gain_db=hole_g, q=hole_q),  # lead hole
-        LowpassFilter(cutoff_frequency_hz=S['lp']),                     # LP @ style spec
+        HighpassFilter(cutoff_frequency_hz=S['hp']),
+        LowpassFilter(cutoff_frequency_hz=S['lp']),
     ])
     bv = bv_eq_chain(bv_audio, sr)
 
-    # ===== COMPRESSION — style-specific ratio + threshold = RMS-4 =====
+    # ===== V17 GENTLER COMPRESSION: 3:1 (was 4:1), slower attack 10ms (was 3ms) =====
+    # Source: simpler = less "spitty" artifact on transient ad-libs.
     active = np.abs(bv).max(axis=1) > 1e-4
     if active.any():
         bv_active = bv[active]
@@ -480,8 +480,7 @@ def backing_vocal_bus(bv_audio, sr, mode='adlib', style='drill', is_ai=True):
     pre_rms_db = max(pre_rms_db, -60.0)
     bv_thresh = max(pre_rms_db - 4.0, -50.0)
     bv = Pedalboard([
-        Compressor(threshold_db=bv_thresh, ratio=S['comp_ratio'],
-                   attack_ms=S['comp_attack'], release_ms=S['comp_release'])
+        Compressor(threshold_db=bv_thresh, ratio=3.0, attack_ms=10.0, release_ms=100.0)
     ])(bv.astype(np.float32), sr)
 
     # ===== STEREO PLACEMENT — style-specific widening =====
