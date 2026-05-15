@@ -705,17 +705,18 @@ def surgical_lead_pass(vocal, sr):
     """
     q3 = load_plugin(PLUGINS['proq3'])
 
-    # Switch to Linear Phase mode for parallel-bus safety
-    # Pro-Q 3 has a 'phase_mode' param with options including 'Linear Phase'
-    if 'phase_mode' in q3.parameters:
-        valid = q3.parameters['phase_mode'].valid_values
-        for opt in valid:
-            if 'linear' in str(opt).lower():
-                try:
-                    q3.phase_mode = opt
-                    print(f"     Pro-Q3 phase_mode -> {opt} (parallel-safe)")
-                    break
-                except: pass
+    # V13 ROUTING FIX: Use MINIMUM PHASE (zero latency).
+    # Linear phase introduced ~50ms latency that wasn't compensated against the
+    # zero-latency atmosphere_bus and bv_bus, causing the lead vocal to phase-cancel
+    # when summed. Minimum phase has slight tonal shift but maintains time alignment.
+    # Per Dan Worrall: "linear phase isn't more natural - exactly backwards."
+    # V13: explicitly set Zero Latency mode (was 'phase_mode' but actual param is 'processing_mode')
+    if 'processing_mode' in q3.parameters:
+        try:
+            q3.processing_mode = 'Zero Latency'
+            print(f"     Pro-Q3 processing_mode -> Zero Latency (V13: lead stays in time)")
+        except Exception as e:
+            print(f"     processing_mode set failed: {e}")
 
     # Helper to enable dynamic band
     def set_dyn_band(n, freq, q, threshold_db, dyn_range_db):
