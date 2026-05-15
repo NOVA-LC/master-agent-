@@ -1,0 +1,335 @@
+{
+  "mix": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "...",
+      "99.6",
+      "99.7",
+      "99.8",
+      "99.9",
+      "100.0"
+    ],
+    "count": 1001,
+    "range": "(0.0, 100.0, 0.1)"
+  },
+  "predelay": {
+    "current": "20.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.01",
+      "0.02",
+      "0.03",
+      "0.04",
+      "...",
+      "495.37",
+      "496.52",
+      "497.68",
+      "498.84",
+      "500.0"
+    ],
+    "count": 985,
+    "range": "(0.0, 500.0, None)"
+  },
+  "decay": {
+    "current": "4.00 s",
+    "type": "enum",
+    "valid_values": [
+      "0.20 s",
+      "0.21 s",
+      "0.22 s",
+      "0.23 s",
+      "0.24 s",
+      "...",
+      "69.07 s",
+      "69.30 s",
+      "69.53 s",
+      "69.77 s",
+      "70.00 s"
+    ],
+    "count": 817,
+    "range": "(None, None, None)"
+  },
+  "size": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "...",
+      "99.6",
+      "99.7",
+      "99.8",
+      "99.9",
+      "100.0"
+    ],
+    "count": 1001,
+    "range": "(0.0, 100.0, 0.1)"
+  },
+  "attack": {
+    "current": "50.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "...",
+      "99.6",
+      "99.7",
+      "99.8",
+      "99.9",
+      "100.0"
+    ],
+    "count": 1001,
+    "range": "(0.0, 100.0, 0.1)"
+  },
+  "bassmult": {
+    "current": "1.5",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.25",
+      "0.26",
+      "0.27",
+      "0.28",
+      "0.29",
+      "...",
+      "3.96",
+      "3.97",
+      "3.98",
+      "3.99",
+      "4.0"
+    ],
+    "count": 376,
+    "range": "(0.25, 4.0, 0.01)"
+  },
+  "bassxover": {
+    "current": "700.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "100.0",
+      "110.0",
+      "120.0",
+      "130.0",
+      "140.0",
+      "...",
+      "9860.0",
+      "9900.0",
+      "9930.0",
+      "9970.0",
+      "10000.0"
+    ],
+    "count": 570,
+    "range": "(100.0, 10000.0, None)"
+  },
+  "highshelf": {
+    "current": "-24.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-24.0",
+      "-23.98",
+      "-23.95",
+      "-23.93",
+      "-23.9",
+      "...",
+      "-0.1",
+      "-0.07",
+      "-0.05",
+      "-0.02",
+      "0.0"
+    ],
+    "count": 1001,
+    "range": "(-24.0, 0.0, None)"
+  },
+  "highfreq": {
+    "current": "6000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "100.0",
+      "110.0",
+      "120.0",
+      "130.0",
+      "140.0",
+      "...",
+      "19860.0",
+      "19900.0",
+      "19930.0",
+      "19970.0",
+      "20000.0"
+    ],
+    "count": 919,
+    "range": "(100.0, 20000.0, None)"
+  },
+  "earlydiffusion": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "...",
+      "99.6",
+      "99.7",
+      "99.8",
+      "99.9",
+      "100.0"
+    ],
+    "count": 1001,
+    "range": "(0.0, 100.0, 0.1)"
+  },
+  "latediffusion": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "...",
+      "99.6",
+      "99.7",
+      "99.8",
+      "99.9",
+      "100.0"
+    ],
+    "count": 1001,
+    "range": "(0.0, 100.0, 0.1)"
+  },
+  "modrate": {
+    "current": "2.53",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.1",
+      "0.11",
+      "0.12",
+      "0.13",
+      "0.14",
+      "...",
+      "9.96",
+      "9.97",
+      "9.98",
+      "9.99",
+      "10.0"
+    ],
+    "count": 991,
+    "range": "(0.1, 10.0, 0.01)"
+  },
+  "moddepth": {
+    "current": "38.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "...",
+      "99.6",
+      "99.7",
+      "99.8",
+      "99.9",
+      "100.0"
+    ],
+    "count": 1001,
+    "range": "(0.0, 100.0, 0.1)"
+  },
+  "highcut": {
+    "current": "8000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "100.0",
+      "110.0",
+      "120.0",
+      "130.0",
+      "140.0",
+      "...",
+      "19860.0",
+      "19900.0",
+      "19930.0",
+      "19970.0",
+      "20000.0"
+    ],
+    "count": 919,
+    "range": "(100.0, 20000.0, None)"
+  },
+  "lowcut": {
+    "current": "10.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "20.0",
+      "30.0",
+      "40.0",
+      "50.0",
+      "...",
+      "1460.0",
+      "1470.0",
+      "1480.0",
+      "1490.0",
+      "1500.0"
+    ],
+    "count": 150,
+    "range": "(10.0, 1500.0, 10.0)"
+  },
+  "colormode": {
+    "current": "seventies",
+    "type": "enum",
+    "valid_values": [
+      "seventies",
+      "eighties",
+      "now"
+    ],
+    "count": 3,
+    "range": "(None, None, None)"
+  },
+  "reverbmode": {
+    "current": "Concert Hall",
+    "type": "enum",
+    "valid_values": [
+      "Concert Hall",
+      "Plate",
+      "Room",
+      "Chamber",
+      "Random Space",
+      "Chorus Space",
+      "Ambience",
+      "Bright Hall",
+      "Sanctuary",
+      "Dirty Hall",
+      "Dirty Plate",
+      "Smooth Plate",
+      "Smooth Room",
+      "Smooth Random",
+      "Nonlin",
+      "Chaotic Chamber",
+      "Chaotic Hall",
+      "Chaotic Neutral",
+      "Concert Hall"
+    ],
+    "count": 19,
+    "range": "(None, None, None)"
+  },
+  "bypass": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  }
+}

@@ -1,0 +1,5728 @@
+{
+  "band_1_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_1_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_1_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_1_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_1_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_1_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_1_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_1_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_1_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_1_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_1_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_1_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_1_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_1_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_1_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_2_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_2_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_2_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_2_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_2_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_2_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_2_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_2_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_2_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_2_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_2_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_2_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_2_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_2_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_2_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_3_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_3_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_3_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_3_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_3_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_3_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_3_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_3_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_3_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_3_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_3_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_3_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_3_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_3_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_3_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_4_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_4_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_4_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_4_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_4_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_4_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_4_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_4_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_4_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_4_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_4_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_4_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_4_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_4_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_4_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_5_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_5_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_5_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_5_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_5_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_5_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_5_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_5_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_5_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_5_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_5_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_5_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_5_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_5_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_5_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_6_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_6_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_6_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_6_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_6_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_6_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_6_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_6_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_6_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_6_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_6_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_6_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_6_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_6_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_6_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_7_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_7_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_7_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_7_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_7_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_7_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_7_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_7_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_7_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_7_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_7_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_7_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_7_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_7_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_7_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_8_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_8_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_8_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_8_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_8_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_8_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_8_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_8_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_8_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_8_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_8_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_8_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_8_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_8_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_8_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_9_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_9_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_9_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_9_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_9_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_9_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_9_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_9_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_9_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_9_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_9_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_9_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_9_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_9_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_9_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_10_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_10_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_10_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_10_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_10_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_10_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_10_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_10_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_10_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_10_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_10_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_10_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_10_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_10_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_10_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_11_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_11_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_11_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_11_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_11_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_11_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_11_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_11_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_11_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_11_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_11_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_11_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_11_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_11_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_11_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_12_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_12_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_12_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_12_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_12_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_12_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_12_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_12_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_12_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_12_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_12_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_12_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_12_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_12_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_12_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_13_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_13_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_13_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_13_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_13_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_13_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_13_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_13_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_13_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_13_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_13_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_13_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_13_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_13_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_13_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_14_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_14_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_14_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_14_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_14_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_14_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_14_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_14_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_14_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_14_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_14_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_14_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_14_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_14_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_14_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_15_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_15_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_15_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_15_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_15_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_15_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_15_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_15_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_15_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_15_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_15_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_15_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_15_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_15_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_15_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_16_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_16_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_16_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_16_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_16_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_16_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_16_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_16_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_16_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_16_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_16_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_16_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_16_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_16_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_16_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_17_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_17_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_17_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_17_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_17_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_17_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_17_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_17_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_17_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_17_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_17_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_17_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_17_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_17_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_17_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_18_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_18_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_18_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_18_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_18_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_18_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_18_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_18_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_18_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_18_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_18_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_18_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_18_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_18_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_18_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_19_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_19_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_19_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_19_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_19_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_19_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_19_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_19_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_19_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_19_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_19_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_19_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_19_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_19_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_19_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_20_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_20_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_20_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_20_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_20_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_20_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_20_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_20_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_20_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_20_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_20_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_20_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_20_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_20_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_20_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_21_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_21_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_21_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_21_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_21_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_21_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_21_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_21_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_21_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_21_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_21_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_21_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_21_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_21_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_21_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_22_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_22_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_22_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_22_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_22_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_22_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_22_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_22_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_22_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_22_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_22_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_22_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_22_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_22_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_22_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_23_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_23_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_23_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_23_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_23_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_23_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_23_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_23_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_23_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_23_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_23_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_23_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_23_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_23_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_23_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_24_used": {
+    "current": "Unused",
+    "type": "enum",
+    "valid_values": [
+      "Unused",
+      "Used"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_24_enabled": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_24_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "10.0",
+      "10.08",
+      "10.161",
+      "10.243",
+      "10.325",
+      "...",
+      "29054.0",
+      "29288.0",
+      "29523.0",
+      "29761.0",
+      "30000.0"
+    ],
+    "count": 1001,
+    "range": "(10.0, 30000.0, None)"
+  },
+  "band_24_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_24_dynamic_range": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.94",
+      "-29.88",
+      "-29.82",
+      "-29.76",
+      "...",
+      "29.76",
+      "29.82",
+      "29.88",
+      "29.94",
+      "30.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 30.0, 0.06)"
+  },
+  "band_24_dynamics_enabled": {
+    "current": "Dynamics Enabled",
+    "type": "enum",
+    "valid_values": [
+      "Dynamics Disabled",
+      "Dynamics Enabled"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "band_24_threshold": {
+    "current": "Auto",
+    "type": "enum",
+    "valid_values": [
+      "-90.0 dB",
+      "-89.8 dB",
+      "-89.6 dB",
+      "-89.5 dB",
+      "-89.3 dB",
+      "...",
+      "-0.4 dB",
+      "-0.3 dB",
+      "-0.2 dB",
+      "-0.1 dB",
+      "Auto"
+    ],
+    "count": 681,
+    "range": "(None, None, None)"
+  },
+  "band_24_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.025",
+      "0.026",
+      "0.027",
+      "0.028",
+      "0.029",
+      "...",
+      "38.84",
+      "39.12",
+      "39.41",
+      "39.71",
+      "40.0"
+    ],
+    "count": 882,
+    "range": "(0.025, 40.0, None)"
+  },
+  "band_24_shape": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "Low Cut",
+      "High Shelf",
+      "High Cut",
+      "Notch",
+      "Band Pass",
+      "Tilt Shelf",
+      "Flat Tilt"
+    ],
+    "count": 9,
+    "range": "(None, None, None)"
+  },
+  "band_24_slope": {
+    "current": "12 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6 dB/oct",
+      "12 dB/oct",
+      "18 dB/oct",
+      "24 dB/oct",
+      "30 dB/oct",
+      "36 dB/oct",
+      "48 dB/oct",
+      "72 dB/oct",
+      "96 dB/oct",
+      "Brickwall"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "band_24_stereo_placement": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "band_24_speakers": {
+    "current": "All (excl. LFE)",
+    "type": "enum",
+    "valid_values": [
+      "All Speakers",
+      "All (excl. LFE)",
+      "LFE",
+      "Center",
+      "L/R (Front)",
+      "Lc/Rc (Front Center)",
+      "Lss/Rss (Surround Side)",
+      "Ls/Rs (Surround)",
+      "Lsr/Rsr (Surround Rear)",
+      "Cs or S (Center Surround)",
+      "Lts/Rts (Top Surround)"
+    ],
+    "count": 11,
+    "range": "(None, None, None)"
+  },
+  "band_24_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "band_24_external_side_chain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ex_band_24_speakers": {
+    "current": "(Other)",
+    "type": "enum",
+    "valid_values": [
+      "(Other)",
+      "L/C/R (Front + Center)",
+      "Lw/Rw (Wide)",
+      "Ltf/Rtf (Top Surround Front)",
+      "Ltr/Rtr (Top Surround Rear)"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "processing_mode": {
+    "current": "Zero Latency",
+    "type": "enum",
+    "valid_values": [
+      "Zero Latency",
+      "Natural Phase",
+      "Linear Phase"
+    ],
+    "count": 3,
+    "range": "(None, None, None)"
+  },
+  "processing_resolution": {
+    "current": "Medium",
+    "type": "enum",
+    "valid_values": [
+      "Low",
+      "Medium",
+      "High",
+      "Very High",
+      "Maximum"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "gain_scale": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.2",
+      "0.4",
+      "0.6",
+      "0.8",
+      "...",
+      "199.2",
+      "199.4",
+      "199.6",
+      "199.8",
+      "200.0"
+    ],
+    "count": 1001,
+    "range": "(0.0, 200.0, 0.2)"
+  },
+  "output_level": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-inf",
+      "-113.64",
+      "-101.6",
+      "-94.56",
+      "-89.56",
+      "...",
+      "35.71",
+      "35.78",
+      "35.86",
+      "35.93",
+      "36.0"
+    ],
+    "count": 1001,
+    "range": "(-inf, 36.0, None)"
+  },
+  "output_pan": {
+    "current": "Left: 0 dB / Right: 0 dB",
+    "type": "enum",
+    "valid_values": [
+      "Left: 0 dB / Right: -INF dB",
+      "Left: 0 dB / Right: -53.98 dB",
+      "Left: 0 dB / Right: -47.96 dB",
+      "Left: 0 dB / Right: -44.44 dB",
+      "Left: 0 dB / Right: -41.94 dB",
+      "...",
+      "Left: -41.94 dB / Right: 0 dB",
+      "Left: -44.44 dB / Right: 0 dB",
+      "Left: -47.96 dB / Right: 0 dB",
+      "Left: -53.98 dB / Right: 0 dB",
+      "Left: -INF dB / Right: 0 dB"
+    ],
+    "count": 1001,
+    "range": "(None, None, None)"
+  },
+  "output_pan_mode": {
+    "current": "Left/Right",
+    "type": "enum",
+    "valid_values": [
+      "Left/Right",
+      "Mid/Side"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "bypass": {
+    "current": "Not Bypassed",
+    "type": "enum",
+    "valid_values": [
+      "Not Bypassed",
+      "Bypassed"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "output_invert_phase": {
+    "current": "Normal",
+    "type": "enum",
+    "valid_values": [
+      "Normal",
+      "Inverted"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "auto_gain": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "analyzer_show_pre_processing": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "analyzer_show_post_processing": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "analyzer_external_spectrum": {
+    "current": "-1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-2.0",
+      "64.0",
+      "129.0",
+      "195.0",
+      "260.0",
+      "...",
+      "65274.0",
+      "65339.0",
+      "65405.0",
+      "65470.0",
+      "65536.0"
+    ],
+    "count": 1001,
+    "range": "(-2.0, 65536.0, None)"
+  },
+  "analyzer_range": {
+    "current": "90.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "60.0",
+      "90.0",
+      "120.0"
+    ],
+    "count": 3,
+    "range": "(60.0, 120.0, 30.0)"
+  },
+  "analyzer_resolution": {
+    "current": "High",
+    "type": "enum",
+    "valid_values": [
+      "Low",
+      "Medium",
+      "High",
+      "Maximum"
+    ],
+    "count": 4,
+    "range": "(None, None, None)"
+  },
+  "analyzer_speed": {
+    "current": "Medium",
+    "type": "enum",
+    "valid_values": [
+      "Very Slow",
+      "Slow",
+      "Medium",
+      "Fast",
+      "Very Fast"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "analyzer_tilt": {
+    "current": "4.5 dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "0 dB/oct",
+      "1.5 dB/oct",
+      "3 dB/oct",
+      "4.5 dB/oct",
+      "6 dB/oct"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "analyzer_freeze": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "analyzer_show_collisions": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "spectrum_grab": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "display_range": {
+    "current": "12.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "3.0",
+      "6.0",
+      "12.0",
+      "30.0"
+    ],
+    "count": 4,
+    "range": "(3.0, 30.0, None)"
+  },
+  "receive_midi": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "True",
+      "False"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "solo_gain": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-20.0",
+      "-19.96",
+      "-19.92",
+      "-19.88",
+      "-19.84",
+      "...",
+      "19.84",
+      "19.88",
+      "19.92",
+      "19.96",
+      "20.0"
+    ],
+    "count": 1001,
+    "range": "(-20.0, 20.0, 0.04)"
+  },
+  "host_bypass": {
+    "current": "Not Bypassed",
+    "type": "enum",
+    "valid_values": [
+      "Not Bypassed",
+      "Bypassed"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "internal": {
+    "current": "-",
+    "type": "enum",
+    "valid_values": [
+      "-"
+    ],
+    "count": 1,
+    "range": "(None, None, None)"
+  },
+  "midi_cc": {
+    "current": "-",
+    "type": "enum",
+    "valid_values": [
+      "-"
+    ],
+    "count": 1,
+    "range": "(None, None, None)"
+  },
+  "pitch_bend": {
+    "current": "-",
+    "type": "enum",
+    "valid_values": [
+      "-"
+    ],
+    "count": 1,
+    "range": "(None, None, None)"
+  },
+  "channel_pressure": {
+    "current": "-",
+    "type": "enum",
+    "valid_values": [
+      "-"
+    ],
+    "count": 1,
+    "range": "(None, None, None)"
+  }
+}

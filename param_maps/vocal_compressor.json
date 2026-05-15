@@ -1,0 +1,1085 @@
+{
+  "plugin_view_plugin_view": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0"
+    ],
+    "count": 2,
+    "range": "(0.0, 1.0, 1.0)"
+  },
+  "comp_model_slot_1_comp_model_slot_1": {
+    "current": "3.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0"
+    ],
+    "count": 4,
+    "range": "(0.0, 3.0, 1.0)"
+  },
+  "comp_model_slot_2_comp_model_slot_2": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0"
+    ],
+    "count": 4,
+    "range": "(0.0, 3.0, 1.0)"
+  },
+  "comp_enable_slot_1_comp_enable_slot_1": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "comp_enable_slot_2_comp_enable_slot_2": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "comp_metering_slot_1_comp_metering_slot_1": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0"
+    ],
+    "count": 2,
+    "range": "(0.0, 1.0, 1.0)"
+  },
+  "comp_metering_slot_2_comp_metering_slot_2": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0"
+    ],
+    "count": 2,
+    "range": "(0.0, 1.0, 1.0)"
+  },
+  "input_type_input_type": {
+    "current": "Alto/Tenor",
+    "type": "enum",
+    "valid_values": [
+      "Soprano",
+      "Alto/Tenor",
+      "Low Male",
+      "Instrument",
+      "Bass Inst"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "compression_level_compression_level": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0"
+    ],
+    "count": 3,
+    "range": "(0.0, 2.0, 1.0)"
+  },
+  "compression_style_compression_style": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0"
+    ],
+    "count": 3,
+    "range": "(0.0, 2.0, 1.0)"
+  },
+  "dry_wet_mix_dry_wet_mix": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 101,
+    "range": "(0.0, 100.0, 1.0)"
+  },
+  "input_gain_db_input_gain_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-18.0",
+      "-17.9",
+      "-17.8",
+      "-17.7",
+      "-17.6",
+      "...",
+      "17.6",
+      "17.7",
+      "17.8",
+      "17.9",
+      "18.0"
+    ],
+    "count": 361,
+    "range": "(-18.0, 18.0, 0.1)"
+  },
+  "output_gain_db_output_gain_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-18.0",
+      "-17.9",
+      "-17.8",
+      "-17.7",
+      "-17.6",
+      "...",
+      "17.6",
+      "17.7",
+      "17.8",
+      "17.9",
+      "18.0"
+    ],
+    "count": 361,
+    "range": "(-18.0, 18.0, 0.1)"
+  },
+  "mod_comp_1_auto_attack_auto_attack1": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "mod_comp_1_auto_release_auto_release1": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "mod_comp_1_ratio_ratio1": {
+    "current": "3.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "1.1",
+      "1.2",
+      "1.3",
+      "1.4",
+      "...",
+      "39.6",
+      "39.7",
+      "39.8",
+      "39.9",
+      "40.0"
+    ],
+    "count": 391,
+    "range": "(1.0, 40.0, 0.1)"
+  },
+  "mod_comp_1_gain_db_gain_db1": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-10.0",
+      "-9.9",
+      "-9.8",
+      "-9.7",
+      "-9.6",
+      "...",
+      "29.6",
+      "29.7",
+      "29.8",
+      "29.9",
+      "30.0"
+    ],
+    "count": 401,
+    "range": "(-10.0, 30.0, 0.1)"
+  },
+  "mod_comp_1_knee_db_knee_db1": {
+    "current": "10.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "...",
+      "59.6",
+      "59.7",
+      "59.8",
+      "59.9",
+      "60.0"
+    ],
+    "count": 601,
+    "range": "(0.0, 60.0, 0.1)"
+  },
+  "mod_comp_1_thresh_db_thresh_db1": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-60.0",
+      "-59.9",
+      "-59.8",
+      "-59.7",
+      "-59.6",
+      "...",
+      "-0.4",
+      "-0.3",
+      "-0.2",
+      "-0.1",
+      "0.0"
+    ],
+    "count": 601,
+    "range": "(-60.0, 0.0, 0.1)"
+  },
+  "mod_comp_1_attack_ms_attack_ms1": {
+    "current": "10.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "0.5",
+      "...",
+      "296.9",
+      "297.7",
+      "298.5",
+      "299.2",
+      "300.0"
+    ],
+    "count": 832,
+    "range": "(0.1, 300.0, None)"
+  },
+  "mod_comp_1_release_ms_release_ms1": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0",
+      "...",
+      "2969.0",
+      "2977.0",
+      "2984.0",
+      "2992.0",
+      "3000.0"
+    ],
+    "count": 831,
+    "range": "(5.0, 3000.0, None)"
+  },
+  "mod_comp_1_sidechain_ext_sidechain_ext1": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "mod_comp_1_sidechain_hpf_sidechain_hpf1": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "mod_comp_1_sidechain_lpf_sidechain_lpf1": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "mod_comp_1_sidechain_surf_sidechain_surf1": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "mod_comp_2_auto_attack_auto_attack2": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "mod_comp_2_auto_release_auto_release2": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "mod_comp_2_ratio_ratio2": {
+    "current": "3.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "1.1",
+      "1.2",
+      "1.3",
+      "1.4",
+      "...",
+      "39.6",
+      "39.7",
+      "39.8",
+      "39.9",
+      "40.0"
+    ],
+    "count": 391,
+    "range": "(1.0, 40.0, 0.1)"
+  },
+  "mod_comp_2_gain_db_gain_db2": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-10.0",
+      "-9.9",
+      "-9.8",
+      "-9.7",
+      "-9.6",
+      "...",
+      "29.6",
+      "29.7",
+      "29.8",
+      "29.9",
+      "30.0"
+    ],
+    "count": 401,
+    "range": "(-10.0, 30.0, 0.1)"
+  },
+  "mod_comp_2_knee_db_knee_db2": {
+    "current": "10.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "...",
+      "59.6",
+      "59.7",
+      "59.8",
+      "59.9",
+      "60.0"
+    ],
+    "count": 601,
+    "range": "(0.0, 60.0, 0.1)"
+  },
+  "mod_comp_2_thresh_db_thresh_db2": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-60.0",
+      "-59.9",
+      "-59.8",
+      "-59.7",
+      "-59.6",
+      "...",
+      "-0.4",
+      "-0.3",
+      "-0.2",
+      "-0.1",
+      "0.0"
+    ],
+    "count": 601,
+    "range": "(-60.0, 0.0, 0.1)"
+  },
+  "mod_comp_2_attack_ms_attack_ms2": {
+    "current": "10.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "0.5",
+      "...",
+      "296.9",
+      "297.7",
+      "298.5",
+      "299.2",
+      "300.0"
+    ],
+    "count": 832,
+    "range": "(0.1, 300.0, None)"
+  },
+  "mod_comp_2_release_ms_release_ms2": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0",
+      "...",
+      "2969.0",
+      "2977.0",
+      "2984.0",
+      "2992.0",
+      "3000.0"
+    ],
+    "count": 831,
+    "range": "(5.0, 3000.0, None)"
+  },
+  "mod_comp_2_sidechain_ext_sidechain_ext2": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "mod_comp_2_sidechain_hpf_sidechain_hpf2": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "mod_comp_2_sidechain_lpf_sidechain_lpf2": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "mod_comp_2_sidechain_surf_sidechain_surf2": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "opt_a_comp_1_warmth_enable_warmth_enable1": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "opt_a_comp_1_gain_reduction_db_gain_reduction_db1": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "...",
+      "99.6",
+      "99.7",
+      "99.8",
+      "99.9",
+      "100.0"
+    ],
+    "count": 1001,
+    "range": "(0.0, 100.0, 0.1)"
+  },
+  "opt_a_comp_1_output_gain_db_output_gain_db1": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-10.0",
+      "-9.9",
+      "-9.8",
+      "-9.7",
+      "-9.6",
+      "...",
+      "39.5",
+      "39.7",
+      "39.8",
+      "39.9",
+      "40.0"
+    ],
+    "count": 492,
+    "range": "(-10.0, 40.0, None)"
+  },
+  "opt_a_comp_1_warmth_db_warmth_db1": {
+    "current": "3.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "...",
+      "11.6",
+      "11.7",
+      "11.8",
+      "11.9",
+      "12.0"
+    ],
+    "count": 121,
+    "range": "(0.0, 12.0, 0.1)"
+  },
+  "opt_a_comp_2_warmth_enable_warmth_enable2": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "opt_a_comp_2_gain_reduction_db_gain_reduction_db2": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "...",
+      "99.6",
+      "99.7",
+      "99.8",
+      "99.9",
+      "100.0"
+    ],
+    "count": 1001,
+    "range": "(0.0, 100.0, 0.1)"
+  },
+  "opt_a_comp_2_output_gain_db_output_gain_db2": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-10.0",
+      "-9.9",
+      "-9.8",
+      "-9.7",
+      "-9.6",
+      "...",
+      "39.5",
+      "39.7",
+      "39.8",
+      "39.9",
+      "40.0"
+    ],
+    "count": 492,
+    "range": "(-10.0, 40.0, None)"
+  },
+  "opt_a_comp_2_warmth_db_warmth_db2": {
+    "current": "3.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "...",
+      "11.6",
+      "11.7",
+      "11.8",
+      "11.9",
+      "12.0"
+    ],
+    "count": 121,
+    "range": "(0.0, 12.0, 0.1)"
+  },
+  "opt_b_comp_1_warmth_enable_warmth_enable1": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "opt_b_comp_1_threshold_db_threshold_db1": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-60.0",
+      "-59.9",
+      "-59.8",
+      "-59.7",
+      "-59.6",
+      "...",
+      "-0.4",
+      "-0.3",
+      "-0.2",
+      "-0.1",
+      "0.0"
+    ],
+    "count": 601,
+    "range": "(-60.0, 0.0, 0.1)"
+  },
+  "opt_b_comp_1_output_gain_db_output_gain_db1": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-10.0",
+      "-9.9",
+      "-9.8",
+      "-9.7",
+      "-9.6",
+      "...",
+      "29.6",
+      "29.7",
+      "29.8",
+      "29.9",
+      "30.0"
+    ],
+    "count": 401,
+    "range": "(-10.0, 30.0, 0.1)"
+  },
+  "opt_b_comp_1_ratio_ratio1": {
+    "current": "3.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "2.0",
+      "2.1",
+      "2.2",
+      "2.3",
+      "2.4",
+      "...",
+      "9.6",
+      "9.7",
+      "9.8",
+      "9.9",
+      "10.0"
+    ],
+    "count": 81,
+    "range": "(2.0, 10.0, 0.1)"
+  },
+  "opt_b_comp_1_attack_ms_attack_ms1": {
+    "current": "2.5",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "...",
+      "98.9",
+      "99.2",
+      "99.5",
+      "99.7",
+      "100.0"
+    ],
+    "count": 657,
+    "range": "(0.0, 100.0, None)"
+  },
+  "opt_b_comp_1_release_ms_release_ms1": {
+    "current": "4.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "...",
+      "99.1",
+      "99.3",
+      "99.5",
+      "99.8",
+      "100.0"
+    ],
+    "count": 700,
+    "range": "(0.0, 100.0, None)"
+  },
+  "opt_b_comp_2_warmth_enable_warmth_enable2": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "opt_b_comp_2_threshold_db_threshold_db2": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-60.0",
+      "-59.9",
+      "-59.8",
+      "-59.7",
+      "-59.6",
+      "...",
+      "-0.4",
+      "-0.3",
+      "-0.2",
+      "-0.1",
+      "0.0"
+    ],
+    "count": 601,
+    "range": "(-60.0, 0.0, 0.1)"
+  },
+  "opt_b_comp_2_output_gain_db_output_gain_db2": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-10.0",
+      "-9.9",
+      "-9.8",
+      "-9.7",
+      "-9.6",
+      "...",
+      "29.6",
+      "29.7",
+      "29.8",
+      "29.9",
+      "30.0"
+    ],
+    "count": 401,
+    "range": "(-10.0, 30.0, 0.1)"
+  },
+  "opt_b_comp_2_ratio_ratio2": {
+    "current": "3.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "2.0",
+      "2.1",
+      "2.2",
+      "2.3",
+      "2.4",
+      "...",
+      "9.6",
+      "9.7",
+      "9.8",
+      "9.9",
+      "10.0"
+    ],
+    "count": 81,
+    "range": "(2.0, 10.0, 0.1)"
+  },
+  "opt_b_comp_2_attack_ms_attack_ms2": {
+    "current": "2.5",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "...",
+      "98.9",
+      "99.2",
+      "99.5",
+      "99.7",
+      "100.0"
+    ],
+    "count": 657,
+    "range": "(0.0, 100.0, None)"
+  },
+  "opt_b_comp_2_release_ms_release_ms2": {
+    "current": "4.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "...",
+      "99.1",
+      "99.3",
+      "99.5",
+      "99.8",
+      "100.0"
+    ],
+    "count": 700,
+    "range": "(0.0, 100.0, None)"
+  },
+  "fet_comp_1_warmth_warmth1": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "fet_comp_1_ratio_ratio1": {
+    "current": "4:1",
+    "type": "enum",
+    "valid_values": [
+      "4:1",
+      "8:1",
+      "12:1",
+      "20:1"
+    ],
+    "count": 4,
+    "range": "(None, None, None)"
+  },
+  "fet_comp_1_attack_attack1": {
+    "current": "4.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "1.1",
+      "1.2",
+      "1.3",
+      "1.4",
+      "...",
+      "6.6",
+      "6.7",
+      "6.8",
+      "6.9",
+      "7.0"
+    ],
+    "count": 61,
+    "range": "(1.0, 7.0, 0.1)"
+  },
+  "fet_comp_1_release_release1": {
+    "current": "6.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "1.1",
+      "1.2",
+      "1.3",
+      "1.4",
+      "...",
+      "6.6",
+      "6.7",
+      "6.8",
+      "6.9",
+      "7.0"
+    ],
+    "count": 61,
+    "range": "(1.0, 7.0, 0.1)"
+  },
+  "fet_comp_1_input_level_db_input_level_db1": {
+    "current": "-30.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-60.0",
+      "-59.9",
+      "-59.8",
+      "-59.7",
+      "-59.6",
+      "...",
+      "-0.4",
+      "-0.3",
+      "-0.2",
+      "-0.1",
+      "0.0"
+    ],
+    "count": 601,
+    "range": "(-60.0, 0.0, 0.1)"
+  },
+  "fet_comp_1_output_level_db_output_level_db1": {
+    "current": "-15.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-60.0",
+      "-59.9",
+      "-59.8",
+      "-59.7",
+      "-59.6",
+      "...",
+      "-0.4",
+      "-0.3",
+      "-0.2",
+      "-0.1",
+      "0.0"
+    ],
+    "count": 601,
+    "range": "(-60.0, 0.0, 0.1)"
+  },
+  "fet_comp_2_warmth_warmth2": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "fet_comp_2_ratio_ratio2": {
+    "current": "4:1",
+    "type": "enum",
+    "valid_values": [
+      "4:1",
+      "8:1",
+      "12:1",
+      "20:1"
+    ],
+    "count": 4,
+    "range": "(None, None, None)"
+  },
+  "fet_comp_2_attack_attack2": {
+    "current": "4.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "1.1",
+      "1.2",
+      "1.3",
+      "1.4",
+      "...",
+      "6.6",
+      "6.7",
+      "6.8",
+      "6.9",
+      "7.0"
+    ],
+    "count": 61,
+    "range": "(1.0, 7.0, 0.1)"
+  },
+  "fet_comp_2_release_release2": {
+    "current": "6.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "1.1",
+      "1.2",
+      "1.3",
+      "1.4",
+      "...",
+      "6.6",
+      "6.7",
+      "6.8",
+      "6.9",
+      "7.0"
+    ],
+    "count": 61,
+    "range": "(1.0, 7.0, 0.1)"
+  },
+  "fet_comp_2_input_level_db_input_level_db2": {
+    "current": "-30.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-60.0",
+      "-59.9",
+      "-59.8",
+      "-59.7",
+      "-59.6",
+      "...",
+      "-0.4",
+      "-0.3",
+      "-0.2",
+      "-0.1",
+      "0.0"
+    ],
+    "count": 601,
+    "range": "(-60.0, 0.0, 0.1)"
+  },
+  "fet_comp_2_output_level_db_output_level_db2": {
+    "current": "-15.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-60.0",
+      "-59.9",
+      "-59.8",
+      "-59.7",
+      "-59.6",
+      "...",
+      "-0.4",
+      "-0.3",
+      "-0.2",
+      "-0.1",
+      "0.0"
+    ],
+    "count": 601,
+    "range": "(-60.0, 0.0, 0.1)"
+  },
+  "master_bypass_master_bypass": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "gain_reduction_gain_reduction": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.001",
+      "0.002",
+      "0.003",
+      "0.004",
+      "...",
+      "0.996",
+      "0.997",
+      "0.998",
+      "0.999",
+      "1.0"
+    ],
+    "count": 1001,
+    "range": "(0.0, 1.0, 0.001)"
+  }
+}

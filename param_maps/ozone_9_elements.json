@@ -1,0 +1,2216 @@
+{
+  "eq_bypass": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq_st_m_l_frequency_1_hz": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "20.0",
+      "39.98",
+      "59.96",
+      "79.94",
+      "99.92",
+      "...",
+      "19920.08",
+      "19940.06",
+      "19960.04",
+      "19980.02",
+      "20000.0"
+    ],
+    "count": 1001,
+    "range": "(20.0, 20000.0, 19.98)"
+  },
+  "eq_st_m_l_frequency_2_hz": {
+    "current": "240.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "20.0",
+      "39.98",
+      "59.96",
+      "79.94",
+      "99.92",
+      "...",
+      "19920.08",
+      "19940.06",
+      "19960.04",
+      "19980.02",
+      "20000.0"
+    ],
+    "count": 1001,
+    "range": "(20.0, 20000.0, 19.98)"
+  },
+  "eq_st_m_l_frequency_3_hz": {
+    "current": "540.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "20.0",
+      "39.98",
+      "59.96",
+      "79.94",
+      "99.92",
+      "...",
+      "19920.08",
+      "19940.06",
+      "19960.04",
+      "19980.02",
+      "20000.0"
+    ],
+    "count": 1001,
+    "range": "(20.0, 20000.0, 19.98)"
+  },
+  "eq_st_m_l_frequency_4_hz": {
+    "current": "1200.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "20.0",
+      "39.98",
+      "59.96",
+      "79.94",
+      "99.92",
+      "...",
+      "19920.08",
+      "19940.06",
+      "19960.04",
+      "19980.02",
+      "20000.0"
+    ],
+    "count": 1001,
+    "range": "(20.0, 20000.0, 19.98)"
+  },
+  "eq_st_m_l_frequency_5_hz": {
+    "current": "2700.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "20.0",
+      "39.98",
+      "59.96",
+      "79.94",
+      "99.92",
+      "...",
+      "19920.08",
+      "19940.06",
+      "19960.04",
+      "19980.02",
+      "20000.0"
+    ],
+    "count": 1001,
+    "range": "(20.0, 20000.0, 19.98)"
+  },
+  "eq_st_m_l_frequency_6_hz": {
+    "current": "5500.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "20.0",
+      "39.98",
+      "59.96",
+      "79.94",
+      "99.92",
+      "...",
+      "19920.08",
+      "19940.06",
+      "19960.04",
+      "19980.02",
+      "20000.0"
+    ],
+    "count": 1001,
+    "range": "(20.0, 20000.0, 19.98)"
+  },
+  "eq_st_m_l_frequency_7_hz": {
+    "current": "10000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "20.0",
+      "39.98",
+      "59.96",
+      "79.94",
+      "99.92",
+      "...",
+      "19920.08",
+      "19940.06",
+      "19960.04",
+      "19980.02",
+      "20000.0"
+    ],
+    "count": 1001,
+    "range": "(20.0, 20000.0, 19.98)"
+  },
+  "eq_st_m_l_frequency_8_hz": {
+    "current": "16000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "20.0",
+      "39.98",
+      "59.96",
+      "79.94",
+      "99.92",
+      "...",
+      "19920.08",
+      "19940.06",
+      "19960.04",
+      "19980.02",
+      "20000.0"
+    ],
+    "count": 1001,
+    "range": "(20.0, 20000.0, 19.98)"
+  },
+  "eq_st_m_l_gain_1_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.95",
+      "-29.91",
+      "-29.86",
+      "-29.82",
+      "...",
+      "14.82",
+      "14.86",
+      "14.91",
+      "14.96",
+      "15.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 15.0, None)"
+  },
+  "eq_st_m_l_gain_2_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.95",
+      "-29.91",
+      "-29.86",
+      "-29.82",
+      "...",
+      "14.82",
+      "14.86",
+      "14.91",
+      "14.96",
+      "15.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 15.0, None)"
+  },
+  "eq_st_m_l_gain_3_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.95",
+      "-29.91",
+      "-29.86",
+      "-29.82",
+      "...",
+      "14.82",
+      "14.86",
+      "14.91",
+      "14.96",
+      "15.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 15.0, None)"
+  },
+  "eq_st_m_l_gain_4_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.95",
+      "-29.91",
+      "-29.86",
+      "-29.82",
+      "...",
+      "14.82",
+      "14.86",
+      "14.91",
+      "14.96",
+      "15.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 15.0, None)"
+  },
+  "eq_st_m_l_gain_5_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.95",
+      "-29.91",
+      "-29.86",
+      "-29.82",
+      "...",
+      "14.82",
+      "14.86",
+      "14.91",
+      "14.96",
+      "15.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 15.0, None)"
+  },
+  "eq_st_m_l_gain_6_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.95",
+      "-29.91",
+      "-29.86",
+      "-29.82",
+      "...",
+      "14.82",
+      "14.86",
+      "14.91",
+      "14.96",
+      "15.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 15.0, None)"
+  },
+  "eq_st_m_l_gain_7_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.95",
+      "-29.91",
+      "-29.86",
+      "-29.82",
+      "...",
+      "14.82",
+      "14.86",
+      "14.91",
+      "14.96",
+      "15.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 15.0, None)"
+  },
+  "eq_st_m_l_gain_8_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.95",
+      "-29.91",
+      "-29.86",
+      "-29.82",
+      "...",
+      "14.82",
+      "14.86",
+      "14.91",
+      "14.96",
+      "15.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 15.0, None)"
+  },
+  "eq_st_m_l_q_1": {
+    "current": "0.71",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.2",
+      "0.21",
+      "0.22",
+      "0.24",
+      "0.25",
+      "...",
+      "11.95",
+      "11.96",
+      "11.98",
+      "11.99",
+      "12.0"
+    ],
+    "count": 1001,
+    "range": "(0.2, 12.0, None)"
+  },
+  "eq_st_m_l_q_2": {
+    "current": "0.71",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.2",
+      "0.21",
+      "0.22",
+      "0.24",
+      "0.25",
+      "...",
+      "11.95",
+      "11.96",
+      "11.98",
+      "11.99",
+      "12.0"
+    ],
+    "count": 1001,
+    "range": "(0.2, 12.0, None)"
+  },
+  "eq_st_m_l_q_3": {
+    "current": "0.71",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.2",
+      "0.21",
+      "0.22",
+      "0.24",
+      "0.25",
+      "...",
+      "11.95",
+      "11.96",
+      "11.98",
+      "11.99",
+      "12.0"
+    ],
+    "count": 1001,
+    "range": "(0.2, 12.0, None)"
+  },
+  "eq_st_m_l_q_4": {
+    "current": "0.71",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.2",
+      "0.21",
+      "0.22",
+      "0.24",
+      "0.25",
+      "...",
+      "11.95",
+      "11.96",
+      "11.98",
+      "11.99",
+      "12.0"
+    ],
+    "count": 1001,
+    "range": "(0.2, 12.0, None)"
+  },
+  "eq_st_m_l_q_5": {
+    "current": "0.71",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.2",
+      "0.21",
+      "0.22",
+      "0.24",
+      "0.25",
+      "...",
+      "11.95",
+      "11.96",
+      "11.98",
+      "11.99",
+      "12.0"
+    ],
+    "count": 1001,
+    "range": "(0.2, 12.0, None)"
+  },
+  "eq_st_m_l_q_6": {
+    "current": "0.71",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.2",
+      "0.21",
+      "0.22",
+      "0.24",
+      "0.25",
+      "...",
+      "11.95",
+      "11.96",
+      "11.98",
+      "11.99",
+      "12.0"
+    ],
+    "count": 1001,
+    "range": "(0.2, 12.0, None)"
+  },
+  "eq_st_m_l_q_7": {
+    "current": "0.71",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.2",
+      "0.21",
+      "0.22",
+      "0.24",
+      "0.25",
+      "...",
+      "11.95",
+      "11.96",
+      "11.98",
+      "11.99",
+      "12.0"
+    ],
+    "count": 1001,
+    "range": "(0.2, 12.0, None)"
+  },
+  "eq_st_m_l_q_8": {
+    "current": "0.71",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.2",
+      "0.21",
+      "0.22",
+      "0.24",
+      "0.25",
+      "...",
+      "11.95",
+      "11.96",
+      "11.98",
+      "11.99",
+      "12.0"
+    ],
+    "count": 1001,
+    "range": "(0.2, 12.0, None)"
+  },
+  "eq_st_m_l_phase_1": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-1.0",
+      "-0.99",
+      "-0.98",
+      "-0.97",
+      "-0.96",
+      "...",
+      "-0.04",
+      "-0.03",
+      "-0.02",
+      "-0.01",
+      "0.0"
+    ],
+    "count": 101,
+    "range": "(-1.0, 0.0, 0.01)"
+  },
+  "eq_st_m_l_phase_2": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-1.0",
+      "-0.99",
+      "-0.98",
+      "-0.97",
+      "-0.96",
+      "...",
+      "-0.04",
+      "-0.03",
+      "-0.02",
+      "-0.01",
+      "0.0"
+    ],
+    "count": 101,
+    "range": "(-1.0, 0.0, 0.01)"
+  },
+  "eq_st_m_l_phase_3": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-1.0",
+      "-0.99",
+      "-0.98",
+      "-0.97",
+      "-0.96",
+      "...",
+      "-0.04",
+      "-0.03",
+      "-0.02",
+      "-0.01",
+      "0.0"
+    ],
+    "count": 101,
+    "range": "(-1.0, 0.0, 0.01)"
+  },
+  "eq_st_m_l_phase_4": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-1.0",
+      "-0.99",
+      "-0.98",
+      "-0.97",
+      "-0.96",
+      "...",
+      "-0.04",
+      "-0.03",
+      "-0.02",
+      "-0.01",
+      "0.0"
+    ],
+    "count": 101,
+    "range": "(-1.0, 0.0, 0.01)"
+  },
+  "eq_st_m_l_phase_5": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-1.0",
+      "-0.99",
+      "-0.98",
+      "-0.97",
+      "-0.96",
+      "...",
+      "-0.04",
+      "-0.03",
+      "-0.02",
+      "-0.01",
+      "0.0"
+    ],
+    "count": 101,
+    "range": "(-1.0, 0.0, 0.01)"
+  },
+  "eq_st_m_l_phase_6": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-1.0",
+      "-0.99",
+      "-0.98",
+      "-0.97",
+      "-0.96",
+      "...",
+      "-0.04",
+      "-0.03",
+      "-0.02",
+      "-0.01",
+      "0.0"
+    ],
+    "count": 101,
+    "range": "(-1.0, 0.0, 0.01)"
+  },
+  "eq_st_m_l_phase_7": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-1.0",
+      "-0.99",
+      "-0.98",
+      "-0.97",
+      "-0.96",
+      "...",
+      "-0.04",
+      "-0.03",
+      "-0.02",
+      "-0.01",
+      "0.0"
+    ],
+    "count": 101,
+    "range": "(-1.0, 0.0, 0.01)"
+  },
+  "eq_st_m_l_phase_8": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-1.0",
+      "-0.99",
+      "-0.98",
+      "-0.97",
+      "-0.96",
+      "...",
+      "-0.04",
+      "-0.03",
+      "-0.02",
+      "-0.01",
+      "0.0"
+    ],
+    "count": 101,
+    "range": "(-1.0, 0.0, 0.01)"
+  },
+  "eq_st_m_l_enable_1": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq_st_m_l_enable_2": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq_st_m_l_enable_3": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq_st_m_l_enable_4": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq_st_m_l_enable_5": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq_st_m_l_enable_6": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq_st_m_l_enable_7": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq_st_m_l_enable_8": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq_st_m_l_shape_1": {
+    "current": "Baxandall Bass",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf",
+      "Low-Pass",
+      "High-Pass",
+      "Flat Low-Pass",
+      "Flat High-Pass",
+      "Brickwall Low-Pass",
+      "Brickwall High-Pass",
+      "Vintage Low Shelf",
+      "Vintage High Shelf",
+      "Baxandall Bass",
+      "Baxandall Treble",
+      "Resonant Low Shelf",
+      "Resonant High Shelf",
+      "Proportional Q Bell",
+      "Bandshelf",
+      "Surgical Bell",
+      "Surgical Low Shelf",
+      "Surgical High Shelf",
+      "Surgical Low-Pass",
+      "Surgical High-Pass"
+    ],
+    "count": 22,
+    "range": "(None, None, None)"
+  },
+  "eq_st_m_l_shape_2": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf",
+      "Low-Pass",
+      "High-Pass",
+      "Flat Low-Pass",
+      "Flat High-Pass",
+      "Brickwall Low-Pass",
+      "Brickwall High-Pass",
+      "Vintage Low Shelf",
+      "Vintage High Shelf",
+      "Baxandall Bass",
+      "Baxandall Treble",
+      "Resonant Low Shelf",
+      "Resonant High Shelf",
+      "Proportional Q Bell",
+      "Bandshelf",
+      "Surgical Bell",
+      "Surgical Low Shelf",
+      "Surgical High Shelf",
+      "Surgical Low-Pass",
+      "Surgical High-Pass"
+    ],
+    "count": 22,
+    "range": "(None, None, None)"
+  },
+  "eq_st_m_l_shape_3": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf",
+      "Low-Pass",
+      "High-Pass",
+      "Flat Low-Pass",
+      "Flat High-Pass",
+      "Brickwall Low-Pass",
+      "Brickwall High-Pass",
+      "Vintage Low Shelf",
+      "Vintage High Shelf",
+      "Baxandall Bass",
+      "Baxandall Treble",
+      "Resonant Low Shelf",
+      "Resonant High Shelf",
+      "Proportional Q Bell",
+      "Bandshelf",
+      "Surgical Bell",
+      "Surgical Low Shelf",
+      "Surgical High Shelf",
+      "Surgical Low-Pass",
+      "Surgical High-Pass"
+    ],
+    "count": 22,
+    "range": "(None, None, None)"
+  },
+  "eq_st_m_l_shape_4": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf",
+      "Low-Pass",
+      "High-Pass",
+      "Flat Low-Pass",
+      "Flat High-Pass",
+      "Brickwall Low-Pass",
+      "Brickwall High-Pass",
+      "Vintage Low Shelf",
+      "Vintage High Shelf",
+      "Baxandall Bass",
+      "Baxandall Treble",
+      "Resonant Low Shelf",
+      "Resonant High Shelf",
+      "Proportional Q Bell",
+      "Bandshelf",
+      "Surgical Bell",
+      "Surgical Low Shelf",
+      "Surgical High Shelf",
+      "Surgical Low-Pass",
+      "Surgical High-Pass"
+    ],
+    "count": 22,
+    "range": "(None, None, None)"
+  },
+  "eq_st_m_l_shape_5": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf",
+      "Low-Pass",
+      "High-Pass",
+      "Flat Low-Pass",
+      "Flat High-Pass",
+      "Brickwall Low-Pass",
+      "Brickwall High-Pass",
+      "Vintage Low Shelf",
+      "Vintage High Shelf",
+      "Baxandall Bass",
+      "Baxandall Treble",
+      "Resonant Low Shelf",
+      "Resonant High Shelf",
+      "Proportional Q Bell",
+      "Bandshelf",
+      "Surgical Bell",
+      "Surgical Low Shelf",
+      "Surgical High Shelf",
+      "Surgical Low-Pass",
+      "Surgical High-Pass"
+    ],
+    "count": 22,
+    "range": "(None, None, None)"
+  },
+  "eq_st_m_l_shape_6": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf",
+      "Low-Pass",
+      "High-Pass",
+      "Flat Low-Pass",
+      "Flat High-Pass",
+      "Brickwall Low-Pass",
+      "Brickwall High-Pass",
+      "Vintage Low Shelf",
+      "Vintage High Shelf",
+      "Baxandall Bass",
+      "Baxandall Treble",
+      "Resonant Low Shelf",
+      "Resonant High Shelf",
+      "Proportional Q Bell",
+      "Bandshelf",
+      "Surgical Bell",
+      "Surgical Low Shelf",
+      "Surgical High Shelf",
+      "Surgical Low-Pass",
+      "Surgical High-Pass"
+    ],
+    "count": 22,
+    "range": "(None, None, None)"
+  },
+  "eq_st_m_l_shape_7": {
+    "current": "Baxandall Treble",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf",
+      "Low-Pass",
+      "High-Pass",
+      "Flat Low-Pass",
+      "Flat High-Pass",
+      "Brickwall Low-Pass",
+      "Brickwall High-Pass",
+      "Vintage Low Shelf",
+      "Vintage High Shelf",
+      "Baxandall Bass",
+      "Baxandall Treble",
+      "Resonant Low Shelf",
+      "Resonant High Shelf",
+      "Proportional Q Bell",
+      "Bandshelf",
+      "Surgical Bell",
+      "Surgical Low Shelf",
+      "Surgical High Shelf",
+      "Surgical Low-Pass",
+      "Surgical High-Pass"
+    ],
+    "count": 22,
+    "range": "(None, None, None)"
+  },
+  "eq_st_m_l_shape_8": {
+    "current": "Resonant High Shelf",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf",
+      "Low-Pass",
+      "High-Pass",
+      "Flat Low-Pass",
+      "Flat High-Pass",
+      "Brickwall Low-Pass",
+      "Brickwall High-Pass",
+      "Vintage Low Shelf",
+      "Vintage High Shelf",
+      "Baxandall Bass",
+      "Baxandall Treble",
+      "Resonant Low Shelf",
+      "Resonant High Shelf",
+      "Proportional Q Bell",
+      "Bandshelf",
+      "Surgical Bell",
+      "Surgical Low Shelf",
+      "Surgical High Shelf",
+      "Surgical Low-Pass",
+      "Surgical High-Pass"
+    ],
+    "count": 22,
+    "range": "(None, None, None)"
+  },
+  "eq_s_r_frequency_1_hz": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "20.0",
+      "39.98",
+      "59.96",
+      "79.94",
+      "99.92",
+      "...",
+      "19920.08",
+      "19940.06",
+      "19960.04",
+      "19980.02",
+      "20000.0"
+    ],
+    "count": 1001,
+    "range": "(20.0, 20000.0, 19.98)"
+  },
+  "eq_s_r_frequency_2_hz": {
+    "current": "240.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "20.0",
+      "39.98",
+      "59.96",
+      "79.94",
+      "99.92",
+      "...",
+      "19920.08",
+      "19940.06",
+      "19960.04",
+      "19980.02",
+      "20000.0"
+    ],
+    "count": 1001,
+    "range": "(20.0, 20000.0, 19.98)"
+  },
+  "eq_s_r_frequency_3_hz": {
+    "current": "540.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "20.0",
+      "39.98",
+      "59.96",
+      "79.94",
+      "99.92",
+      "...",
+      "19920.08",
+      "19940.06",
+      "19960.04",
+      "19980.02",
+      "20000.0"
+    ],
+    "count": 1001,
+    "range": "(20.0, 20000.0, 19.98)"
+  },
+  "eq_s_r_frequency_4_hz": {
+    "current": "1200.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "20.0",
+      "39.98",
+      "59.96",
+      "79.94",
+      "99.92",
+      "...",
+      "19920.08",
+      "19940.06",
+      "19960.04",
+      "19980.02",
+      "20000.0"
+    ],
+    "count": 1001,
+    "range": "(20.0, 20000.0, 19.98)"
+  },
+  "eq_s_r_frequency_5_hz": {
+    "current": "2700.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "20.0",
+      "39.98",
+      "59.96",
+      "79.94",
+      "99.92",
+      "...",
+      "19920.08",
+      "19940.06",
+      "19960.04",
+      "19980.02",
+      "20000.0"
+    ],
+    "count": 1001,
+    "range": "(20.0, 20000.0, 19.98)"
+  },
+  "eq_s_r_frequency_6_hz": {
+    "current": "5500.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "20.0",
+      "39.98",
+      "59.96",
+      "79.94",
+      "99.92",
+      "...",
+      "19920.08",
+      "19940.06",
+      "19960.04",
+      "19980.02",
+      "20000.0"
+    ],
+    "count": 1001,
+    "range": "(20.0, 20000.0, 19.98)"
+  },
+  "eq_s_r_frequency_7_hz": {
+    "current": "10000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "20.0",
+      "39.98",
+      "59.96",
+      "79.94",
+      "99.92",
+      "...",
+      "19920.08",
+      "19940.06",
+      "19960.04",
+      "19980.02",
+      "20000.0"
+    ],
+    "count": 1001,
+    "range": "(20.0, 20000.0, 19.98)"
+  },
+  "eq_s_r_frequency_8_hz": {
+    "current": "16000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "20.0",
+      "39.98",
+      "59.96",
+      "79.94",
+      "99.92",
+      "...",
+      "19920.08",
+      "19940.06",
+      "19960.04",
+      "19980.02",
+      "20000.0"
+    ],
+    "count": 1001,
+    "range": "(20.0, 20000.0, 19.98)"
+  },
+  "eq_s_r_gain_1_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.95",
+      "-29.91",
+      "-29.86",
+      "-29.82",
+      "...",
+      "14.82",
+      "14.86",
+      "14.91",
+      "14.96",
+      "15.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 15.0, None)"
+  },
+  "eq_s_r_gain_2_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.95",
+      "-29.91",
+      "-29.86",
+      "-29.82",
+      "...",
+      "14.82",
+      "14.86",
+      "14.91",
+      "14.96",
+      "15.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 15.0, None)"
+  },
+  "eq_s_r_gain_3_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.95",
+      "-29.91",
+      "-29.86",
+      "-29.82",
+      "...",
+      "14.82",
+      "14.86",
+      "14.91",
+      "14.96",
+      "15.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 15.0, None)"
+  },
+  "eq_s_r_gain_4_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.95",
+      "-29.91",
+      "-29.86",
+      "-29.82",
+      "...",
+      "14.82",
+      "14.86",
+      "14.91",
+      "14.96",
+      "15.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 15.0, None)"
+  },
+  "eq_s_r_gain_5_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.95",
+      "-29.91",
+      "-29.86",
+      "-29.82",
+      "...",
+      "14.82",
+      "14.86",
+      "14.91",
+      "14.96",
+      "15.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 15.0, None)"
+  },
+  "eq_s_r_gain_6_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.95",
+      "-29.91",
+      "-29.86",
+      "-29.82",
+      "...",
+      "14.82",
+      "14.86",
+      "14.91",
+      "14.96",
+      "15.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 15.0, None)"
+  },
+  "eq_s_r_gain_7_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.95",
+      "-29.91",
+      "-29.86",
+      "-29.82",
+      "...",
+      "14.82",
+      "14.86",
+      "14.91",
+      "14.96",
+      "15.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 15.0, None)"
+  },
+  "eq_s_r_gain_8_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-30.0",
+      "-29.95",
+      "-29.91",
+      "-29.86",
+      "-29.82",
+      "...",
+      "14.82",
+      "14.86",
+      "14.91",
+      "14.96",
+      "15.0"
+    ],
+    "count": 1001,
+    "range": "(-30.0, 15.0, None)"
+  },
+  "eq_s_r_q_1": {
+    "current": "0.71",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.2",
+      "0.21",
+      "0.22",
+      "0.24",
+      "0.25",
+      "...",
+      "11.95",
+      "11.96",
+      "11.98",
+      "11.99",
+      "12.0"
+    ],
+    "count": 1001,
+    "range": "(0.2, 12.0, None)"
+  },
+  "eq_s_r_q_2": {
+    "current": "0.71",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.2",
+      "0.21",
+      "0.22",
+      "0.24",
+      "0.25",
+      "...",
+      "11.95",
+      "11.96",
+      "11.98",
+      "11.99",
+      "12.0"
+    ],
+    "count": 1001,
+    "range": "(0.2, 12.0, None)"
+  },
+  "eq_s_r_q_3": {
+    "current": "0.71",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.2",
+      "0.21",
+      "0.22",
+      "0.24",
+      "0.25",
+      "...",
+      "11.95",
+      "11.96",
+      "11.98",
+      "11.99",
+      "12.0"
+    ],
+    "count": 1001,
+    "range": "(0.2, 12.0, None)"
+  },
+  "eq_s_r_q_4": {
+    "current": "0.71",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.2",
+      "0.21",
+      "0.22",
+      "0.24",
+      "0.25",
+      "...",
+      "11.95",
+      "11.96",
+      "11.98",
+      "11.99",
+      "12.0"
+    ],
+    "count": 1001,
+    "range": "(0.2, 12.0, None)"
+  },
+  "eq_s_r_q_5": {
+    "current": "0.71",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.2",
+      "0.21",
+      "0.22",
+      "0.24",
+      "0.25",
+      "...",
+      "11.95",
+      "11.96",
+      "11.98",
+      "11.99",
+      "12.0"
+    ],
+    "count": 1001,
+    "range": "(0.2, 12.0, None)"
+  },
+  "eq_s_r_q_6": {
+    "current": "0.71",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.2",
+      "0.21",
+      "0.22",
+      "0.24",
+      "0.25",
+      "...",
+      "11.95",
+      "11.96",
+      "11.98",
+      "11.99",
+      "12.0"
+    ],
+    "count": 1001,
+    "range": "(0.2, 12.0, None)"
+  },
+  "eq_s_r_q_7": {
+    "current": "0.71",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.2",
+      "0.21",
+      "0.22",
+      "0.24",
+      "0.25",
+      "...",
+      "11.95",
+      "11.96",
+      "11.98",
+      "11.99",
+      "12.0"
+    ],
+    "count": 1001,
+    "range": "(0.2, 12.0, None)"
+  },
+  "eq_s_r_q_8": {
+    "current": "0.71",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.2",
+      "0.21",
+      "0.22",
+      "0.24",
+      "0.25",
+      "...",
+      "11.95",
+      "11.96",
+      "11.98",
+      "11.99",
+      "12.0"
+    ],
+    "count": 1001,
+    "range": "(0.2, 12.0, None)"
+  },
+  "eq_s_r_phase_1": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-1.0",
+      "-0.99",
+      "-0.98",
+      "-0.97",
+      "-0.96",
+      "...",
+      "-0.04",
+      "-0.03",
+      "-0.02",
+      "-0.01",
+      "0.0"
+    ],
+    "count": 101,
+    "range": "(-1.0, 0.0, 0.01)"
+  },
+  "eq_s_r_phase_2": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-1.0",
+      "-0.99",
+      "-0.98",
+      "-0.97",
+      "-0.96",
+      "...",
+      "-0.04",
+      "-0.03",
+      "-0.02",
+      "-0.01",
+      "0.0"
+    ],
+    "count": 101,
+    "range": "(-1.0, 0.0, 0.01)"
+  },
+  "eq_s_r_phase_3": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-1.0",
+      "-0.99",
+      "-0.98",
+      "-0.97",
+      "-0.96",
+      "...",
+      "-0.04",
+      "-0.03",
+      "-0.02",
+      "-0.01",
+      "0.0"
+    ],
+    "count": 101,
+    "range": "(-1.0, 0.0, 0.01)"
+  },
+  "eq_s_r_phase_4": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-1.0",
+      "-0.99",
+      "-0.98",
+      "-0.97",
+      "-0.96",
+      "...",
+      "-0.04",
+      "-0.03",
+      "-0.02",
+      "-0.01",
+      "0.0"
+    ],
+    "count": 101,
+    "range": "(-1.0, 0.0, 0.01)"
+  },
+  "eq_s_r_phase_5": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-1.0",
+      "-0.99",
+      "-0.98",
+      "-0.97",
+      "-0.96",
+      "...",
+      "-0.04",
+      "-0.03",
+      "-0.02",
+      "-0.01",
+      "0.0"
+    ],
+    "count": 101,
+    "range": "(-1.0, 0.0, 0.01)"
+  },
+  "eq_s_r_phase_6": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-1.0",
+      "-0.99",
+      "-0.98",
+      "-0.97",
+      "-0.96",
+      "...",
+      "-0.04",
+      "-0.03",
+      "-0.02",
+      "-0.01",
+      "0.0"
+    ],
+    "count": 101,
+    "range": "(-1.0, 0.0, 0.01)"
+  },
+  "eq_s_r_phase_7": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-1.0",
+      "-0.99",
+      "-0.98",
+      "-0.97",
+      "-0.96",
+      "...",
+      "-0.04",
+      "-0.03",
+      "-0.02",
+      "-0.01",
+      "0.0"
+    ],
+    "count": 101,
+    "range": "(-1.0, 0.0, 0.01)"
+  },
+  "eq_s_r_phase_8": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-1.0",
+      "-0.99",
+      "-0.98",
+      "-0.97",
+      "-0.96",
+      "...",
+      "-0.04",
+      "-0.03",
+      "-0.02",
+      "-0.01",
+      "0.0"
+    ],
+    "count": 101,
+    "range": "(-1.0, 0.0, 0.01)"
+  },
+  "eq_s_r_enable_1": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq_s_r_enable_2": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq_s_r_enable_3": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq_s_r_enable_4": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq_s_r_enable_5": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq_s_r_enable_6": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq_s_r_enable_7": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq_s_r_enable_8": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq_s_r_shape_1": {
+    "current": "Baxandall Bass",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf",
+      "Low-Pass",
+      "High-Pass",
+      "Flat Low-Pass",
+      "Flat High-Pass",
+      "Brickwall Low-Pass",
+      "Brickwall High-Pass",
+      "Vintage Low Shelf",
+      "Vintage High Shelf",
+      "Baxandall Bass",
+      "Baxandall Treble",
+      "Resonant Low Shelf",
+      "Resonant High Shelf",
+      "Proportional Q Bell",
+      "Bandshelf",
+      "Surgical Bell",
+      "Surgical Low Shelf",
+      "Surgical High Shelf",
+      "Surgical Low-Pass",
+      "Surgical High-Pass"
+    ],
+    "count": 22,
+    "range": "(None, None, None)"
+  },
+  "eq_s_r_shape_2": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf",
+      "Low-Pass",
+      "High-Pass",
+      "Flat Low-Pass",
+      "Flat High-Pass",
+      "Brickwall Low-Pass",
+      "Brickwall High-Pass",
+      "Vintage Low Shelf",
+      "Vintage High Shelf",
+      "Baxandall Bass",
+      "Baxandall Treble",
+      "Resonant Low Shelf",
+      "Resonant High Shelf",
+      "Proportional Q Bell",
+      "Bandshelf",
+      "Surgical Bell",
+      "Surgical Low Shelf",
+      "Surgical High Shelf",
+      "Surgical Low-Pass",
+      "Surgical High-Pass"
+    ],
+    "count": 22,
+    "range": "(None, None, None)"
+  },
+  "eq_s_r_shape_3": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf",
+      "Low-Pass",
+      "High-Pass",
+      "Flat Low-Pass",
+      "Flat High-Pass",
+      "Brickwall Low-Pass",
+      "Brickwall High-Pass",
+      "Vintage Low Shelf",
+      "Vintage High Shelf",
+      "Baxandall Bass",
+      "Baxandall Treble",
+      "Resonant Low Shelf",
+      "Resonant High Shelf",
+      "Proportional Q Bell",
+      "Bandshelf",
+      "Surgical Bell",
+      "Surgical Low Shelf",
+      "Surgical High Shelf",
+      "Surgical Low-Pass",
+      "Surgical High-Pass"
+    ],
+    "count": 22,
+    "range": "(None, None, None)"
+  },
+  "eq_s_r_shape_4": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf",
+      "Low-Pass",
+      "High-Pass",
+      "Flat Low-Pass",
+      "Flat High-Pass",
+      "Brickwall Low-Pass",
+      "Brickwall High-Pass",
+      "Vintage Low Shelf",
+      "Vintage High Shelf",
+      "Baxandall Bass",
+      "Baxandall Treble",
+      "Resonant Low Shelf",
+      "Resonant High Shelf",
+      "Proportional Q Bell",
+      "Bandshelf",
+      "Surgical Bell",
+      "Surgical Low Shelf",
+      "Surgical High Shelf",
+      "Surgical Low-Pass",
+      "Surgical High-Pass"
+    ],
+    "count": 22,
+    "range": "(None, None, None)"
+  },
+  "eq_s_r_shape_5": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf",
+      "Low-Pass",
+      "High-Pass",
+      "Flat Low-Pass",
+      "Flat High-Pass",
+      "Brickwall Low-Pass",
+      "Brickwall High-Pass",
+      "Vintage Low Shelf",
+      "Vintage High Shelf",
+      "Baxandall Bass",
+      "Baxandall Treble",
+      "Resonant Low Shelf",
+      "Resonant High Shelf",
+      "Proportional Q Bell",
+      "Bandshelf",
+      "Surgical Bell",
+      "Surgical Low Shelf",
+      "Surgical High Shelf",
+      "Surgical Low-Pass",
+      "Surgical High-Pass"
+    ],
+    "count": 22,
+    "range": "(None, None, None)"
+  },
+  "eq_s_r_shape_6": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf",
+      "Low-Pass",
+      "High-Pass",
+      "Flat Low-Pass",
+      "Flat High-Pass",
+      "Brickwall Low-Pass",
+      "Brickwall High-Pass",
+      "Vintage Low Shelf",
+      "Vintage High Shelf",
+      "Baxandall Bass",
+      "Baxandall Treble",
+      "Resonant Low Shelf",
+      "Resonant High Shelf",
+      "Proportional Q Bell",
+      "Bandshelf",
+      "Surgical Bell",
+      "Surgical Low Shelf",
+      "Surgical High Shelf",
+      "Surgical Low-Pass",
+      "Surgical High-Pass"
+    ],
+    "count": 22,
+    "range": "(None, None, None)"
+  },
+  "eq_s_r_shape_7": {
+    "current": "Baxandall Treble",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf",
+      "Low-Pass",
+      "High-Pass",
+      "Flat Low-Pass",
+      "Flat High-Pass",
+      "Brickwall Low-Pass",
+      "Brickwall High-Pass",
+      "Vintage Low Shelf",
+      "Vintage High Shelf",
+      "Baxandall Bass",
+      "Baxandall Treble",
+      "Resonant Low Shelf",
+      "Resonant High Shelf",
+      "Proportional Q Bell",
+      "Bandshelf",
+      "Surgical Bell",
+      "Surgical Low Shelf",
+      "Surgical High Shelf",
+      "Surgical Low-Pass",
+      "Surgical High-Pass"
+    ],
+    "count": 22,
+    "range": "(None, None, None)"
+  },
+  "eq_s_r_shape_8": {
+    "current": "Resonant High Shelf",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf",
+      "Low-Pass",
+      "High-Pass",
+      "Flat Low-Pass",
+      "Flat High-Pass",
+      "Brickwall Low-Pass",
+      "Brickwall High-Pass",
+      "Vintage Low Shelf",
+      "Vintage High Shelf",
+      "Baxandall Bass",
+      "Baxandall Treble",
+      "Resonant Low Shelf",
+      "Resonant High Shelf",
+      "Proportional Q Bell",
+      "Bandshelf",
+      "Surgical Bell",
+      "Surgical Low Shelf",
+      "Surgical High Shelf",
+      "Surgical Low-Pass",
+      "Surgical High-Pass"
+    ],
+    "count": 22,
+    "range": "(None, None, None)"
+  },
+  "eq_processing_mode": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Stereo",
+      "Mid/Side",
+      "Left/Right"
+    ],
+    "count": 3,
+    "range": "(None, None, None)"
+  },
+  "eq_bypass_main": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq_bypass_aux": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "global_bypass": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "img_bypass": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "img_enable_stereoize": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "img_stereoize_amount_ms": {
+    "current": "6.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "1.02",
+      "1.04",
+      "1.06",
+      "1.08",
+      "...",
+      "19.92",
+      "19.94",
+      "19.96",
+      "19.98",
+      "20.0"
+    ],
+    "count": 1001,
+    "range": "(1.0, 20.0, None)"
+  },
+  "img_width_percent": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-100.0",
+      "-99.8",
+      "-99.6",
+      "-99.4",
+      "-99.2",
+      "...",
+      "99.2",
+      "99.4",
+      "99.6",
+      "99.8",
+      "100.0"
+    ],
+    "count": 1001,
+    "range": "(-100.0, 100.0, 0.2)"
+  },
+  "max_bypass": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "max_mode": {
+    "current": "IRC",
+    "type": "enum",
+    "valid_values": [
+      "IRC",
+      "IRC II"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "max_threshold": {
+    "current": "-2.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-20.0",
+      "-19.98",
+      "-19.96",
+      "-19.94",
+      "-19.92",
+      "...",
+      "-0.08",
+      "-0.06",
+      "-0.04",
+      "-0.02",
+      "0.0"
+    ],
+    "count": 1001,
+    "range": "(-20.0, 0.0, 0.02)"
+  },
+  "max_ceiling": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-20.0",
+      "-19.98",
+      "-19.96",
+      "-19.94",
+      "-19.92",
+      "...",
+      "-0.08",
+      "-0.06",
+      "-0.04",
+      "-0.02",
+      "0.0"
+    ],
+    "count": 1001,
+    "range": "(-20.0, 0.0, 0.02)"
+  },
+  "max_character": {
+    "current": "2.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.01",
+      "0.02",
+      "0.03",
+      "0.04",
+      "...",
+      "9.96",
+      "9.97",
+      "9.98",
+      "9.99",
+      "10.0"
+    ],
+    "count": 1001,
+    "range": "(0.0, 10.0, 0.01)"
+  },
+  "max_stereo_unlink_amt": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "...",
+      "99.6",
+      "99.7",
+      "99.8",
+      "99.9",
+      "100.0"
+    ],
+    "count": 1001,
+    "range": "(0.0, 100.0, 0.1)"
+  },
+  "max_enable_transient_shaping": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "max_transient_shaping_amt": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.2",
+      "0.4",
+      "0.6",
+      "0.8",
+      "...",
+      "199.2",
+      "199.4",
+      "199.6",
+      "199.8",
+      "200.0"
+    ],
+    "count": 1001,
+    "range": "(0.0, 200.0, 0.2)"
+  },
+  "max_true_peak_limiting": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "gain_input_l_locked_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-144.0",
+      "-143.85",
+      "-143.69",
+      "-143.54",
+      "-143.38",
+      "...",
+      "9.38",
+      "9.54",
+      "9.69",
+      "9.85",
+      "10.0"
+    ],
+    "count": 1001,
+    "range": "(-144.0, 10.0, None)"
+  },
+  "gain_input_l_unlocked_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-144.0",
+      "-143.85",
+      "-143.69",
+      "-143.54",
+      "-143.38",
+      "...",
+      "9.38",
+      "9.54",
+      "9.69",
+      "9.85",
+      "10.0"
+    ],
+    "count": 1001,
+    "range": "(-144.0, 10.0, None)"
+  },
+  "gain_input_r_unlocked_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-144.0",
+      "-143.85",
+      "-143.69",
+      "-143.54",
+      "-143.38",
+      "...",
+      "9.38",
+      "9.54",
+      "9.69",
+      "9.85",
+      "10.0"
+    ],
+    "count": 1001,
+    "range": "(-144.0, 10.0, None)"
+  },
+  "gain_output_l_locked_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-144.0",
+      "-143.85",
+      "-143.69",
+      "-143.54",
+      "-143.38",
+      "...",
+      "9.38",
+      "9.54",
+      "9.69",
+      "9.85",
+      "10.0"
+    ],
+    "count": 1001,
+    "range": "(-144.0, 10.0, None)"
+  },
+  "gain_ouput_l_unlocked_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-144.0",
+      "-143.85",
+      "-143.69",
+      "-143.54",
+      "-143.38",
+      "...",
+      "9.38",
+      "9.54",
+      "9.69",
+      "9.85",
+      "10.0"
+    ],
+    "count": 1001,
+    "range": "(-144.0, 10.0, None)"
+  },
+  "gain_output_r_unlocked_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-144.0",
+      "-143.85",
+      "-143.69",
+      "-143.54",
+      "-143.38",
+      "...",
+      "9.38",
+      "9.54",
+      "9.69",
+      "9.85",
+      "10.0"
+    ],
+    "count": 1001,
+    "range": "(-144.0, 10.0, None)"
+  }
+}

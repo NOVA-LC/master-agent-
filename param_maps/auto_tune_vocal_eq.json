@@ -1,0 +1,2130 @@
+{
+  "tab_position_tab_position": {
+    "current": "2.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0"
+    ],
+    "count": 10,
+    "range": "(0.0, 9.0, 1.0)"
+  },
+  "resizing_factor_resizing_factor": {
+    "current": "0.5",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.01",
+      "0.02",
+      "0.03",
+      "0.04",
+      "...",
+      "9.96",
+      "9.97",
+      "9.98",
+      "9.99",
+      "10.0"
+    ],
+    "count": 1001,
+    "range": "(0.0, 10.0, 0.01)"
+  },
+  "dry_wet_mix_dry_wet_mix": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 101,
+    "range": "(0.0, 100.0, 1.0)"
+  },
+  "input_gain_db_input_gain_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-18.0",
+      "-17.9",
+      "-17.8",
+      "-17.7",
+      "-17.6",
+      "...",
+      "17.6",
+      "17.7",
+      "17.8",
+      "17.9",
+      "18.0"
+    ],
+    "count": 361,
+    "range": "(-18.0, 18.0, 0.1)"
+  },
+  "output_gain_db_output_gain_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-18.0",
+      "-17.9",
+      "-17.8",
+      "-17.7",
+      "-17.6",
+      "...",
+      "17.6",
+      "17.7",
+      "17.8",
+      "17.9",
+      "18.0"
+    ],
+    "count": 361,
+    "range": "(-18.0, 18.0, 0.1)"
+  },
+  "master_eq_enable_master_eq_enable": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "phase_invert_phase_invert": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "pitch_metering_pitch_metering": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "input_type_input_type": {
+    "current": "Alto/Tenor",
+    "type": "enum",
+    "valid_values": [
+      "Soprano",
+      "Alto/Tenor",
+      "Low Male",
+      "Instrument",
+      "Bass Inst"
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "input_source_input_source": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0"
+    ],
+    "count": 7,
+    "range": "(0.0, 6.0, 1.0)"
+  },
+  "mid_side_eq_mode_mid_side_eq_mode": {
+    "current": "Stereo",
+    "type": "enum",
+    "valid_values": [
+      "Stereo",
+      "Mid",
+      "Side"
+    ],
+    "count": 3,
+    "range": "(None, None, None)"
+  },
+  "analyzer_enable_analyzer_enable": {
+    "current": "Pre",
+    "type": "enum",
+    "valid_values": [
+      "Off",
+      "Pre",
+      "Post"
+    ],
+    "count": 3,
+    "range": "(None, None, None)"
+  },
+  "analyzer_source_analyzer_source": {
+    "current": "Mid",
+    "type": "enum",
+    "valid_values": [
+      "Left",
+      "Right",
+      "Mid",
+      "Side"
+    ],
+    "count": 4,
+    "range": "(None, None, None)"
+  },
+  "tilt_eq_enable_tilt_eq_enable": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "tilt_eq_solo_tilt_eq_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "tilt_eq_freq_hz_tilt_eq_freq_hz": {
+    "current": "750.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "18.0",
+      "18.1",
+      "18.2",
+      "18.3",
+      "18.4",
+      "...",
+      "20696.6",
+      "20765.9",
+      "20835.3",
+      "20904.9",
+      "20974.7"
+    ],
+    "count": 959,
+    "range": "(18.0, 20974.7, None)"
+  },
+  "tilt_eq_slope_db_oct_tilt_eq_slope_db_oct": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-3.0",
+      "-2.99",
+      "-2.98",
+      "-2.97",
+      "-2.96",
+      "...",
+      "2.96",
+      "2.97",
+      "2.98",
+      "2.99",
+      "3.0"
+    ],
+    "count": 601,
+    "range": "(-3.0, 3.0, 0.01)"
+  },
+  "air_eq_enable_air_eq_enable": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "air_eq_solo_air_eq_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "air_eq_freq_hz_air_eq_freq_hz": {
+    "current": "15000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "2500.0",
+      "2501.0",
+      "2502.0",
+      "2503.0",
+      "2504.0",
+      "...",
+      "39502.0",
+      "39626.0",
+      "39751.0",
+      "39875.0",
+      "40000.0"
+    ],
+    "count": 913,
+    "range": "(2500.0, 40000.0, None)"
+  },
+  "air_eq_gain_db_air_eq_gain_db": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "...",
+      "17.6",
+      "17.7",
+      "17.8",
+      "17.9",
+      "18.0"
+    ],
+    "count": 181,
+    "range": "(0.0, 18.0, 0.1)"
+  },
+  "hpf_enable_hpf_enable": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "hpf_solo_hpf_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "hpf_track_pitch_hpf_track_pitch": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "hpf_slope_hpf_slope": {
+    "current": "12dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6dB/oct",
+      "12dB/oct",
+      "18dB/oct",
+      "24dB/oct"
+    ],
+    "count": 4,
+    "range": "(None, None, None)"
+  },
+  "hpf_q_hpf_q": {
+    "current": "0.7",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.4",
+      "0.5",
+      "0.6",
+      "0.7",
+      "0.8",
+      "...",
+      "39.6",
+      "39.7",
+      "39.8",
+      "39.9",
+      "40.0"
+    ],
+    "count": 397,
+    "range": "(0.4, 40.0, 0.1)"
+  },
+  "hpf_freq_hz_hpf_freq_hz": {
+    "current": "18.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "18.0",
+      "18.1",
+      "18.2",
+      "18.3",
+      "18.4",
+      "...",
+      "20696.6",
+      "20765.9",
+      "20835.3",
+      "20904.9",
+      "20974.7"
+    ],
+    "count": 959,
+    "range": "(18.0, 20974.7, None)"
+  },
+  "lpf_enable_lpf_enable": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "lpf_solo_lpf_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "lpf_track_pitch_lpf_track_pitch": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "lpf_slope_lpf_slope": {
+    "current": "12dB/oct",
+    "type": "enum",
+    "valid_values": [
+      "6dB/oct",
+      "12dB/oct",
+      "18dB/oct",
+      "24dB/oct"
+    ],
+    "count": 4,
+    "range": "(None, None, None)"
+  },
+  "lpf_q_lpf_q": {
+    "current": "0.7",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.4",
+      "0.5",
+      "0.6",
+      "0.7",
+      "0.8",
+      "...",
+      "39.6",
+      "39.7",
+      "39.8",
+      "39.9",
+      "40.0"
+    ],
+    "count": 397,
+    "range": "(0.4, 40.0, 0.1)"
+  },
+  "lpf_freq_hz_lpf_freq_hz": {
+    "current": "20000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "18.0",
+      "18.1",
+      "18.2",
+      "18.3",
+      "18.4",
+      "...",
+      "20696.6",
+      "20765.9",
+      "20835.3",
+      "20904.9",
+      "20974.7"
+    ],
+    "count": 959,
+    "range": "(18.0, 20974.7, None)"
+  },
+  "eq1_enable_enable1": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq1_solo_solo1": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq1_track_pitch_track_pitch1": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq1_invert_gain_invert_gain1": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq1_shape_shape1": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf"
+    ],
+    "count": 3,
+    "range": "(None, None, None)"
+  },
+  "eq1_band_id_band_id1": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0"
+    ],
+    "count": 6,
+    "range": "(1.0, 6.0, 1.0)"
+  },
+  "eq1_harmonic_harmonic1": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0",
+      "10.0"
+    ],
+    "count": 10,
+    "range": "(1.0, 10.0, 1.0)"
+  },
+  "eq1_freq_hz_freq_hz1": {
+    "current": "50.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "18.0",
+      "18.1",
+      "18.2",
+      "18.3",
+      "18.4",
+      "...",
+      "20696.6",
+      "20765.9",
+      "20835.3",
+      "20904.9",
+      "20974.7"
+    ],
+    "count": 959,
+    "range": "(18.0, 20974.7, None)"
+  },
+  "eq1_gain_db_gain_db1": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-18.0",
+      "-17.9",
+      "-17.8",
+      "-17.7",
+      "-17.6",
+      "...",
+      "17.6",
+      "17.7",
+      "17.8",
+      "17.9",
+      "18.0"
+    ],
+    "count": 361,
+    "range": "(-18.0, 18.0, 0.1)"
+  },
+  "eq1_q_q1": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.4",
+      "0.5",
+      "0.6",
+      "0.7",
+      "0.8",
+      "...",
+      "39.6",
+      "39.7",
+      "39.8",
+      "39.9",
+      "40.0"
+    ],
+    "count": 397,
+    "range": "(0.4, 40.0, 0.1)"
+  },
+  "eq1_dynamic_eq_on_dynamic_eq_on1": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq1_auto_attack_auto_attack1": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq1_auto_release_auto_release1": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq1_sidechain_filter_sidechain_filter1": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq1_sidechain_audition_sidechain_audition1": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq1_external_sidechain_external_sidechain1": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq1_range_db_range_db1": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-18.0",
+      "-17.9",
+      "-17.8",
+      "-17.7",
+      "-17.6",
+      "...",
+      "17.6",
+      "17.7",
+      "17.8",
+      "17.9",
+      "18.0"
+    ],
+    "count": 361,
+    "range": "(-18.0, 18.0, 0.1)"
+  },
+  "eq1_threshold_db_threshold_db1": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-60.0",
+      "-59.9",
+      "-59.8",
+      "-59.7",
+      "-59.6",
+      "...",
+      "-0.4",
+      "-0.3",
+      "-0.2",
+      "-0.1",
+      "0.0"
+    ],
+    "count": 601,
+    "range": "(-60.0, 0.0, 0.1)"
+  },
+  "eq1_attack_ms_attack_ms1": {
+    "current": "10.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.5",
+      "0.6",
+      "0.7",
+      "0.8",
+      "0.9",
+      "...",
+      "198.4",
+      "198.8",
+      "199.2",
+      "199.6",
+      "200.0"
+    ],
+    "count": 876,
+    "range": "(0.5, 200.0, None)"
+  },
+  "eq1_release_ms_release_ms1": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0",
+      "...",
+      "1976.0",
+      "1982.0",
+      "1988.0",
+      "1994.0",
+      "2000.0"
+    ],
+    "count": 725,
+    "range": "(5.0, 2000.0, None)"
+  },
+  "eq2_enable_enable2": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq2_solo_solo2": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq2_track_pitch_track_pitch2": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq2_invert_gain_invert_gain2": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq2_shape_shape2": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf"
+    ],
+    "count": 3,
+    "range": "(None, None, None)"
+  },
+  "eq2_band_id_band_id2": {
+    "current": "2.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0"
+    ],
+    "count": 6,
+    "range": "(1.0, 6.0, 1.0)"
+  },
+  "eq2_harmonic_harmonic2": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0",
+      "10.0"
+    ],
+    "count": 10,
+    "range": "(1.0, 10.0, 1.0)"
+  },
+  "eq2_freq_hz_freq_hz2": {
+    "current": "200.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "18.0",
+      "18.1",
+      "18.2",
+      "18.3",
+      "18.4",
+      "...",
+      "20696.6",
+      "20765.9",
+      "20835.3",
+      "20904.9",
+      "20974.7"
+    ],
+    "count": 959,
+    "range": "(18.0, 20974.7, None)"
+  },
+  "eq2_gain_db_gain_db2": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-18.0",
+      "-17.9",
+      "-17.8",
+      "-17.7",
+      "-17.6",
+      "...",
+      "17.6",
+      "17.7",
+      "17.8",
+      "17.9",
+      "18.0"
+    ],
+    "count": 361,
+    "range": "(-18.0, 18.0, 0.1)"
+  },
+  "eq2_q_q2": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.4",
+      "0.5",
+      "0.6",
+      "0.7",
+      "0.8",
+      "...",
+      "39.6",
+      "39.7",
+      "39.8",
+      "39.9",
+      "40.0"
+    ],
+    "count": 397,
+    "range": "(0.4, 40.0, 0.1)"
+  },
+  "eq2_dynamic_eq_on_dynamic_eq_on2": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq2_auto_attack_auto_attack2": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq2_auto_release_auto_release2": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq2_sidechain_filter_sidechain_filter2": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq2_sidechain_audition_sidechain_audition2": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq2_external_sidechain_external_sidechain2": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq2_range_db_range_db2": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-18.0",
+      "-17.9",
+      "-17.8",
+      "-17.7",
+      "-17.6",
+      "...",
+      "17.6",
+      "17.7",
+      "17.8",
+      "17.9",
+      "18.0"
+    ],
+    "count": 361,
+    "range": "(-18.0, 18.0, 0.1)"
+  },
+  "eq2_threshold_db_threshold_db2": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-60.0",
+      "-59.9",
+      "-59.8",
+      "-59.7",
+      "-59.6",
+      "...",
+      "-0.4",
+      "-0.3",
+      "-0.2",
+      "-0.1",
+      "0.0"
+    ],
+    "count": 601,
+    "range": "(-60.0, 0.0, 0.1)"
+  },
+  "eq2_attack_ms_attack_ms2": {
+    "current": "10.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.5",
+      "0.6",
+      "0.7",
+      "0.8",
+      "0.9",
+      "...",
+      "198.4",
+      "198.8",
+      "199.2",
+      "199.6",
+      "200.0"
+    ],
+    "count": 876,
+    "range": "(0.5, 200.0, None)"
+  },
+  "eq2_release_ms_release_ms2": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0",
+      "...",
+      "1976.0",
+      "1982.0",
+      "1988.0",
+      "1994.0",
+      "2000.0"
+    ],
+    "count": 725,
+    "range": "(5.0, 2000.0, None)"
+  },
+  "eq3_enable_enable3": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq3_solo_solo3": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq3_track_pitch_track_pitch3": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq3_invert_gain_invert_gain3": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq3_shape_shape3": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf"
+    ],
+    "count": 3,
+    "range": "(None, None, None)"
+  },
+  "eq3_band_id_band_id3": {
+    "current": "3.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0"
+    ],
+    "count": 6,
+    "range": "(1.0, 6.0, 1.0)"
+  },
+  "eq3_harmonic_harmonic3": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0",
+      "10.0"
+    ],
+    "count": 10,
+    "range": "(1.0, 10.0, 1.0)"
+  },
+  "eq3_freq_hz_freq_hz3": {
+    "current": "500.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "18.0",
+      "18.1",
+      "18.2",
+      "18.3",
+      "18.4",
+      "...",
+      "20696.6",
+      "20765.9",
+      "20835.3",
+      "20904.9",
+      "20974.7"
+    ],
+    "count": 959,
+    "range": "(18.0, 20974.7, None)"
+  },
+  "eq3_gain_db_gain_db3": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-18.0",
+      "-17.9",
+      "-17.8",
+      "-17.7",
+      "-17.6",
+      "...",
+      "17.6",
+      "17.7",
+      "17.8",
+      "17.9",
+      "18.0"
+    ],
+    "count": 361,
+    "range": "(-18.0, 18.0, 0.1)"
+  },
+  "eq3_q_q3": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.4",
+      "0.5",
+      "0.6",
+      "0.7",
+      "0.8",
+      "...",
+      "39.6",
+      "39.7",
+      "39.8",
+      "39.9",
+      "40.0"
+    ],
+    "count": 397,
+    "range": "(0.4, 40.0, 0.1)"
+  },
+  "eq3_dynamic_eq_on_dynamic_eq_on3": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq3_auto_attack_auto_attack3": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq3_auto_release_auto_release3": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq3_sidechain_filter_sidechain_filter3": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq3_sidechain_audition_sidechain_audition3": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq3_external_sidechain_external_sidechain3": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq3_range_db_range_db3": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-18.0",
+      "-17.9",
+      "-17.8",
+      "-17.7",
+      "-17.6",
+      "...",
+      "17.6",
+      "17.7",
+      "17.8",
+      "17.9",
+      "18.0"
+    ],
+    "count": 361,
+    "range": "(-18.0, 18.0, 0.1)"
+  },
+  "eq3_threshold_db_threshold_db3": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-60.0",
+      "-59.9",
+      "-59.8",
+      "-59.7",
+      "-59.6",
+      "...",
+      "-0.4",
+      "-0.3",
+      "-0.2",
+      "-0.1",
+      "0.0"
+    ],
+    "count": 601,
+    "range": "(-60.0, 0.0, 0.1)"
+  },
+  "eq3_attack_ms_attack_ms3": {
+    "current": "10.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.5",
+      "0.6",
+      "0.7",
+      "0.8",
+      "0.9",
+      "...",
+      "198.4",
+      "198.8",
+      "199.2",
+      "199.6",
+      "200.0"
+    ],
+    "count": 876,
+    "range": "(0.5, 200.0, None)"
+  },
+  "eq3_release_ms_release_ms3": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0",
+      "...",
+      "1976.0",
+      "1982.0",
+      "1988.0",
+      "1994.0",
+      "2000.0"
+    ],
+    "count": 725,
+    "range": "(5.0, 2000.0, None)"
+  },
+  "eq4_enable_enable4": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq4_solo_solo4": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq4_track_pitch_track_pitch4": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq4_invert_gain_invert_gain4": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq4_shape_shape4": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf"
+    ],
+    "count": 3,
+    "range": "(None, None, None)"
+  },
+  "eq4_band_id_band_id4": {
+    "current": "4.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0"
+    ],
+    "count": 6,
+    "range": "(1.0, 6.0, 1.0)"
+  },
+  "eq4_harmonic_harmonic4": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0",
+      "10.0"
+    ],
+    "count": 10,
+    "range": "(1.0, 10.0, 1.0)"
+  },
+  "eq4_freq_hz_freq_hz4": {
+    "current": "1200.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "18.0",
+      "18.1",
+      "18.2",
+      "18.3",
+      "18.4",
+      "...",
+      "20696.6",
+      "20765.9",
+      "20835.3",
+      "20904.9",
+      "20974.7"
+    ],
+    "count": 959,
+    "range": "(18.0, 20974.7, None)"
+  },
+  "eq4_gain_db_gain_db4": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-18.0",
+      "-17.9",
+      "-17.8",
+      "-17.7",
+      "-17.6",
+      "...",
+      "17.6",
+      "17.7",
+      "17.8",
+      "17.9",
+      "18.0"
+    ],
+    "count": 361,
+    "range": "(-18.0, 18.0, 0.1)"
+  },
+  "eq4_q_q4": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.4",
+      "0.5",
+      "0.6",
+      "0.7",
+      "0.8",
+      "...",
+      "39.6",
+      "39.7",
+      "39.8",
+      "39.9",
+      "40.0"
+    ],
+    "count": 397,
+    "range": "(0.4, 40.0, 0.1)"
+  },
+  "eq4_dynamic_eq_on_dynamic_eq_on4": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq4_auto_attack_auto_attack4": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq4_auto_release_auto_release4": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq4_sidechain_filter_sidechain_filter4": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq4_sidechain_audition_sidechain_audition4": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq4_external_sidechain_external_sidechain4": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq4_range_db_range_db4": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-18.0",
+      "-17.9",
+      "-17.8",
+      "-17.7",
+      "-17.6",
+      "...",
+      "17.6",
+      "17.7",
+      "17.8",
+      "17.9",
+      "18.0"
+    ],
+    "count": 361,
+    "range": "(-18.0, 18.0, 0.1)"
+  },
+  "eq4_threshold_db_threshold_db4": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-60.0",
+      "-59.9",
+      "-59.8",
+      "-59.7",
+      "-59.6",
+      "...",
+      "-0.4",
+      "-0.3",
+      "-0.2",
+      "-0.1",
+      "0.0"
+    ],
+    "count": 601,
+    "range": "(-60.0, 0.0, 0.1)"
+  },
+  "eq4_attack_ms_attack_ms4": {
+    "current": "10.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.5",
+      "0.6",
+      "0.7",
+      "0.8",
+      "0.9",
+      "...",
+      "198.4",
+      "198.8",
+      "199.2",
+      "199.6",
+      "200.0"
+    ],
+    "count": 876,
+    "range": "(0.5, 200.0, None)"
+  },
+  "eq4_release_ms_release_ms4": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0",
+      "...",
+      "1976.0",
+      "1982.0",
+      "1988.0",
+      "1994.0",
+      "2000.0"
+    ],
+    "count": 725,
+    "range": "(5.0, 2000.0, None)"
+  },
+  "eq5_enable_enable5": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq5_solo_solo5": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq5_track_pitch_track_pitch5": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq5_invert_gain_invert_gain5": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq5_shape_shape5": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf"
+    ],
+    "count": 3,
+    "range": "(None, None, None)"
+  },
+  "eq5_band_id_band_id5": {
+    "current": "5.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0"
+    ],
+    "count": 6,
+    "range": "(1.0, 6.0, 1.0)"
+  },
+  "eq5_harmonic_harmonic5": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0",
+      "10.0"
+    ],
+    "count": 10,
+    "range": "(1.0, 10.0, 1.0)"
+  },
+  "eq5_freq_hz_freq_hz5": {
+    "current": "2800.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "18.0",
+      "18.1",
+      "18.2",
+      "18.3",
+      "18.4",
+      "...",
+      "20696.6",
+      "20765.9",
+      "20835.3",
+      "20904.9",
+      "20974.7"
+    ],
+    "count": 959,
+    "range": "(18.0, 20974.7, None)"
+  },
+  "eq5_gain_db_gain_db5": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-18.0",
+      "-17.9",
+      "-17.8",
+      "-17.7",
+      "-17.6",
+      "...",
+      "17.6",
+      "17.7",
+      "17.8",
+      "17.9",
+      "18.0"
+    ],
+    "count": 361,
+    "range": "(-18.0, 18.0, 0.1)"
+  },
+  "eq5_q_q5": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.4",
+      "0.5",
+      "0.6",
+      "0.7",
+      "0.8",
+      "...",
+      "39.6",
+      "39.7",
+      "39.8",
+      "39.9",
+      "40.0"
+    ],
+    "count": 397,
+    "range": "(0.4, 40.0, 0.1)"
+  },
+  "eq5_dynamic_eq_on_dynamic_eq_on5": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq5_auto_attack_auto_attack5": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq5_auto_release_auto_release5": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq5_sidechain_filter_sidechain_filter5": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq5_sidechain_audition_sidechain_audition5": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq5_external_sidechain_external_sidechain5": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq5_range_db_range_db5": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-18.0",
+      "-17.9",
+      "-17.8",
+      "-17.7",
+      "-17.6",
+      "...",
+      "17.6",
+      "17.7",
+      "17.8",
+      "17.9",
+      "18.0"
+    ],
+    "count": 361,
+    "range": "(-18.0, 18.0, 0.1)"
+  },
+  "eq5_threshold_db_threshold_db5": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-60.0",
+      "-59.9",
+      "-59.8",
+      "-59.7",
+      "-59.6",
+      "...",
+      "-0.4",
+      "-0.3",
+      "-0.2",
+      "-0.1",
+      "0.0"
+    ],
+    "count": 601,
+    "range": "(-60.0, 0.0, 0.1)"
+  },
+  "eq5_attack_ms_attack_ms5": {
+    "current": "10.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.5",
+      "0.6",
+      "0.7",
+      "0.8",
+      "0.9",
+      "...",
+      "198.4",
+      "198.8",
+      "199.2",
+      "199.6",
+      "200.0"
+    ],
+    "count": 876,
+    "range": "(0.5, 200.0, None)"
+  },
+  "eq5_release_ms_release_ms5": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0",
+      "...",
+      "1976.0",
+      "1982.0",
+      "1988.0",
+      "1994.0",
+      "2000.0"
+    ],
+    "count": 725,
+    "range": "(5.0, 2000.0, None)"
+  },
+  "eq6_enable_enable6": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq6_solo_solo6": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq6_track_pitch_track_pitch6": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq6_invert_gain_invert_gain6": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq6_shape_shape6": {
+    "current": "Bell",
+    "type": "enum",
+    "valid_values": [
+      "Bell",
+      "Low Shelf",
+      "High Shelf"
+    ],
+    "count": 3,
+    "range": "(None, None, None)"
+  },
+  "eq6_band_id_band_id6": {
+    "current": "6.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0"
+    ],
+    "count": 6,
+    "range": "(1.0, 6.0, 1.0)"
+  },
+  "eq6_harmonic_harmonic6": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0",
+      "10.0"
+    ],
+    "count": 10,
+    "range": "(1.0, 10.0, 1.0)"
+  },
+  "eq6_freq_hz_freq_hz6": {
+    "current": "6600.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "18.0",
+      "18.1",
+      "18.2",
+      "18.3",
+      "18.4",
+      "...",
+      "20696.6",
+      "20765.9",
+      "20835.3",
+      "20904.9",
+      "20974.7"
+    ],
+    "count": 959,
+    "range": "(18.0, 20974.7, None)"
+  },
+  "eq6_gain_db_gain_db6": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-18.0",
+      "-17.9",
+      "-17.8",
+      "-17.7",
+      "-17.6",
+      "...",
+      "17.6",
+      "17.7",
+      "17.8",
+      "17.9",
+      "18.0"
+    ],
+    "count": 361,
+    "range": "(-18.0, 18.0, 0.1)"
+  },
+  "eq6_q_q6": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.4",
+      "0.5",
+      "0.6",
+      "0.7",
+      "0.8",
+      "...",
+      "39.6",
+      "39.7",
+      "39.8",
+      "39.9",
+      "40.0"
+    ],
+    "count": 397,
+    "range": "(0.4, 40.0, 0.1)"
+  },
+  "eq6_dynamic_eq_on_dynamic_eq_on6": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq6_auto_attack_auto_attack6": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq6_auto_release_auto_release6": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq6_sidechain_filter_sidechain_filter6": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq6_sidechain_audition_sidechain_audition6": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq6_external_sidechain_external_sidechain6": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "eq6_range_db_range_db6": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-18.0",
+      "-17.9",
+      "-17.8",
+      "-17.7",
+      "-17.6",
+      "...",
+      "17.6",
+      "17.7",
+      "17.8",
+      "17.9",
+      "18.0"
+    ],
+    "count": 361,
+    "range": "(-18.0, 18.0, 0.1)"
+  },
+  "eq6_threshold_db_threshold_db6": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-60.0",
+      "-59.9",
+      "-59.8",
+      "-59.7",
+      "-59.6",
+      "...",
+      "-0.4",
+      "-0.3",
+      "-0.2",
+      "-0.1",
+      "0.0"
+    ],
+    "count": 601,
+    "range": "(-60.0, 0.0, 0.1)"
+  },
+  "eq6_attack_ms_attack_ms6": {
+    "current": "10.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.5",
+      "0.6",
+      "0.7",
+      "0.8",
+      "0.9",
+      "...",
+      "198.4",
+      "198.8",
+      "199.2",
+      "199.6",
+      "200.0"
+    ],
+    "count": 876,
+    "range": "(0.5, 200.0, None)"
+  },
+  "eq6_release_ms_release_ms6": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0",
+      "...",
+      "1976.0",
+      "1982.0",
+      "1988.0",
+      "1994.0",
+      "2000.0"
+    ],
+    "count": 725,
+    "range": "(5.0, 2000.0, None)"
+  },
+  "master_bypass_master_bypass": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  }
+}

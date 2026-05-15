@@ -1,0 +1,1891 @@
+{
+  "correction_mode": {
+    "current": "Auto mode",
+    "type": "enum",
+    "valid_values": [
+      "Auto mode",
+      "Graph mode"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "scale": {
+    "current": "Chromatic",
+    "type": "enum",
+    "valid_values": [
+      "Major",
+      "Minor",
+      "Chromatic",
+      "Ling Ln",
+      "Scholar's",
+      "Greek Dia",
+      "Greek Chr",
+      "Greek En",
+      "Pythagor",
+      "Just Major",
+      "Just Minor",
+      "Meantone",
+      "Werck III",
+      "Vallotti",
+      "Barnes",
+      "Indian",
+      "Slendro",
+      "Pelog",
+      "Arabic 1",
+      "Arabic 2",
+      "19 Tone",
+      "24 Tone",
+      "31 Tone",
+      "53 Tone",
+      "Partch",
+      "Carlos A",
+      "Carlos B",
+      "Carlos G",
+      "Harmonic"
+    ],
+    "count": 29,
+    "range": "(None, None, None)"
+  },
+  "key": {
+    "current": "C",
+    "type": "enum",
+    "valid_values": [
+      "C",
+      "C#",
+      "D",
+      "D#",
+      "E",
+      "F",
+      "F#",
+      "G",
+      "G#",
+      "A",
+      "A#",
+      "B"
+    ],
+    "count": 12,
+    "range": "(None, None, None)"
+  },
+  "detune": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-100.0",
+      "-99.0",
+      "-98.0",
+      "-97.0",
+      "-96.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 201,
+    "range": "(-100.0, 100.0, 1.0)"
+  },
+  "retune_speed_ms": {
+    "current": "20.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "400.0",
+      "398.0",
+      "397.0",
+      "395.0",
+      "394.0",
+      "...",
+      "4.0",
+      "3.0",
+      "2.0",
+      "1.0",
+      "0.0"
+    ],
+    "count": 369,
+    "range": "(0.0, 400.0, None)"
+  },
+  "vibrato_shape": {
+    "current": "(No Vibrato)",
+    "type": "enum",
+    "valid_values": [
+      "(No Vibrato)",
+      "Sine Wave",
+      "Square",
+      "Sawtooth"
+    ],
+    "count": 4,
+    "range": "(None, None, None)"
+  },
+  "vibrato_pitch": {
+    "current": "18.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 101,
+    "range": "(0.0, 100.0, 1.0)"
+  },
+  "vibrato_rate": {
+    "current": "5.5",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.1",
+      "0.2",
+      "0.3",
+      "0.4",
+      "0.5",
+      "...",
+      "9.6",
+      "9.7",
+      "9.8",
+      "9.9",
+      "10.0"
+    ],
+    "count": 100,
+    "range": "(0.1, 10.0, 0.1)"
+  },
+  "re_track_ara": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0"
+    ],
+    "count": 2,
+    "range": "(0.0, 1.0, 1.0)"
+  },
+  "tracking": {
+    "current": "50.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 100,
+    "range": "(1.0, 100.0, 1.0)"
+  },
+  "input_type": {
+    "current": "Alto-Tenor",
+    "type": "enum",
+    "valid_values": [
+      "Soprano",
+      "Alto-Tenor",
+      "Low Male",
+      "Instrument",
+      "Bass Inst."
+    ],
+    "count": 5,
+    "range": "(None, None, None)"
+  },
+  "use_classic_mode_dsp": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0"
+    ],
+    "count": 2,
+    "range": "(0.0, 1.0, 1.0)"
+  },
+  "n_a": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "0.001",
+      "0.002",
+      "0.003",
+      "0.004",
+      "...",
+      "0.996",
+      "0.997",
+      "0.998",
+      "0.999",
+      "1.0"
+    ],
+    "count": 1001,
+    "range": "(0.0, 1.0, 0.001)"
+  },
+  "graph_tool": {
+    "current": "Arrow",
+    "type": "enum",
+    "valid_values": [
+      "Draw Lines",
+      "Draw Curves",
+      "Draw Notes",
+      "Arrow",
+      "Scissors",
+      "Zoom",
+      "I-Beam",
+      "Hand Scroll",
+      "Move Time Point",
+      "Move Time Region"
+    ],
+    "count": 10,
+    "range": "(None, None, None)"
+  },
+  "tie_waveform_to_graph": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0"
+    ],
+    "count": 2,
+    "range": "(0.0, 1.0, 1.0)"
+  },
+  "track_pitch": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0"
+    ],
+    "count": 2,
+    "range": "(0.0, 1.0, 1.0)"
+  },
+  "object_retune_speed_ms": {
+    "current": "20.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "400.0",
+      "398.0",
+      "397.0",
+      "395.0",
+      "394.0",
+      "...",
+      "4.0",
+      "3.0",
+      "2.0",
+      "1.0",
+      "0.0"
+    ],
+    "count": 369,
+    "range": "(0.0, 400.0, None)"
+  },
+  "advanced_view": {
+    "current": "Easy",
+    "type": "enum",
+    "valid_values": [
+      "Easy",
+      "Advanced"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "l_r_ref": {
+    "current": "Left Channel",
+    "type": "enum",
+    "valid_values": [
+      "Left Channel",
+      "Right Channel"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "learn_scale_from_midi": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "target_notes_via_midi": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "ignore_vibrato": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "show_waveform": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "v_onset_delay_ms": {
+    "current": "500.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "2.0",
+      "3.0",
+      "5.0",
+      "6.0",
+      "...",
+      "1494.0",
+      "1496.0",
+      "1497.0",
+      "1499.0",
+      "1500.0"
+    ],
+    "count": 1001,
+    "range": "(0.0, 1500.0, None)"
+  },
+  "vibrato_amplitude": {
+    "current": "10.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "...",
+      "26.0",
+      "27.0",
+      "28.0",
+      "29.0",
+      "30.0"
+    ],
+    "count": 31,
+    "range": "(0.0, 30.0, 1.0)"
+  },
+  "vibrato_formant": {
+    "current": "70.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 101,
+    "range": "(0.0, 100.0, 1.0)"
+  },
+  "vibrato_variation": {
+    "current": "20.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 101,
+    "range": "(0.0, 100.0, 1.0)"
+  },
+  "v_onset_rate_ms": {
+    "current": "500.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "2.0",
+      "3.0",
+      "5.0",
+      "6.0",
+      "...",
+      "1494.0",
+      "1496.0",
+      "1497.0",
+      "1499.0",
+      "1500.0"
+    ],
+    "count": 1001,
+    "range": "(0.0, 1500.0, None)"
+  },
+  "object_adjust_vibrato": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-18.0",
+      "-17.9",
+      "-17.8",
+      "-17.7",
+      "-17.6",
+      "...",
+      "11.6",
+      "11.7",
+      "11.8",
+      "11.9",
+      "12.0"
+    ],
+    "count": 301,
+    "range": "(-18.0, 12.0, 0.1)"
+  },
+  "hold_note_shown": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "keyboard_edits": {
+    "current": "Remove",
+    "type": "enum",
+    "valid_values": [
+      "Remove",
+      "Bypass"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "keyboard_mode": {
+    "current": "Latched",
+    "type": "enum",
+    "valid_values": [
+      "Latched",
+      "Momentary"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "midi_octaves": {
+    "current": "As Played",
+    "type": "enum",
+    "valid_values": [
+      "As Played",
+      "All"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "humanize": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 101,
+    "range": "(0.0, 100.0, 1.0)"
+  },
+  "natural_vibrato": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-12.0",
+      "-11.9",
+      "-11.8",
+      "-11.7",
+      "-11.6",
+      "...",
+      "11.6",
+      "11.7",
+      "11.8",
+      "11.9",
+      "12.0"
+    ],
+    "count": 241,
+    "range": "(-12.0, 12.0, 0.1)"
+  },
+  "snap_to_note": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "clock_source": {
+    "current": "Host Clock",
+    "type": "enum",
+    "valid_values": [
+      "Host Clock",
+      "Internal Clock"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "auto_scroll": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "show_info_bar": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "formant_correction": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "throat_length": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "50.0",
+      "51.0",
+      "52.0",
+      "53.0",
+      "54.0",
+      "...",
+      "176.0",
+      "177.0",
+      "178.0",
+      "179.0",
+      "180.0"
+    ],
+    "count": 131,
+    "range": "(50.0, 180.0, 1.0)"
+  },
+  "show_lanes": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "number_of_notes": {
+    "current": "50.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 100,
+    "range": "(1.0, 100.0, 1.0)"
+  },
+  "transpose": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-12.0",
+      "-11.0",
+      "-10.0",
+      "-9.0",
+      "-8.0",
+      "-7.0",
+      "-6.0",
+      "-5.0",
+      "-4.0",
+      "-3.0",
+      "-2.0",
+      "-1.0",
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0",
+      "7.0",
+      "8.0",
+      "9.0",
+      "10.0",
+      "11.0",
+      "12.0"
+    ],
+    "count": 25,
+    "range": "(-12.0, 12.0, 1.0)"
+  },
+  "object_throat_length": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-50.0",
+      "-49.0",
+      "-48.0",
+      "-47.0",
+      "-46.0",
+      "...",
+      "46.0",
+      "47.0",
+      "48.0",
+      "49.0",
+      "50.0"
+    ],
+    "count": 101,
+    "range": "(-50.0, 50.0, 1.0)"
+  },
+  "show_midi": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "time_display": {
+    "current": "Bars/Beats",
+    "type": "enum",
+    "valid_values": [
+      "Minutes/Seconds",
+      "Bars/Beats"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "enable_time_control": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "track_pitch_time": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0"
+    ],
+    "count": 2,
+    "range": "(0.0, 1.0, 1.0)"
+  },
+  "master_bypass": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "flex_tune": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 101,
+    "range": "(0.0, 100.0, 1.0)"
+  },
+  "latency_removal": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "wet_dry_mix": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 101,
+    "range": "(0.0, 100.0, 1.0)"
+  },
+  "hp_voice_1_fixed_interval": {
+    "current": "U",
+    "type": "enum",
+    "valid_values": [
+      "24",
+      "23",
+      "22",
+      "21",
+      "20",
+      "...",
+      "-20",
+      "-21",
+      "-22",
+      "-23",
+      "-24"
+    ],
+    "count": 49,
+    "range": "(None, None, None)"
+  },
+  "hp_voice_2_fixed_interval": {
+    "current": "U",
+    "type": "enum",
+    "valid_values": [
+      "24",
+      "23",
+      "22",
+      "21",
+      "20",
+      "...",
+      "-20",
+      "-21",
+      "-22",
+      "-23",
+      "-24"
+    ],
+    "count": 49,
+    "range": "(None, None, None)"
+  },
+  "hp_voice_3_fixed_interval": {
+    "current": "U",
+    "type": "enum",
+    "valid_values": [
+      "24",
+      "23",
+      "22",
+      "21",
+      "20",
+      "...",
+      "-20",
+      "-21",
+      "-22",
+      "-23",
+      "-24"
+    ],
+    "count": 49,
+    "range": "(None, None, None)"
+  },
+  "hp_voice_4_fixed_interval": {
+    "current": "U",
+    "type": "enum",
+    "valid_values": [
+      "24",
+      "23",
+      "22",
+      "21",
+      "20",
+      "...",
+      "-20",
+      "-21",
+      "-22",
+      "-23",
+      "-24"
+    ],
+    "count": 49,
+    "range": "(None, None, None)"
+  },
+  "hp_voice_1_scale_interval": {
+    "current": "8va",
+    "type": "enum",
+    "valid_values": [
+      "16va",
+      "8va+7th",
+      "8va+6th",
+      "8va+5th",
+      "8va+4th",
+      "8va+3rd",
+      "8va+2nd",
+      "8va",
+      "+7th",
+      "+6th",
+      "+5th",
+      "+4th",
+      "+3rd",
+      "+2nd",
+      "U",
+      "-2nd",
+      "-3rd",
+      "-4th",
+      "-5th",
+      "-6th",
+      "-7th",
+      "8vb",
+      "8vb-2nd",
+      "8vb-3rd",
+      "8vb-4th",
+      "8vb-5th",
+      "8vb-6th",
+      "8vb-7th",
+      "16vb"
+    ],
+    "count": 29,
+    "range": "(None, None, None)"
+  },
+  "hp_voice_2_scale_interval": {
+    "current": "+5th",
+    "type": "enum",
+    "valid_values": [
+      "16va",
+      "8va+7th",
+      "8va+6th",
+      "8va+5th",
+      "8va+4th",
+      "8va+3rd",
+      "8va+2nd",
+      "8va",
+      "+7th",
+      "+6th",
+      "+5th",
+      "+4th",
+      "+3rd",
+      "+2nd",
+      "U",
+      "-2nd",
+      "-3rd",
+      "-4th",
+      "-5th",
+      "-6th",
+      "-7th",
+      "8vb",
+      "8vb-2nd",
+      "8vb-3rd",
+      "8vb-4th",
+      "8vb-5th",
+      "8vb-6th",
+      "8vb-7th",
+      "16vb"
+    ],
+    "count": 29,
+    "range": "(None, None, None)"
+  },
+  "hp_voice_3_scale_interval": {
+    "current": "+3rd",
+    "type": "enum",
+    "valid_values": [
+      "16va",
+      "8va+7th",
+      "8va+6th",
+      "8va+5th",
+      "8va+4th",
+      "8va+3rd",
+      "8va+2nd",
+      "8va",
+      "+7th",
+      "+6th",
+      "+5th",
+      "+4th",
+      "+3rd",
+      "+2nd",
+      "U",
+      "-2nd",
+      "-3rd",
+      "-4th",
+      "-5th",
+      "-6th",
+      "-7th",
+      "8vb",
+      "8vb-2nd",
+      "8vb-3rd",
+      "8vb-4th",
+      "8vb-5th",
+      "8vb-6th",
+      "8vb-7th",
+      "16vb"
+    ],
+    "count": 29,
+    "range": "(None, None, None)"
+  },
+  "hp_voice_4_scale_interval": {
+    "current": "8vb",
+    "type": "enum",
+    "valid_values": [
+      "16va",
+      "8va+7th",
+      "8va+6th",
+      "8va+5th",
+      "8va+4th",
+      "8va+3rd",
+      "8va+2nd",
+      "8va",
+      "+7th",
+      "+6th",
+      "+5th",
+      "+4th",
+      "+3rd",
+      "+2nd",
+      "U",
+      "-2nd",
+      "-3rd",
+      "-4th",
+      "-5th",
+      "-6th",
+      "-7th",
+      "8vb",
+      "8vb-2nd",
+      "8vb-3rd",
+      "8vb-4th",
+      "8vb-5th",
+      "8vb-6th",
+      "8vb-7th",
+      "16vb"
+    ],
+    "count": 29,
+    "range": "(None, None, None)"
+  },
+  "hp_voice_1_latch": {
+    "current": "Momentary",
+    "type": "enum",
+    "valid_values": [
+      "Momentary",
+      "Latched"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "hp_voice_2_latch": {
+    "current": "Momentary",
+    "type": "enum",
+    "valid_values": [
+      "Momentary",
+      "Latched"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "hp_voice_3_latch": {
+    "current": "Momentary",
+    "type": "enum",
+    "valid_values": [
+      "Momentary",
+      "Latched"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "hp_voice_4_latch": {
+    "current": "Momentary",
+    "type": "enum",
+    "valid_values": [
+      "Momentary",
+      "Latched"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "hp_all_voices_latch": {
+    "current": "Momentary",
+    "type": "enum",
+    "valid_values": [
+      "Momentary",
+      "Latched"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "hp_voice_1_level": {
+    "current": "-6.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-inf",
+      "-35.0",
+      "-34.0",
+      "-33.0",
+      "-32.0",
+      "...",
+      "8.0",
+      "9.0",
+      "10.0",
+      "11.0",
+      "12.0"
+    ],
+    "count": 49,
+    "range": "(-inf, 12.0, None)"
+  },
+  "hp_voice_2_level": {
+    "current": "-6.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-inf",
+      "-35.0",
+      "-34.0",
+      "-33.0",
+      "-32.0",
+      "...",
+      "8.0",
+      "9.0",
+      "10.0",
+      "11.0",
+      "12.0"
+    ],
+    "count": 49,
+    "range": "(-inf, 12.0, None)"
+  },
+  "hp_voice_3_level": {
+    "current": "-6.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-inf",
+      "-35.0",
+      "-34.0",
+      "-33.0",
+      "-32.0",
+      "...",
+      "8.0",
+      "9.0",
+      "10.0",
+      "11.0",
+      "12.0"
+    ],
+    "count": 49,
+    "range": "(-inf, 12.0, None)"
+  },
+  "hp_voice_4_level": {
+    "current": "-6.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-inf",
+      "-35.0",
+      "-34.0",
+      "-33.0",
+      "-32.0",
+      "...",
+      "8.0",
+      "9.0",
+      "10.0",
+      "11.0",
+      "12.0"
+    ],
+    "count": 49,
+    "range": "(-inf, 12.0, None)"
+  },
+  "hp_voice_1_pan": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-100.0",
+      "-99.0",
+      "-98.0",
+      "-97.0",
+      "-96.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 201,
+    "range": "(-100.0, 100.0, 1.0)"
+  },
+  "hp_voice_2_pan": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-100.0",
+      "-99.0",
+      "-98.0",
+      "-97.0",
+      "-96.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 201,
+    "range": "(-100.0, 100.0, 1.0)"
+  },
+  "hp_voice_3_pan": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-100.0",
+      "-99.0",
+      "-98.0",
+      "-97.0",
+      "-96.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 201,
+    "range": "(-100.0, 100.0, 1.0)"
+  },
+  "hp_voice_4_pan": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-100.0",
+      "-99.0",
+      "-98.0",
+      "-97.0",
+      "-96.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 201,
+    "range": "(-100.0, 100.0, 1.0)"
+  },
+  "hp_voice_1_width": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 101,
+    "range": "(0.0, 100.0, 1.0)"
+  },
+  "hp_voice_2_width": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 101,
+    "range": "(0.0, 100.0, 1.0)"
+  },
+  "hp_voice_3_width": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 101,
+    "range": "(0.0, 100.0, 1.0)"
+  },
+  "hp_voice_4_width": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 101,
+    "range": "(0.0, 100.0, 1.0)"
+  },
+  "hp_voice_1_formant": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "75.0",
+      "76.0",
+      "77.0",
+      "78.0",
+      "79.0",
+      "...",
+      "146.0",
+      "147.0",
+      "148.0",
+      "149.0",
+      "150.0"
+    ],
+    "count": 76,
+    "range": "(75.0, 150.0, 1.0)"
+  },
+  "hp_voice_2_formant": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "75.0",
+      "76.0",
+      "77.0",
+      "78.0",
+      "79.0",
+      "...",
+      "146.0",
+      "147.0",
+      "148.0",
+      "149.0",
+      "150.0"
+    ],
+    "count": 76,
+    "range": "(75.0, 150.0, 1.0)"
+  },
+  "hp_voice_3_formant": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "75.0",
+      "76.0",
+      "77.0",
+      "78.0",
+      "79.0",
+      "...",
+      "146.0",
+      "147.0",
+      "148.0",
+      "149.0",
+      "150.0"
+    ],
+    "count": 76,
+    "range": "(75.0, 150.0, 1.0)"
+  },
+  "hp_voice_4_formant": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "75.0",
+      "76.0",
+      "77.0",
+      "78.0",
+      "79.0",
+      "...",
+      "146.0",
+      "147.0",
+      "148.0",
+      "149.0",
+      "150.0"
+    ],
+    "count": 76,
+    "range": "(75.0, 150.0, 1.0)"
+  },
+  "hp_voice_1_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "hp_voice_2_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "hp_voice_3_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "hp_voice_4_solo": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "hp_voice_1_trigger": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "hp_voice_2_trigger": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "hp_voice_3_trigger": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "hp_voice_4_trigger": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "hp_all_voices_trigger": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "hp_interval_type": {
+    "current": "Fixed",
+    "type": "enum",
+    "valid_values": [
+      "Scale",
+      "Fixed"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "hp_pan_width": {
+    "current": "Pan",
+    "type": "enum",
+    "valid_values": [
+      "Pan",
+      "Width"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "hp_bypass_harmony_player": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "hp_mute_input": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "hp_solo_input": {
+    "current": "False",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "hp_naturalize": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 101,
+    "range": "(0.0, 100.0, 1.0)"
+  },
+  "hp_pitch_variation": {
+    "current": "30.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 101,
+    "range": "(0.0, 100.0, 1.0)"
+  },
+  "hp_timing_variation": {
+    "current": "50.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "...",
+      "96.0",
+      "97.0",
+      "98.0",
+      "99.0",
+      "100.0"
+    ],
+    "count": 101,
+    "range": "(0.0, 100.0, 1.0)"
+  },
+  "hp_transition_time": {
+    "current": "125.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "...",
+      "982.0",
+      "987.0",
+      "991.0",
+      "996.0",
+      "1000.0"
+    ],
+    "count": 556,
+    "range": "(0.0, 1000.0, None)"
+  },
+  "modern_scale": {
+    "current": "Chromatic",
+    "type": "enum",
+    "valid_values": [
+      "Chromatic",
+      "Major",
+      "Minor",
+      "Harmonic Minor",
+      "Jazz Melodic Minor",
+      "Dorian",
+      "Phrygian",
+      "Lydian",
+      "Mixolydian",
+      "Locrian",
+      "Major Pentatonic",
+      "Minor Pentatonic",
+      "Blues",
+      "Whole Tone",
+      "Diminished"
+    ],
+    "count": 15,
+    "range": "(None, None, None)"
+  },
+  "hp_attack": {
+    "current": "0.5",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.5",
+      "3.5",
+      "6.5",
+      "9.5",
+      "12.5",
+      "...",
+      "2988.0",
+      "2991.0",
+      "2994.0",
+      "2997.0",
+      "3000.0"
+    ],
+    "count": 1001,
+    "range": "(0.5, 3000.0, None)"
+  },
+  "hp_release": {
+    "current": "5.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "5.0",
+      "8.0",
+      "11.0",
+      "14.0",
+      "17.0",
+      "...",
+      "2988.0",
+      "2991.0",
+      "2994.0",
+      "2997.0",
+      "3000.0"
+    ],
+    "count": 1001,
+    "range": "(5.0, 3000.0, None)"
+  },
+  "hp_equalizer_type": {
+    "current": "High Pass",
+    "type": "enum",
+    "valid_values": [
+      "High Pass",
+      "Band Pass",
+      "Low Pass"
+    ],
+    "count": 3,
+    "range": "(None, None, None)"
+  },
+  "hp_lpf_frequency": {
+    "current": "20000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "18.0",
+      "19.0",
+      "20.0",
+      "21.0",
+      "22.0",
+      "...",
+      "20697.0",
+      "20766.0",
+      "20835.0",
+      "20905.0",
+      "20974.7"
+    ],
+    "count": 888,
+    "range": "(18.0, 20974.7, None)"
+  },
+  "hp_lpf_db_octave": {
+    "current": "12.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "6.0",
+      "12.0",
+      "18.0",
+      "24.0"
+    ],
+    "count": 4,
+    "range": "(6.0, 24.0, 6.0)"
+  },
+  "hp_bpf_frequency": {
+    "current": "1000.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "18.0",
+      "19.0",
+      "20.0",
+      "21.0",
+      "22.0",
+      "...",
+      "20697.0",
+      "20766.0",
+      "20835.0",
+      "20905.0",
+      "20974.7"
+    ],
+    "count": 888,
+    "range": "(18.0, 20974.7, None)"
+  },
+  "hp_bpf_q": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.4",
+      "0.5",
+      "0.6",
+      "0.7",
+      "0.8",
+      "...",
+      "39.6",
+      "39.7",
+      "39.8",
+      "39.9",
+      "40.0"
+    ],
+    "count": 397,
+    "range": "(0.4, 40.0, 0.1)"
+  },
+  "hp_bpf_level": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-18.0",
+      "-17.9",
+      "-17.8",
+      "-17.7",
+      "-17.6",
+      "...",
+      "17.6",
+      "17.7",
+      "17.8",
+      "17.9",
+      "18.0"
+    ],
+    "count": 361,
+    "range": "(-18.0, 18.0, 0.1)"
+  },
+  "hp_hpf_frequency": {
+    "current": "18.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "18.0",
+      "19.0",
+      "20.0",
+      "21.0",
+      "22.0",
+      "...",
+      "20697.0",
+      "20766.0",
+      "20835.0",
+      "20905.0",
+      "20974.7"
+    ],
+    "count": 888,
+    "range": "(18.0, 20974.7, None)"
+  },
+  "hp_hpf_db_octave": {
+    "current": "12.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "6.0",
+      "12.0",
+      "18.0",
+      "24.0"
+    ],
+    "count": 4,
+    "range": "(6.0, 24.0, 6.0)"
+  },
+  "hp_gate_side_chain_source": {
+    "current": "Internal",
+    "type": "enum",
+    "valid_values": [
+      "Internal",
+      "External"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "hp_gate_threshold": {
+    "current": "-70.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-96.0",
+      "-95.0",
+      "-94.0",
+      "-93.0",
+      "-92.0",
+      "...",
+      "8.0",
+      "9.0",
+      "10.0",
+      "11.0",
+      "12.0"
+    ],
+    "count": 109,
+    "range": "(-96.0, 12.0, 1.0)"
+  },
+  "hp_stereo_width": {
+    "current": "100.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "50.0",
+      "51.0",
+      "52.0",
+      "53.0",
+      "54.0",
+      "...",
+      "126.0",
+      "127.0",
+      "128.0",
+      "129.0",
+      "130.0"
+    ],
+    "count": 81,
+    "range": "(50.0, 130.0, 1.0)"
+  },
+  "hp_bypass_gate": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "hp_bypass_envelope": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "hp_bypass_equalizer": {
+    "current": "True",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "False",
+      "True"
+    ],
+    "count": 2,
+    "range": "(False, True, 1)"
+  },
+  "transpose_in_scale": {
+    "current": "In Scale",
+    "type": "enum",
+    "valid_values": [
+      "Ignoring Scale",
+      "In Scale"
+    ],
+    "count": 2,
+    "range": "(None, None, None)"
+  },
+  "hp_mixer_show_hide": {
+    "current": "1.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "0.0",
+      "1.0"
+    ],
+    "count": 2,
+    "range": "(0.0, 1.0, 1.0)"
+  },
+  "scale_transpose": {
+    "current": "0.0",
+    "type": "discrete_numeric",
+    "valid_values": [
+      "-7.0",
+      "-6.0",
+      "-5.0",
+      "-4.0",
+      "-3.0",
+      "-2.0",
+      "-1.0",
+      "0.0",
+      "1.0",
+      "2.0",
+      "3.0",
+      "4.0",
+      "5.0",
+      "6.0",
+      "7.0"
+    ],
+    "count": 15,
+    "range": "(-7.0, 7.0, 1.0)"
+  }
+}
