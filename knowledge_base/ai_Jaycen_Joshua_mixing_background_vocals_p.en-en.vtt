@@ -1,0 +1,126 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.040 --> 00:00:03.720
+In an episode of Mix with the&nbsp;
+Masters, 15-time Grammy Award&nbsp;&nbsp;
+
+00:00:03.720 --> 00:00:08.880
+winner Jaycen Joshua revealed how he&nbsp;
+processes 808s that need more sauce.
+
+00:00:08.880 --> 00:00:13.200
+Start by placing an EQ on your 808&nbsp;
+and applying a low-pass filter,&nbsp;&nbsp;
+
+00:00:13.200 --> 00:00:15.240
+cutting out everything above 200Hz.
+
+00:00:16.040 --> 00:00:19.880
+Next, duplicate this channel and&nbsp;
+switch the low-pass to a high-pass,&nbsp;&nbsp;
+
+00:00:19.880 --> 00:00:22.760
+removing everything below 200 Hz.
+
+00:00:22.760 --> 00:00:27.760
+Now you’ve got control over the low and&nbsp;
+high frequencies of your 808, independently.
+
+00:00:27.760 --> 00:00:31.760
+Then, add your saturation plugin&nbsp;
+of choice. Joshua uses options like&nbsp;&nbsp;
+
+00:00:31.760 --> 00:00:36.720
+UAD’s Tubescreamer and Plugin Alliance's&nbsp;
+Blackbox, but if you don’t own either,&nbsp;&nbsp;
+
+00:00:36.720 --> 00:00:40.400
+the Airwindows collection is free&nbsp;
+and offers excellent saturation&nbsp;&nbsp;
+
+00:00:40.400 --> 00:00:46.960
+tools. Other free options include Softube’s&nbsp;
+Saturation Knob and IVGI 2 by Klanghelm.
+
+00:00:46.960 --> 00:00:53.000
+After adding saturation, apply a low-pass&nbsp;
+on the duplicated 808 around 5 kHz,&nbsp;&nbsp;
+
+00:00:53.000 --> 00:00:55.560
+effectively creating a band-pass filter.
+
+00:00:55.560 --> 00:00:59.720
+The goal here is to add upper harmonics&nbsp;
+to just this frequency range of the 808.&nbsp;&nbsp;
+
+00:01:00.440 --> 00:01:05.160
+These harmonics help the bass cut through&nbsp;
+on smaller speakers like phones, earbuds,&nbsp;&nbsp;
+
+00:01:05.160 --> 00:01:10.640
+and laptops. This way, we avoid interfering&nbsp;
+with the low-end and introducing phase issues,&nbsp;&nbsp;
+
+00:01:10.640 --> 00:01:15.400
+while also keeping the highs clear so they&nbsp;
+don’t clash with other elements in the mix.
+
+00:01:15.400 --> 00:01:19.680
+After the EQ, Joshua adds PS22 X-Split by Waves,&nbsp;&nbsp;
+
+00:01:19.680 --> 00:01:24.880
+which converts mono signals to stereo using&nbsp;
+what Waves calls “Advanced Stereo Synthesis.”&nbsp;&nbsp;
+
+00:01:24.880 --> 00:01:31.960
+A great free alternative is Polyverse’s Wider,&nbsp;
+which like the PS22 retains mono compatibility.
+
+00:01:31.960 --> 00:01:36.120
+I know what you’re thinking—stereo&nbsp;
+width on my 808? But remember,&nbsp;&nbsp;
+
+00:01:36.120 --> 00:01:41.440
+we’re only applying this effect to the upper&nbsp;
+band of frequencies, leaving the low end intact.
+
+00:01:41.440 --> 00:01:46.000
+In the Mix with the Masters episode, Joshua&nbsp;
+explains that he keeps the low frequencies&nbsp;&nbsp;
+
+00:01:46.000 --> 00:01:51.440
+of his 808 in mono but uses this stereo width&nbsp;
+technique to create separation from the kick drum.
+
+00:01:51.440 --> 00:01:57.320
+PS22 X-Split is unique because it converts&nbsp;
+mono sounds to stereo using its advanced&nbsp;&nbsp;
+
+00:01:57.320 --> 00:02:02.880
+stereo synthesis, making it ideal for adding&nbsp;
+width without compromising low-end focus.
+
+00:02:02.880 --> 00:02:08.640
+I'm highlighting this as most stereo spreading&nbsp;
+plugins rely on delay to simulate stereo width,&nbsp;&nbsp;
+
+00:02:08.640 --> 00:02:11.400
+but this can introduce a range of downsides,&nbsp;&nbsp;
+
+00:02:11.400 --> 00:02:17.160
+like phase issues and a loss of clarity.&nbsp;
+This is likely why Joshua opts for PS22.
+
+00:02:17.160 --> 00:02:21.880
+Polyverse’s Wider isn’t exactly the same,&nbsp;
+but it avoids phase issues thanks to its&nbsp;&nbsp;
+
+00:02:21.880 --> 00:02:26.720
+comb filtering algorithm. You can learn&nbsp;
+more about how it works on its website.
+
+00:02:26.720 --> 00:02:27.960
+Thank you for watching.
+

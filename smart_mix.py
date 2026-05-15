@@ -309,96 +309,168 @@ def _safe_set(plugin, attr, value):
     except Exception: pass
 
 # ============================================================
-# BACKING VOCAL BUS — engineer-sourced from 5 BV masterclasses
+# HUMANIZE AI VOCAL — break the "too perfect" feel of ElevenLabs
+# Per AI Humanization Protocol:
+#   1. Subtle tape saturation (analog harmonic distortion = "throat grit")
+#   2. Micro time-shift (5-15ms random) — AI vocal NOT on the digital grid
 # ============================================================
-def backing_vocal_bus(bv_audio, sr, mode='adlib'):
+def humanize_ai_vocal(audio, sr, shift_ms_min=5, shift_ms_max=15, drive_db=2.0, ai_mode=True):
     """
-    Process background vocals (ad-libs / doubles / harmonies) through a dedicated chain.
-
-    Sources (5 BV masterclass transcripts in knowledge_base/):
-      - Devvon: HP more aggressive than lead, low-mid cut for boxiness, plate reverb SHORT decay
-      - Reid Stefan: harder ratio on ad-lib compression, dynamic mid scoop @ 2.5 kHz
-      - Pensado: don't over-widen rap BVs (subtle widening only)
-      - Alex Tumay: HP+LP combo = "telephone/radio filter", pan 60/50/45 (not full hard), keep QUIET
-      - Finneas/Kinelski: heavy automation, vocal rider on stacks
+    Process AI-generated vocal to sound more human.
 
     Args:
-        bv_audio: stereo float32 array of background vocal(s)
+        audio: stereo float32 array
         sr: sample rate
-        mode: 'adlib' (slightly louder, panned wider) | 'double' | 'harmony' (tucked harder)
+        shift_ms_min/max: random timing shift range
+        drive_db: tape saturation drive (subtle, 1.5-3 dB typical)
+        ai_mode: True = full humanization; False = bypass (already-human vocals)
+
+    Returns processed audio. Sourced from 'How to Make AI Vocals Sound Real' research.
+    """
+    if not ai_mode or audio is None:
+        return audio
+    import random
+    # 1) Random micro time-shift — push AI vocal off the digital grid
+    shift_ms = random.uniform(shift_ms_min, shift_ms_max)
+    shift_samples = int(sr * shift_ms / 1000)
+    pad = np.zeros((shift_samples, audio.shape[1] if audio.ndim == 2 else 1), dtype=audio.dtype)
+    audio_shifted = np.concatenate([pad, audio], axis=0)[:len(audio)]
+
+    # 2) Subtle tape-style saturation — adds 2nd/3rd harmonics for "throat grit"
+    # Using soft-clip tanh saturation (matches analog tape character)
+    drive_lin = 10 ** (drive_db / 20)
+    audio_driven = np.tanh(audio_shifted * drive_lin) / drive_lin
+
+    # 3) Subtle high-shelf restoration — saturation darkens slightly, compensate
+    sos_air = butter(2, 8000, btype='hp', fs=sr, output='sos')
+    air_only = sosfilt(sos_air, audio_driven, axis=0).astype(np.float32)
+    audio_out = audio_driven + air_only * 0.15  # +1.2 dB air shelf
+
+    return audio_out.astype(np.float32)
+
+# ============================================================
+# BV STYLE PRESETS mapped to god-tier reference tracks
+# ============================================================
+BV_STYLES = {
+    'drill': {  # Pop Smoke "Invincible" — aggressive, never steps on lead
+        'hp': 300, 'lp': 6000, 'mud_cut': (-2.5, 400, 1.2),
+        'lead_hole': (-3.0, 2500, 1.4),
+        'side_widen': 1.3,
+        'verb_mode': 'Room', 'verb_decay': 0.7, 'verb_wet': 0.18,
+        'comp_ratio': 4.0, 'comp_attack': 3, 'comp_release': 30,
+        'tuck_db': -8.0,
+        'ref': 'pop_smoke_invincible',
+    },
+    'trap_hype': {  # Migos "Bad and Boujee" — gap-filling, panned wide
+        'hp': 280, 'lp': 6500, 'mud_cut': (-2.0, 400, 1.2),
+        'lead_hole': (-3.5, 2500, 1.4),
+        'side_widen': 1.6,  # Migos width corr 0.991 = very wide BVs
+        'verb_mode': 'Plate', 'verb_decay': 0.5, 'verb_wet': 0.15,
+        'comp_ratio': 5.0, 'comp_attack': 2, 'comp_release': 25,
+        'tuck_db': -7.0,
+        'ref': 'migos_bad_and_boujee',
+    },
+    'rnb_harmony': {  # Smino "90 Proof" — buttery synth-pad harmonies
+        'hp': 200, 'lp': 8000, 'mud_cut': (-1.5, 400, 1.0),
+        'lead_hole': (-2.5, 2700, 1.2),
+        'side_widen': 1.5,
+        'verb_mode': 'Smooth Plate', 'verb_decay': 1.8, 'verb_wet': 0.28,
+        'comp_ratio': 3.0, 'comp_attack': 10, 'comp_release': 80,
+        'tuck_db': -10.0,
+        'ref': 'smino_90_proof',
+    },
+    'psychedelic': {  # Travis Scott "STARGAZING" — drowned in verb/delay
+        'hp': 350, 'lp': 7000, 'mud_cut': (-2.0, 450, 1.1),
+        'lead_hole': (-3.0, 2500, 1.4),
+        'side_widen': 1.5,
+        'verb_mode': 'Cathedral', 'verb_decay': 3.0, 'verb_wet': 0.45,
+        'comp_ratio': 4.0, 'comp_attack': 5, 'comp_release': 40,
+        'tuck_db': -9.0,
+        'ref': 'travis_stargazing',
+    },
+}
+
+# ============================================================
+# BACKING VOCAL BUS — engineer-sourced from 5 BV masterclasses
+# ============================================================
+def backing_vocal_bus(bv_audio, sr, mode='adlib', style='drill', is_ai=True):
+    """
+    Process background vocals through a dedicated chain mapped to god-tier references.
+
+    SOURCES:
+      - 5 BV masterclass transcripts (Devvon, Reid Stefan, Pensado, Alex Tumay, Finneas)
+      - 4 god-tier reference tracks spectrally mapped (Pop Smoke, Migos, Smino, Travis)
+
+    Args:
+        bv_audio: stereo float32 array
+        sr: sample rate
+        mode: 'adlib' | 'harmony' (affects final tuck depth)
+        style: 'drill' | 'trap_hype' | 'rnb_harmony' | 'psychedelic'
+        is_ai: if True, run humanize_ai_vocal() first (tape sat + micro time-shift)
 
     Returns processed stereo array.
     """
-    # ===== EQ: HP @ 300, surgical cuts, LP @ 6000 =====
+    style = style if style in BV_STYLES else 'drill'
+    S = BV_STYLES[style]
+    print(f"     [bv_bus] style={style} (ref: {S['ref']}) | AI humanize: {is_ai}")
+
+    # ===== HUMANIZE (if AI-generated) =====
+    if is_ai:
+        bv_audio = humanize_ai_vocal(bv_audio, sr, drive_db=2.0)
+
+    # ===== EQ via Pro-Q 3 — style-specific HP/LP + cuts =====
     q3 = load_plugin(PLUGINS['proq3'])
-    # Band 1: HP @ 300 Hz (Devvon's "roll off more than lead" — lead uses 120, BV uses 300)
-    set_band(q3, 1, 'Low Cut', 300, slope='24 dB/oct')
-    # Band 2: Cut boxiness @ 400 Hz (Devvon's boxy low-mid)
-    set_band(q3, 2, 'Bell', 400, gain=-2.5, q=1.2)
-    # Band 3: Mid scoop @ 2.5 kHz (Reid Stefan's dynamic cut, Tyler's directive)
-    # This is THE hole for the lead vocal to sit in
-    set_band(q3, 3, 'Bell', 2500, gain=-3.0, q=1.4)
-    # Band 4: LP @ 6 kHz (Tyler's directive; Alex Tumay's "radio filter")
-    set_band(q3, 4, 'High Cut', 6000, slope='24 dB/oct')
+    set_band(q3, 1, 'Low Cut', S['hp'], slope='24 dB/oct')
+    g, f, q = S['mud_cut']
+    set_band(q3, 2, 'Bell', f, gain=g, q=q)
+    g, f, q = S['lead_hole']
+    set_band(q3, 3, 'Bell', f, gain=g, q=q)
+    set_band(q3, 4, 'High Cut', S['lp'], slope='24 dB/oct')
+    bv = Pedalboard([q3])(bv_audio, sr)
 
-    eq_pass = Pedalboard([q3])
-    bv = eq_pass(bv_audio, sr)
-
-    # ===== COMPRESSION: aggressive 4:1, fast attack, fast release =====
-    # Reid Stefan: "harder ratio on adlib compression"
-    # Threshold dynamically computed = RMS - 4 dB so it actually catches peaks
-    # SILENCE GUARD: if BV is mostly silent (rare ad-libs), only compute RMS on the active samples
-    active = np.abs(bv).max(axis=1) > 1e-4  # samples above ~ -80 dB
+    # ===== COMPRESSION — style-specific ratio + threshold = RMS-4 =====
+    active = np.abs(bv).max(axis=1) > 1e-4
     if active.any():
         bv_active = bv[active]
         pre_rms_db = 20 * np.log10(np.sqrt(np.mean(bv_active**2)) + 1e-12)
     else:
-        pre_rms_db = -60.0  # safe default for silent stems
-    pre_rms_db = max(pre_rms_db, -60.0)  # clamp to prevent NaN cascade
+        pre_rms_db = -60.0
+    pre_rms_db = max(pre_rms_db, -60.0)
     bv_thresh = max(pre_rms_db - 4.0, -50.0)
-    comp_pass = Pedalboard([
-        Compressor(threshold_db=bv_thresh, ratio=4.0, attack_ms=3.0, release_ms=30.0)
-    ])
-    bv = comp_pass(bv.astype(np.float32), sr)
+    bv = Pedalboard([
+        Compressor(threshold_db=bv_thresh, ratio=S['comp_ratio'],
+                   attack_ms=S['comp_attack'], release_ms=S['comp_release'])
+    ])(bv.astype(np.float32), sr)
 
-    # ===== STEREO PLACEMENT =====
-    # Per Pensado: "rap vocals — probably wouldn't widen them" — so for drill, subtle widening
-    # Per Alex Tumay: 60/50/45 panning (not full hard-pan)
-    # If incoming bv_audio is ALREADY panned at the placement layer (place_adlibs.py),
-    # this section adds incremental stereo width without doubling up.
+    # ===== STEREO PLACEMENT — style-specific widening =====
     mid = (bv[:,0] + bv[:,1]) / 2
     side = (bv[:,0] - bv[:,1]) / 2
-    # HP the side at 250 Hz so any sub stays mono (industry standard)
     sos_side_hp = butter(4, 250, btype='hp', fs=sr, output='sos')
     side_hp = sosfilt(sos_side_hp, side).astype(np.float32)
-    # Widen highs by 1.3x (per Pensado's "just a little" + Alex Tumay's restraint)
-    side_widened = side_hp * 1.3
+    side_widened = side_hp * S['side_widen']
     L = mid + side_widened
     R = mid - side_widened
     bv = np.stack([L, R], axis=1).astype(np.float32)
 
-    # ===== REVERB: wetter + shorter than lead =====
-    # Devvon: "very very short reverb time" on BV plate
-    # Alex Tumay: "send to a plate reverb to make it more wet"
-    # Goal: BVs sound "back stage" while lead is "front stage" (psychoacoustic depth)
+    # ===== REVERB — style-specific mode + decay + wet blend =====
     verb = load_plugin(PLUGINS['verb'])
     verb_config = {
-        'mode': 'Plate', 'decay': 0.6, 'predelay': 15, 'mix_pct': 100,
-        'wet_blend': 0.30 if mode == 'adlib' else 0.25,  # ad-libs slightly wetter
-        'send_hp': 350, 'colormode': 'eighties',
+        'mode': S['verb_mode'], 'decay': S['verb_decay'], 'predelay': 15, 'mix_pct': 100,
+        'wet_blend': S['verb_wet'], 'send_hp': 350, 'colormode': 'eighties',
         'early_diff': 100, 'late_diff': 100,
     }
     configure_verb(verb, verb_config)
     bv_wet_raw = Pedalboard([verb])(bv, sr)
     sos_v_hp = butter(4, verb_config['send_hp'], btype='hp', fs=sr, output='sos')
-    sos_v_lp = butter(4, 6000, btype='lp', fs=sr, output='sos')  # LP the verb tail too (no air clashing with lead)
+    sos_v_lp = butter(4, 6000, btype='lp', fs=sr, output='sos')
     bv_wet = sosfilt(sos_v_lp, sosfilt(sos_v_hp, bv_wet_raw, axis=0), axis=0).astype(np.float32)
     bv_with_verb = bv * (1 - verb_config['wet_blend']) + bv_wet * verb_config['wet_blend']
 
-    # ===== GAIN STAGING: tuck under lead =====
-    # Tyler spec: -8 dB ad-libs, -12 dB harmonies
-    tuck_db = -8.0 if mode == 'adlib' else -12.0
-    bv_final = bv_with_verb * (10 ** (tuck_db / 20))
+    # ===== TUCK — style-specific depth, harmonies tucked harder than adlibs =====
+    base_tuck = S['tuck_db']
+    if mode == 'harmony':
+        base_tuck -= 4.0  # harmonies sit deeper than ad-libs
+    bv_final = bv_with_verb * (10 ** (base_tuck / 20))
 
     return bv_final.astype(np.float32)
 
@@ -455,7 +527,7 @@ def list_knowledge():
 # ============================================================
 # EXECUTOR
 # ============================================================
-def execute_chain(vocal_path, music_path, output_path, style_override=None, force_full=False, bv_path=None):
+def execute_chain(vocal_path, music_path, output_path, style_override=None, force_full=False, bv_path=None, bv_style='drill', bv_is_ai=True):
     voc, sr = sf.read(vocal_path)
     mus, _  = sf.read(music_path)
     if voc.ndim == 1: voc = np.stack([voc, voc], axis=1)
@@ -665,7 +737,7 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
         print(f"\n=== BACKING VOCAL BUS ===")
         print(f"  BV stem -> dedicated chain: HP 300 | -2.5dB @ 400 | -3dB @ 2.5k (hole for lead) | LP 6k")
         print(f"  Comp 4:1 (Reid Stefan) | side widening 1.3x (Pensado restraint) | Plate verb 0.6s + LP 6k")
-        bv_processed = backing_vocal_bus(bv_stem, sr, mode='adlib')
+        bv_processed = backing_vocal_bus(bv_stem, sr, mode='adlib', style=bv_style, is_ai=bv_is_ai)
         print(f"  BV processed RMS: {rdb(bv_processed):+.1f} (tucked -8 dB under lead)")
         mix = mix + bv_processed
         print(f"  Mixed BV into stereo bus")
@@ -755,12 +827,16 @@ if __name__ == '__main__':
     args = sys.argv[1:]
     force_full = '--force-full-chain' in args
     # Pull --bv=path arg
-    bv_path = None
+    bv_path = None; bv_style = 'drill'; bv_is_ai = True
     for a in args[:]:
         if a.startswith('--bv='):
-            bv_path = a.split('=', 1)[1]
-            args.remove(a)
+            bv_path = a.split('=', 1)[1]; args.remove(a)
+        elif a.startswith('--bv-style='):
+            bv_style = a.split('=', 1)[1]; args.remove(a)
+        elif a == '--bv-human':
+            bv_is_ai = False; args.remove(a)
     args = [a for a in args if not a.startswith('--')]
     vocal, music, out = args[0], args[1], args[2]
     override = args[3] if len(args) > 3 else None
-    execute_chain(vocal, music, out, style_override=override, force_full=force_full, bv_path=bv_path)
+    execute_chain(vocal, music, out, style_override=override, force_full=force_full,
+                  bv_path=bv_path, bv_style=bv_style, bv_is_ai=bv_is_ai)
