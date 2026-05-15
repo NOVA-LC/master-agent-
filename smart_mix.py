@@ -793,7 +793,9 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
         for i in range(len(env)):
             a = max(0, i - win)
             env[i] = np.sqrt((cs[i] - cs[a]) / (i - a + 1))
-        aA = np.exp(-1.0/(sr*0.005)); aR = np.exp(-1.0/(sr*0.060))
+        # V11: slow release 175ms (was 60ms) - prevents audible pumping
+        # Source: Reid Stefan "master sounds way more open when you slow down the attack"
+        aA = np.exp(-1.0/(sr*0.005)); aR = np.exp(-1.0/(sr*0.175))
         smoothed = np.zeros_like(env); prev = 0
         for i in range(len(env)):
             a = aA if env[i] > prev else aR
@@ -802,7 +804,8 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
         peak95 = np.percentile(smoothed, 95) + 1e-9
         env_norm = np.clip(smoothed / peak95, 0, 1)
         env_norm = np.where(env_norm > 0.10, env_norm, 0)
-        gentle_duck = min(3.0, S['pocket']['duck_db'])
+        # V11: max ducking -2.5 dB (was -3 dB cap) - invisible dynamics
+        gentle_duck = min(2.5, S['pocket']['duck_db'])
         sos_pocket = butter(6, [S['pocket']['lo'], S['pocket']['hi']], btype='bp', fs=sr, output='sos')
         pocket_band = sosfilt(sos_pocket, mus, axis=0).astype(np.float32)
         rest_mus = mus - pocket_band
@@ -963,13 +966,16 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
     # and land 1-2 dB GR. No static -12 threshold (that fails when RMS < -12).
     pre_rms_db = rdb(mix)
     pre_rms_db = max(pre_rms_db, -60.0)  # clamp to prevent NaN cascade with silent mixes
-    glue_threshold = max(pre_rms_db - 3.0, -50.0)
+    # V11: threshold = RMS + 1.5 (peaks only) — target -1 to -1.5 dB GR
+    glue_threshold = max(pre_rms_db + 1.5, -50.0)
+    # V11: slow release 300ms (was 50ms) - invisible glue, max 1-1.5 dB GR
+    # Source: BeatsToRapOn "transparent VCA-style bus compressor (e.g., SSL G-)"
     bus_glue = Pedalboard([
-        Compressor(threshold_db=glue_threshold, ratio=2.0, attack_ms=30.0, release_ms=50.0)
+        Compressor(threshold_db=glue_threshold, ratio=2.0, attack_ms=30.0, release_ms=300.0)
     ])
     mix = bus_glue(mix.astype(np.float32), sr)
     post_glue_rms = rdb(mix)
-    print(f"  Glue: 2:1, attack 30ms, release 50ms, threshold {glue_threshold:.1f} dB (= RMS-3)")
+    print(f"  Glue: 2:1, attack 30ms, release 300ms (V11 slow), threshold {glue_threshold:.1f} dB (= RMS-1)")
     print(f"  Pre/Post RMS: {pre_glue_rms:+.1f} -> {post_glue_rms:+.1f} ({post_glue_rms-pre_glue_rms:+.1f} dB GR)")
 
     # ====================================================
@@ -986,11 +992,13 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
             # Enable all 4 bands we touch
             for bn in (1, 2, 5, 7):
                 setattr(ozone, f"{p}_enable_{bn}", True)
-            # Reshape Band 1 from default 100 Hz down to 50 Hz to actually hit the sub
+            # V11: Chest Restoration — lighter sub cut + add 150Hz chest weight boost
             setattr(ozone, f"{p}_frequency_1_hz", 50.0)
-            setattr(ozone, f"{p}_gain_1_db", -2.0)    # sub cut
-            setattr(ozone, f"{p}_frequency_2_hz", 240.0)  # default already 240
-            setattr(ozone, f"{p}_gain_2_db", 1.5)     # bass body boost
+            setattr(ozone, f"{p}_gain_1_db", -1.0)    # V11: -1 (was -2) — preserve some sub
+            setattr(ozone, f"{p}_frequency_2_hz", 150.0)  # V11: 150 (was 240) — chest fundamental
+            setattr(ozone, f"{p}_gain_2_db", 1.5)     # +1.5 dB @ 150 Hz - male rap chest weight
+            setattr(ozone, f"{p}_frequency_3_hz", 240.0)
+            setattr(ozone, f"{p}_gain_3_db", 1.0)     # +1 dB @ 240 - bass body (band 3 enabled by default)
             setattr(ozone, f"{p}_gain_5_db", 0.0)     # 2.7k: ZERO (do not pierce vocal)
             setattr(ozone, f"{p}_gain_7_db", 1.5)     # 10k: gentle air
         ozone.img_width_percent = 22.0
