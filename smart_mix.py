@@ -691,6 +691,62 @@ def atmosphere_bus(lead_vocal, sr, bpm=144):
     atmosphere = room_wet + plate_wet + hall_wet + ping_pong
     return atmosphere
 
+# ============================================================
+# SURGICAL LEAD PASS — minimal EQ on pre-mixed vocals (Glue Mode)
+# Per V12 Surgical EQ Protocol:
+#   - 2 dynamic bands at 3-5 kHz and 7-9 kHz (harshness tamers)
+#   - 1 narrow static cut @ 350 Hz, -1.5 dB max (boxiness, preserves chest)
+#   - Linear Phase mode (parallel-safe — vocal sums with reverb/BV without phase smear)
+# ============================================================
+def surgical_lead_pass(vocal, sr):
+    """
+    Minimal EQ correction for pre-mixed lead vocals in Glue Mode.
+    Uses Pro-Q 3 dynamic bands + narrow static boxiness cut.
+    """
+    q3 = load_plugin(PLUGINS['proq3'])
+
+    # Switch to Linear Phase mode for parallel-bus safety
+    # Pro-Q 3 has a 'phase_mode' param with options including 'Linear Phase'
+    if 'phase_mode' in q3.parameters:
+        valid = q3.parameters['phase_mode'].valid_values
+        for opt in valid:
+            if 'linear' in str(opt).lower():
+                try:
+                    q3.phase_mode = opt
+                    print(f"     Pro-Q3 phase_mode -> {opt} (parallel-safe)")
+                    break
+                except: pass
+
+    # Helper to enable dynamic band
+    def set_dyn_band(n, freq, q, threshold_db, dyn_range_db):
+        setattr(q3, f'band_{n}_used', 'Used')
+        setattr(q3, f'band_{n}_enabled', True)
+        setattr(q3, f'band_{n}_shape', 'Bell')
+        setattr(q3, f'band_{n}_frequency', float(freq))
+        setattr(q3, f'band_{n}_gain', 0.0)  # static gain 0 — only dynamic moves
+        setattr(q3, f'band_{n}_q', float(q))
+        setattr(q3, f'band_{n}_dynamics_enabled', 'Dynamics Enabled')
+        # Threshold sets when the dynamic engages. dynamic_range is amount of cut.
+        try: setattr(q3, f'band_{n}_threshold', float(threshold_db))
+        except: pass
+        try: setattr(q3, f'band_{n}_dynamic_range', float(dyn_range_db))
+        except: pass
+
+    # Band 1: dynamic harshness #1 (3-5 kHz typical mouth resonance / harsh A vowels)
+    set_dyn_band(1, freq=4000, q=1.5, threshold_db=-20, dyn_range_db=-2.5)
+    # Band 2: dynamic harshness #2 (7-9 kHz sibilance overflow / cymbal-clash range)
+    set_dyn_band(2, freq=8000, q=1.5, threshold_db=-22, dyn_range_db=-2.5)
+    # Band 3: STATIC narrow boxiness cut (350 Hz, Q 2.0, -1.5 dB max)
+    setattr(q3, f'band_3_used', 'Used')
+    setattr(q3, f'band_3_enabled', True)
+    setattr(q3, f'band_3_shape', 'Bell')
+    setattr(q3, f'band_3_frequency', 350.0)
+    setattr(q3, f'band_3_gain', -1.5)
+    setattr(q3, f'band_3_q', 2.0)
+
+    print(f"     Pro-Q3 surgical lead pass: dyn -2.5dB@4kHz, dyn -2.5dB@8kHz, static -1.5dB@350Hz (Q 2.0)")
+    return Pedalboard([q3])(vocal.astype(np.float32), sr)
+
 def cite(key, brief=True):
     """Look up a citable source for a decision key. Returns None silently if no KB."""
     if not _KB_AVAILABLE: return None
@@ -781,6 +837,11 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
         VOCAL_STEM_DROP_DB = -2.0
         voc_processed = voc * (10 ** (VOCAL_STEM_DROP_DB / 20))
         print(f"  vocal stem dropped {VOCAL_STEM_DROP_DB:+.1f} dB (sit IN beat, not on top)")
+
+        # V12 SURGICAL EQ PASS — minimal correction on pre-mixed vocal
+        # Dynamic harshness cuts + narrow boxiness cut + linear phase (parallel-safe)
+        print("\n  [V12] Surgical EQ pass on lead vocal (Linear Phase):")
+        voc_processed = surgical_lead_pass(voc_processed, sr)
 
         # Apply only dynamic pocket on music (gentle)
         voc_mono = np.mean(voc_processed, axis=1)

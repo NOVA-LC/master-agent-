@@ -20,6 +20,8 @@ CATEGORY_TAGS = {
     'aura_':      ['atmosphere', 'reverb', 'pre_delay', 'delay_throws', 'depth', '3d_space'],
     'ai_':        ['ai_humanization', 'ai_vocals', 'eleven_labs', 'tape_saturation'],
     'tag_':       ['tag_removal', 'phase_cancellation', 'loop_chop', 'demucs_slice'],
+    'eq_':        ['surgical_eq', 'dynamic_eq', 'frequency_masking', 'sweep_destroy', 'mud', 'boxiness'],
+    'eq2_':       ['surgical_eq', 'dynamic_eq', 'phase_linear', 'frequency_chart', 'harshness'],
     'video_':     ['general_mixing', 'engineer_interview'],
     'article_':   ['mixing_theory', 'mastering_targets', 'LUFS', 'platform_specs'],
 }
