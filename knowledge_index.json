@@ -1,0 +1,388 @@
+{
+  "doc_count": 39,
+  "total_chars": 609238,
+  "documents": {
+    "01_max_lord_juice_wrld_pensados_491.txt": {
+      "source": "Max Lord (Juice WRLD engineer) \u2014 Pensado #491",
+      "categories": [],
+      "char_count": 33720
+    },
+    "06_juice_wrld_10k_vocal_chain.txt": {
+      "source": "06 juice wrld 10k vocal chain",
+      "categories": [],
+      "char_count": 9054
+    },
+    "07_devvon_ny_drill_mixing.txt": {
+      "source": "Help Me Devvon (drill/rap vocal mixing)",
+      "categories": [],
+      "char_count": 9367
+    },
+    "ai_Devvon_mixing_rap_adlibs_perfectly_high_.en.vtt": {
+      "source": "Help Me Devvon (drill/rap vocal mixing)",
+      "categories": [
+        "ai_humanization",
+        "ai_vocals",
+        "eleven_labs",
+        "tape_saturation"
+      ],
+      "char_count": 14060
+    },
+    "ai_Jaycen_Joshua_mixing_background_vocals_p.en.vtt": {
+      "source": "Jaycen Joshua (R&B/Trap BV phase + panning)",
+      "categories": [
+        "ai_humanization",
+        "ai_vocals",
+        "eleven_labs",
+        "tape_saturation"
+      ],
+      "char_count": 2326
+    },
+    "ai_make_AI_vocals_sound_real_processing_mix.en.vtt": {
+      "source": "ai make AI vocals sound real processing mix.en",
+      "categories": [
+        "ai_humanization",
+        "ai_vocals",
+        "eleven_labs",
+        "tape_saturation"
+      ],
+      "char_count": 5949
+    },
+    "ai_Travis_Scott_vocal_delay_reverb_throws_a.en.vtt": {
+      "source": "Travis Scott vocal delay throws (Tumay technique)",
+      "categories": [
+        "ai_humanization",
+        "ai_vocals",
+        "eleven_labs",
+        "tape_saturation"
+      ],
+      "char_count": 4631
+    },
+    "article_01_valhalla_vintage_verb_modes.txt": {
+      "source": "Valhalla DSP official mode documentation",
+      "categories": [
+        "mixing_theory",
+        "mastering_targets",
+        "LUFS",
+        "platform_specs"
+      ],
+      "char_count": 8037
+    },
+    "article_02_fabfilter_pro_q3_dynamic_eq.txt": {
+      "source": "FabFilter Pro-Q 3 help docs",
+      "categories": [
+        "mixing_theory",
+        "mastering_targets",
+        "LUFS",
+        "platform_specs"
+      ],
+      "char_count": 9139
+    },
+    "article_03_antares_autotune_pro_manual.txt": {
+      "source": "Antares Auto-Tune Pro manual",
+      "categories": [
+        "mixing_theory",
+        "mastering_targets",
+        "LUFS",
+        "platform_specs"
+      ],
+      "char_count": 251
+    },
+    "article_04_horiamc_lufs_2026_guide.txt": {
+      "source": "Horia Stan \u2014 LUFS Guide 2026",
+      "categories": [
+        "mixing_theory",
+        "mastering_targets",
+        "LUFS",
+        "platform_specs"
+      ],
+      "char_count": 10667
+    },
+    "article_05_vocal_market_streaming_lufs.txt": {
+      "source": "The Vocal Market \u2014 Streaming LUFS Guide 2026",
+      "categories": [
+        "mixing_theory",
+        "mastering_targets",
+        "LUFS",
+        "platform_specs"
+      ],
+      "char_count": 8466
+    },
+    "article_06_genesis_mix_lab_spotify_mastering.txt": {
+      "source": "Genesis Mix Lab \u2014 Mastering for Spotify",
+      "categories": [
+        "mixing_theory",
+        "mastering_targets",
+        "LUFS",
+        "platform_specs"
+      ],
+      "char_count": 1254
+    },
+    "article_07_beatstorapon_rap_mastering_2026.txt": {
+      "source": "BeatsToRapOn \u2014 Rap Mastering Settings 2026",
+      "categories": [
+        "mixing_theory",
+        "mastering_targets",
+        "LUFS",
+        "platform_specs"
+      ],
+      "char_count": 47254
+    },
+    "article_08_rys_up_audio_trap_vocals_2026.txt": {
+      "source": "Rys Up Audio \u2014 Trap Vocals 2026",
+      "categories": [
+        "mixing_theory",
+        "mastering_targets",
+        "LUFS",
+        "platform_specs"
+      ],
+      "char_count": 23701
+    },
+    "article_09_musicguymixing_rap_vocal_eq.txt": {
+      "source": "Music Guy Mixing \u2014 Rap Vocal EQ",
+      "categories": [
+        "mixing_theory",
+        "mastering_targets",
+        "LUFS",
+        "platform_specs"
+      ],
+      "char_count": 6724
+    },
+    "aura_clean_aura_Devvon_drill_vocal_reverb_delay_filterin.txt": {
+      "source": "Help Me Devvon (drill/rap vocal mixing)",
+      "categories": [
+        "atmosphere",
+        "reverb",
+        "pre_delay",
+        "delay_throws",
+        "depth",
+        "3d_space"
+      ],
+      "char_count": 9650
+    },
+    "aura_clean_aura_reverb_pre-delay_3D_depth_vocal_mixing_p.txt": {
+      "source": "aura clean aura reverb pre-delay 3D depth vocal mixing p",
+      "categories": [
+        "atmosphere",
+        "reverb",
+        "pre_delay",
+        "delay_throws",
+        "depth",
+        "3d_space"
+      ],
+      "char_count": 4774
+    },
+    "aura_clean_aura_Travis_Scott_delay_throws_ping_pong_auto.txt": {
+      "source": "Travis Scott vocal delay throws (Tumay technique)",
+      "categories": [
+        "atmosphere",
+        "reverb",
+        "pre_delay",
+        "delay_throws",
+        "depth",
+        "3d_space"
+      ],
+      "char_count": 660
+    },
+    "aura_clean_aura_Valhalla_VintageVerb_EQ_filter_reverb_ta.txt": {
+      "source": "Valhalla DSP official mode documentation",
+      "categories": [
+        "atmosphere",
+        "reverb",
+        "pre_delay",
+        "delay_throws",
+        "depth",
+        "3d_space"
+      ],
+      "char_count": 3930
+    },
+    "aura_Devvon_drill_vocal_reverb_delay_filterin.en.vtt": {
+      "source": "Help Me Devvon (drill/rap vocal mixing)",
+      "categories": [
+        "atmosphere",
+        "reverb",
+        "pre_delay",
+        "delay_throws",
+        "depth",
+        "3d_space"
+      ],
+      "char_count": 9650
+    },
+    "aura_reverb_pre-delay_3D_depth_vocal_mixing_p.en.vtt": {
+      "source": "aura reverb pre-delay 3D depth vocal mixing p.en",
+      "categories": [
+        "atmosphere",
+        "reverb",
+        "pre_delay",
+        "delay_throws",
+        "depth",
+        "3d_space"
+      ],
+      "char_count": 4774
+    },
+    "aura_Travis_Scott_delay_throws_ping_pong_auto.en.vtt": {
+      "source": "Travis Scott vocal delay throws (Tumay technique)",
+      "categories": [
+        "atmosphere",
+        "reverb",
+        "pre_delay",
+        "delay_throws",
+        "depth",
+        "3d_space"
+      ],
+      "char_count": 660
+    },
+    "aura_Valhalla_VintageVerb_EQ_filter_reverb_ta.en.vtt": {
+      "source": "Valhalla DSP official mode documentation",
+      "categories": [
+        "atmosphere",
+        "reverb",
+        "pre_delay",
+        "delay_throws",
+        "depth",
+        "3d_space"
+      ],
+      "char_count": 3930
+    },
+    "bv_Alex_Tumay_vocal_delay_reverb_throws_trap.en.vtt": {
+      "source": "Alex Tumay (Young Thug engineer)",
+      "categories": [
+        "backing_vocals",
+        "ad_libs",
+        "doubles",
+        "harmonies"
+      ],
+      "char_count": 23322
+    },
+    "bv_clean_bv_Alex_Tumay_vocal_delay_reverb_throws_trap.txt": {
+      "source": "Alex Tumay (Young Thug engineer)",
+      "categories": [
+        "backing_vocals",
+        "ad_libs",
+        "doubles",
+        "harmonies"
+      ],
+      "char_count": 23322
+    },
+    "bv_clean_bv_Help_Me_Devvon_mixing_adlibs_background_vocals.txt": {
+      "source": "Help Me Devvon (drill/rap vocal mixing)",
+      "categories": [
+        "backing_vocals",
+        "ad_libs",
+        "doubles",
+        "harmonies"
+      ],
+      "char_count": 25470
+    },
+    "bv_clean_bv_Pensado_Place_mixing_vocal_harmonies_Dave_Pensado.txt": {
+      "source": "Dave Pensado (Pensado's Place)",
+      "categories": [
+        "backing_vocals",
+        "ad_libs",
+        "doubles",
+        "harmonies"
+      ],
+      "char_count": 2493
+    },
+    "bv_clean_bv_Reid_Stefan_mixing_vocal_doubles_harmonies.txt": {
+      "source": "Reid Stefan (vocal doubles & harmonies)",
+      "categories": [
+        "backing_vocals",
+        "ad_libs",
+        "doubles",
+        "harmonies"
+      ],
+      "char_count": 43469
+    },
+    "bv_Help_Me_Devvon_mixing_adlibs_background_vocals.en.vtt": {
+      "source": "Help Me Devvon (drill/rap vocal mixing)",
+      "categories": [
+        "backing_vocals",
+        "ad_libs",
+        "doubles",
+        "harmonies"
+      ],
+      "char_count": 25470
+    },
+    "bv_Pensado_Place_mixing_vocal_harmonies_Dave_Pensado.en.vtt": {
+      "source": "Dave Pensado (Pensado's Place)",
+      "categories": [
+        "backing_vocals",
+        "ad_libs",
+        "doubles",
+        "harmonies"
+      ],
+      "char_count": 2493
+    },
+    "bv_Reid_Stefan_mixing_vocal_doubles_harmonies.en.vtt": {
+      "source": "Reid Stefan (vocal doubles & harmonies)",
+      "categories": [
+        "backing_vocals",
+        "ad_libs",
+        "doubles",
+        "harmonies"
+      ],
+      "char_count": 43469
+    },
+    "tag_chop_loop_bars_FL_Studio_beat_structure_.en.vtt": {
+      "source": "tag chop loop bars FL Studio beat structure .en",
+      "categories": [
+        "tag_removal",
+        "phase_cancellation",
+        "loop_chop",
+        "demucs_slice"
+      ],
+      "char_count": 14203
+    },
+    "tag_remove_vocals_phase_cancellation_inversi.en.vtt": {
+      "source": "tag remove vocals phase cancellation inversi.en",
+      "categories": [
+        "tag_removal",
+        "phase_cancellation",
+        "loop_chop",
+        "demucs_slice"
+      ],
+      "char_count": 12628
+    },
+    "video_01_max_lord_juice_wrld.txt": {
+      "source": "Max Lord (Juice WRLD engineer) \u2014 Pensado #491",
+      "categories": [
+        "general_mixing",
+        "engineer_interview"
+      ],
+      "char_count": 33659
+    },
+    "video_02_rob_kinelski_billie.txt": {
+      "source": "Rob Kinelski (Billie Eilish mix engineer) \u2014 Pensado #412",
+      "categories": [
+        "general_mixing",
+        "engineer_interview"
+      ],
+      "char_count": 32205
+    },
+    "video_03_sean_costello_valhalla.txt": {
+      "source": "Sean Costello (Valhalla DSP creator)",
+      "categories": [
+        "general_mixing",
+        "engineer_interview"
+      ],
+      "char_count": 54302
+    },
+    "video_04_alex_tumay_young_thug.txt": {
+      "source": "Alex Tumay (Young Thug engineer)",
+      "categories": [
+        "general_mixing",
+        "engineer_interview"
+      ],
+      "char_count": 23626
+    },
+    "video_05_dan_worrall_fabfilter_eq.txt": {
+      "source": "Dan Worrall (FabFilter \u2014 EQ masterclass)",
+      "categories": [
+        "general_mixing",
+        "engineer_interview"
+      ],
+      "char_count": 16479
+    }
+  },
+  "keyword_count": 5581
+}

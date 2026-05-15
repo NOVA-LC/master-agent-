@@ -22,6 +22,44 @@ import sys, os, json, numpy as np, soundfile as sf, pyloudnorm as pyln, librosa
 from pathlib import Path
 from pedalboard import Pedalboard, load_plugin, Compressor
 from scipy.signal import butter, sosfilt
+try:
+    from knowledge_index import get_kb
+    _KB_AVAILABLE = True
+except ImportError:
+    _KB_AVAILABLE = False
+
+# Decision -> KB topic query mapping (every chain choice has a citable source)
+DECISION_CITATIONS = {
+    'vocal_hp_120':       'vocal high pass 120 lead',
+    'vocal_hp_drill':     'drill vocal HP filter clear 808',
+    'vocal_mud_cut':      'vocal EQ cut 300 mud boxy',
+    'vocal_nasal_cut':    'vocal EQ 1kHz nasal cut',
+    'vocal_presence':     'vocal presence 3kHz boost rap',
+    'vocal_air_shelf':    'high shelf air 12k vocal',
+    'comp_4_to_1':        'rap vocal compression ratio 4:1',
+    'deess_5_8k':         'de-ess 5kHz 8kHz sibilance',
+    'autotune_drill_0':   'autotune retune 0 drill hard tune',
+    'autotune_juice_15':  'autotune retune Juice WRLD melodic',
+    'verb_predelay':      'reverb pre-delay 28ms 3d depth psychoacoustic',
+    'verb_hp_400':        'reverb high pass 400 drill 808',
+    'verb_lp_5k':         'reverb low pass 5000 tail recede distance',
+    'verb_sidechain':     'sidechain compress reverb duck vocal Devvon',
+    'verb_concert_hall':  'concert hall reverb dark floating drill',
+    'verb_smooth_plate':  'smooth plate transparent vocal Valhalla',
+    'verb_dirty_plate':   'dirty plate gritty warm Juice WRLD',
+    'delay_eighth_dotted':'1/8 dotted delay BPM ping pong rap',
+    'delay_gated_throw':  'Travis Scott delay throw automate send last word',
+    'bv_hp_300':          'background vocal HP 300 roll off',
+    'bv_lead_hole_2_5k':  'background vocal mid scoop 2.5k hole lead',
+    'bv_lp_6k_radio':     'low pass 6k radio filter ad-lib',
+    'bv_widen_subtle':    'background vocal widen subtle Pensado rap',
+    'bv_tuck_8':          'background vocal tuck -8dB under lead',
+    'ai_humanize_shift':  'AI vocal time shift humanize off grid',
+    'ai_humanize_sat':    'tape saturation analog harmonic AI vocal',
+    'lufs_drill':         'drill rap LUFS -10 target streaming',
+    'tp_minus_1':         'true peak -1 dBTP ITU 1770',
+    'imager_drill':       'stereo imager width drill rap',
+}
 
 REPO = Path(__file__).parent
 KB = REPO / "knowledge_base"
@@ -527,7 +565,159 @@ def list_knowledge():
 # ============================================================
 # EXECUTOR
 # ============================================================
-def execute_chain(vocal_path, music_path, output_path, style_override=None, force_full=False, bv_path=None, bv_style='drill', bv_is_ai=True):
+# ============================================================
+# ATMOSPHERE BUS — restores 3D depth ("aura") to a mix
+# Based on psychoacoustics research + Devvon drill reverb + Alex Tumay throws.
+#
+# Three components:
+#   1. Cathedral/Hall verb with 25-30ms PRE-DELAY (creates front-to-back distance)
+#   2. Reverb tail HP @ 400 + LP @ 5k (no 808 mud, no harsh air clash)
+#   3. Ping-pong delay tail at -18 dB, 1/8 dotted timing (fills phrase gaps)
+# ============================================================
+def _vocal_envelope(audio_mono, sr, win_ms=30, attack_ms=5, release_ms=80):
+    """Compute smoothed normalized vocal envelope [0,1]. Used for sidechain + gating."""
+    win = max(1, int(sr * win_ms / 1000))
+    abs_v = np.abs(audio_mono)
+    cs = np.cumsum(abs_v**2)
+    env = np.zeros_like(abs_v)
+    for i in range(len(env)):
+        a = max(0, i - win)
+        env[i] = np.sqrt((cs[i] - cs[a]) / (i - a + 1))
+    aA = np.exp(-1.0/(sr*attack_ms/1000))
+    aR = np.exp(-1.0/(sr*release_ms/1000))
+    smoothed = np.zeros_like(env); prev = 0
+    for i in range(len(env)):
+        a = aA if env[i] > prev else aR
+        prev = a * prev + (1-a) * env[i]
+        smoothed[i] = prev
+    peak95 = np.percentile(smoothed, 95) + 1e-9
+    return np.clip(smoothed / peak95, 0, 1)
+
+def atmosphere_bus(lead_vocal, sr, bpm=144):
+    """
+    V10 — Devvon/Travis Protocol:
+      - 3 reverb buses (Room close + Plate mid + Hall far)
+      - Hall sidechain-ducked to lead vocal (Devvon drill trick)
+      - Ping-pong delay GATED to phrase ends only (Travis throw trick)
+      - LP @ 5k on Plate/Hall (recede), Room stays brighter (close-up body)
+    """
+    from pedalboard import Delay
+    if lead_vocal.ndim == 1:
+        lead_vocal = np.stack([lead_vocal, lead_vocal], axis=1)
+    lead = lead_vocal.astype(np.float32)
+    mono = np.mean(lead, axis=1).astype(np.float32)
+
+    # ===== ENVELOPE for sidechain + gating =====
+    print("  [atmos] computing vocal envelope...")
+    env = _vocal_envelope(mono, sr)
+    # Active vs silent: > 0.15 = vocal active
+    vocal_active = env > 0.15
+
+    # ===== REVERB 1: ROOM (close 3D body) =====
+    room = load_plugin(PLUGINS['verb'])
+    configure_verb(room, {
+        'mode': 'Room', 'decay': 0.5, 'predelay': 15, 'mix_pct': 100,
+        'send_hp': 300, 'colormode': 'eighties',
+        'early_diff': 90, 'late_diff': 100,
+    })
+    room_wet = Pedalboard([room])(lead, sr)
+    sos_hp_300 = butter(4, 300, btype='hp', fs=sr, output='sos')
+    room_wet = sosfilt(sos_hp_300, room_wet, axis=0).astype(np.float32)
+    # Room stays brighter (no LP @ 5k) — adds proximity body
+    room_wet *= 10 ** (-18.0 / 20)
+    print(f"  [atmos] Room (close): decay 0.5s, HP 300 (NO LP — bright body), send -18 dB")
+
+    # ===== REVERB 2: PLATE (mid width) =====
+    plate = load_plugin(PLUGINS['verb'])
+    configure_verb(plate, {
+        'mode': 'Plate', 'decay': 1.5, 'predelay': 22, 'mix_pct': 100,
+        'send_hp': 400, 'colormode': 'eighties',
+        'early_diff': 100, 'late_diff': 100,
+    })
+    plate_wet = Pedalboard([plate])(lead, sr)
+    sos_hp_400 = butter(4, 400, btype='hp', fs=sr, output='sos')
+    sos_lp_5k  = butter(4, 5000, btype='lp', fs=sr, output='sos')
+    plate_wet = sosfilt(sos_lp_5k, sosfilt(sos_hp_400, plate_wet, axis=0), axis=0).astype(np.float32)
+    plate_wet *= 10 ** (-22.0 / 20)
+    print(f"  [atmos] Plate (mid width): decay 1.5s, HP 400 + LP 5k, send -22 dB")
+
+    # ===== REVERB 3: CONCERT HALL (far aura, SIDECHAIN-DUCKED) =====
+    hall = load_plugin(PLUGINS['verb'])
+    configure_verb(hall, {
+        'mode': 'Concert Hall', 'decay': 3.5, 'predelay': 28, 'mix_pct': 100,
+        'send_hp': 400, 'colormode': 'eighties',
+        'early_diff': 80, 'late_diff': 100,
+    })
+    hall_wet_raw = Pedalboard([hall])(lead, sr)
+    hall_wet = sosfilt(sos_lp_5k, sosfilt(sos_hp_400, hall_wet_raw, axis=0), axis=0).astype(np.float32)
+    # SIDECHAIN DUCK (Devvon trick): when vocal_active, hall verb ducked -10 dB
+    # When vocal silent, hall verb at full -18 dB (blooms into the gap)
+    DUCK_DB = 10.0
+    duck_curve_db = -DUCK_DB * env  # -10 dB at peak vocal, 0 dB when silent
+    duck_lin = (10 ** (duck_curve_db / 20)).astype(np.float32)
+    hall_wet = hall_wet * duck_lin[:, None]
+    hall_wet *= 10 ** (-18.0 / 20)
+    print(f"  [atmos] Hall (far AURA, sidechain-ducked -10 dB on vocal): decay 3.5s, 28ms predelay, send -18 dB")
+
+    # ===== PING-PONG DELAY (Travis throw, GATED to phrase ends) =====
+    beat_sec = 60.0 / bpm
+    dly_1_8_dotted = beat_sec * 0.75
+    delay_L = Pedalboard([Delay(delay_seconds=dly_1_8_dotted,     feedback=0.42, mix=1.0)])
+    delay_R = Pedalboard([Delay(delay_seconds=dly_1_8_dotted * 2, feedback=0.42, mix=1.0)])
+    mono_stereo = np.stack([mono, mono], axis=1).astype(np.float32)
+    wet_L = delay_L(mono_stereo, sr)
+    wet_R = delay_R(mono_stereo, sr)
+    ping_pong = np.stack([wet_L[:, 0] * 0.9, wet_R[:, 1] * 0.9], axis=1).astype(np.float32)
+    ping_pong = sosfilt(sos_lp_5k, sosfilt(sos_hp_400, ping_pong, axis=0), axis=0).astype(np.float32)
+
+    # GATE: only let delay through when vocal is QUIET (phrase end)
+    # gate = (1 - env) -> high when silent, low when vocal loud
+    gate = (1.0 - env).astype(np.float32)
+    # Sharpen: only really open when vocal drops below 0.25 of peak
+    gate = np.clip((gate - 0.7) / 0.25, 0, 1)  # opens fully when env < ~0.05, closed when env > 0.30
+    # Smooth gate to avoid clicks
+    aA = np.exp(-1.0/(sr*0.030))  # 30ms attack (opens slowly when vocal stops)
+    aR = np.exp(-1.0/(sr*0.005))  # 5ms release (closes fast when vocal resumes)
+    smooth_gate = np.zeros_like(gate); prev = 0
+    for i in range(len(gate)):
+        a = aA if gate[i] > prev else aR
+        prev = a * prev + (1-a) * gate[i]
+        smooth_gate[i] = prev
+    ping_pong = ping_pong * smooth_gate[:, None]
+    ping_pong *= 10 ** (-18.0 / 20)
+    print(f"  [atmos] Ping-pong delay: 1/8 dotted ({dly_1_8_dotted*1000:.0f}ms), GATED (only fires at phrase ends), send -18 dB")
+
+    # Sum atmosphere
+    atmosphere = room_wet + plate_wet + hall_wet + ping_pong
+    return atmosphere
+
+def cite(key, brief=True):
+    """Look up a citable source for a decision key. Returns None silently if no KB."""
+    if not _KB_AVAILABLE: return None
+    topic = DECISION_CITATIONS.get(key, key)
+    try:
+        return get_kb().cite(topic, brief=brief)
+    except: return None
+
+def log_decision(decisions_log, key, value, citation=None):
+    """Append a decision row + source citation to the log dict."""
+    decisions_log.append({'key': key, 'value': str(value), 'source': citation or 'general engineering'})
+
+def execute_chain(vocal_path, music_path, output_path, style_override=None, force_full=False, bv_path=None, bv_style='drill', bv_is_ai=True, atmosphere=True):
+    # Initialize decisions log (saved per render)
+    decisions = []
+
+    # KB summary at startup
+    if _KB_AVAILABLE:
+        try:
+            kb = get_kb()
+            n_docs = len(kb.documents)
+            n_chars = sum(m['char_count'] for m in kb.metadata.values())
+            print(f"=== KNOWLEDGE BASE LOADED ===")
+            print(f"  {n_docs} indexed documents ({n_chars:,} chars)")
+            print(f"  Every decision cites a source — see decisions.log\n")
+        except Exception as e:
+            print(f"  (KB load skipped: {e})")
     voc, sr = sf.read(vocal_path)
     mus, _  = sf.read(music_path)
     if voc.ndim == 1: voc = np.stack([voc, voc], axis=1)
@@ -733,6 +923,24 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
     # Routes ad-libs through their OWN chain (NOT lead chain).
     # Prevents lead/BV clash and phase issues.
     # ====================================================
+    # =========================================================
+    # ATMOSPHERE BUS — generate stereo aura from lead vocal
+    # Added BEFORE backing vocals so the BV chain doesn't trigger on the wet send
+    # =========================================================
+    if atmosphere:
+        print(f"\n=== ATMOSPHERE BUS (3D aura) ===")
+        # Compute BPM for delay timing — use detected feats tempo
+        bpm_for_delay = feats['tempo'] if feats['tempo'] > 80 else feats['tempo'] * 2
+        atmos = atmosphere_bus(voc, sr, bpm=bpm_for_delay)
+        # Trim/pad to match mix length
+        if len(atmos) > len(mix):
+            atmos = atmos[:len(mix)]
+        elif len(atmos) < len(mix):
+            pad = np.zeros((len(mix) - len(atmos), 2), dtype=atmos.dtype)
+            atmos = np.concatenate([atmos, pad], axis=0)
+        mix = mix + atmos
+        print(f"  Atmosphere summed into mix")
+
     if bv_stem is not None:
         print(f"\n=== BACKING VOCAL BUS ===")
         print(f"  BV stem -> dedicated chain: HP 300 | -2.5dB @ 400 | -3dB @ 2.5k (hole for lead) | LP 6k")
@@ -819,15 +1027,49 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
     print(f"\n=== FINAL ===")
     print(f"  Mode: {'GLUE' if glue_mode else 'FULL'} | Style: {style}")
     print(f"  LUFS: {final_lufs:+.1f} | Peak: {db(mastered):+.1f}")
+
+    # Save decisions log per render with citations
+    if glue_mode:
+        log_decision(decisions, 'mode', 'GLUE', 'Pre-Mix Detector (>= 2/4 indicators of pre-treated audio)')
+    log_decision(decisions, 'style_detected', style, f"feature classifier (BPM={feats['tempo']:.1f}, key={feats['key']})")
+    log_decision(decisions, 'lufs_target', S['lufs_target'], cite('lufs_drill'))
+    log_decision(decisions, 'true_peak_ceiling', '-1 dBTP', cite('tp_minus_1'))
+    log_decision(decisions, 'ozone_imager_width', f"+{S['ozone_width']}%", cite('imager_drill'))
+    if atmosphere:
+        log_decision(decisions, 'verb_predelay', '28 ms', cite('verb_predelay'))
+        log_decision(decisions, 'verb_hp_400', 'HP filter on verb tail @ 400 Hz', cite('verb_hp_400'))
+        log_decision(decisions, 'verb_lp_5k', 'LP filter on verb tail @ 5 kHz', cite('verb_lp_5k'))
+        log_decision(decisions, 'verb_sidechain_duck', 'Hall verb ducks -10 dB on lead vocal', cite('verb_sidechain'))
+        log_decision(decisions, 'delay_gated', 'Ping-pong only fires at phrase ends', cite('delay_gated_throw'))
+        log_decision(decisions, 'delay_timing', '1/8 dotted at detected BPM', cite('delay_eighth_dotted'))
+    if bv_stem is not None:
+        log_decision(decisions, 'bv_chain_used', f"backing_vocal_bus style={bv_style}", cite('bv_hp_300'))
+        log_decision(decisions, 'bv_lead_hole', '-3 dB @ 2.5 kHz (carved hole for lead)', cite('bv_lead_hole_2_5k'))
+        log_decision(decisions, 'bv_radio_lp', 'LP @ 6 kHz on BV', cite('bv_lp_6k_radio'))
+        log_decision(decisions, 'bv_tuck', f"BV tucked {BV_STYLES[bv_style]['tuck_db']} dB", cite('bv_tuck_8'))
+        log_decision(decisions, 'ai_humanize', 'time shift + tape sat', cite('ai_humanize_shift'))
+    # Save log
+    out_dir = Path(output_path).parent
+    log_path = out_dir / (Path(output_path).stem + '.decisions.json')
+    log_path.write_text(json.dumps({
+        'output': output_path,
+        'final_lufs': float(final_lufs),
+        'final_peak': float(db(mastered)),
+        'style': style,
+        'glue_mode': bool(glue_mode),
+        'decisions': decisions,
+    }, indent=2, default=str), encoding='utf-8')
+    print(f"  Decisions log: {log_path}")
+
     sf.write(output_path, mastered, sr, subtype='PCM_16')
     return {'mode': 'glue' if glue_mode else 'full', 'style': style, 'lufs': final_lufs,
-            'features': feats, 'premix_evidence': ev, 'output': output_path}
+            'features': feats, 'premix_evidence': ev, 'output': output_path, 'decisions': decisions}
 
 if __name__ == '__main__':
     args = sys.argv[1:]
     force_full = '--force-full-chain' in args
     # Pull --bv=path arg
-    bv_path = None; bv_style = 'drill'; bv_is_ai = True
+    bv_path = None; bv_style = 'drill'; bv_is_ai = True; atmosphere = True
     for a in args[:]:
         if a.startswith('--bv='):
             bv_path = a.split('=', 1)[1]; args.remove(a)
@@ -835,8 +1077,10 @@ if __name__ == '__main__':
             bv_style = a.split('=', 1)[1]; args.remove(a)
         elif a == '--bv-human':
             bv_is_ai = False; args.remove(a)
+        elif a == '--no-atmosphere':
+            atmosphere = False; args.remove(a)
     args = [a for a in args if not a.startswith('--')]
     vocal, music, out = args[0], args[1], args[2]
     override = args[3] if len(args) > 3 else None
     execute_chain(vocal, music, out, style_override=override, force_full=force_full,
-                  bv_path=bv_path, bv_style=bv_style, bv_is_ai=bv_is_ai)
+                  bv_path=bv_path, bv_style=bv_style, bv_is_ai=bv_is_ai, atmosphere=atmosphere)
