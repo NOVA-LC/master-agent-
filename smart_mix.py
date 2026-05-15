@@ -40,8 +40,105 @@ Usage:
 """
 import sys, os, json, numpy as np, soundfile as sf, pyloudnorm as pyln, librosa
 from pathlib import Path
-from pedalboard import Pedalboard, load_plugin, Compressor, HighpassFilter, LowpassFilter, PeakFilter, HighShelfFilter, LowShelfFilter
+from pedalboard import Pedalboard, load_plugin, Compressor, HighpassFilter, LowpassFilter, PeakFilter, HighShelfFilter, LowShelfFilter, Distortion, Gain
 from scipy.signal import butter, sosfilt
+
+# ============================================================
+# DEEPGRAM INTENT PARSER — permanent integration (not a script)
+# ============================================================
+def parse_vocal_intent(vocal_path, cache=True):
+    """
+    Transcribe vocal with Deepgram, return semantic intent:
+      - cadence_wps: words per second (RAP > 2.5, SUNG < 1.5)
+      - sentiment: positive | negative | neutral (from text)
+      - transcript: full lyrics
+      - confidence: 0-1
+      - classification: 'rap' | 'sung' | 'mixed'
+
+    Used to OVERRIDE BPM-only genre detection when cadence indicates
+    a mismatch (e.g., R&B detected by audio but cadence is RAP).
+    """
+    cache_path = Path(vocal_path).with_suffix('.dg_transcript.json')
+    if cache and cache_path.exists():
+        try: return json.loads(cache_path.read_text(encoding='utf-8'))
+        except: pass
+
+    api_key = os.environ.get('DEEPGRAM_API_KEY')
+    if not api_key:
+        return {'enabled': False, 'reason': 'no DEEPGRAM_API_KEY'}
+
+    try:
+        from deepgram import DeepgramClient, PrerecordedOptions
+    except ImportError:
+        return {'enabled': False, 'reason': 'deepgram-sdk not installed'}
+
+    try:
+        client = DeepgramClient(api_key)
+        with open(vocal_path, 'rb') as f:
+            payload = {'buffer': f.read()}
+        options = PrerecordedOptions(
+            model='nova-2', smart_format=True, punctuate=True,
+            paragraphs=True, utterances=True, detect_language=True,
+            profanity_filter=False,
+        )
+        response = client.listen.rest.v('1').transcribe_file(payload, options).to_dict()
+        alt = response.get('results', {}).get('channels', [{}])[0].get('alternatives', [{}])[0]
+        transcript = alt.get('transcript', '')
+        confidence = float(alt.get('confidence', 0))
+        words = alt.get('words', [])
+        if words and len(words) > 5:
+            duration = words[-1]['end'] - words[0]['start']
+            cadence_wps = len(words) / duration if duration > 0 else 0
+        else:
+            duration = 0; cadence_wps = 0
+        # Classify cadence
+        if cadence_wps > 2.5:
+            classification = 'rap'
+        elif cadence_wps < 1.5:
+            classification = 'sung'
+        else:
+            classification = 'mixed'
+        # Crude sentiment via lexical markers
+        neg_words = ['die','dead','lost','pain','hate','alone','tired','sad','broken','bust','dark','manipulation','lies','cap']
+        pos_words = ['love','life','happy','good','great','best','win','blessed','beautiful','shine','rise']
+        text_lower = transcript.lower()
+        neg_count = sum(text_lower.count(w) for w in neg_words)
+        pos_count = sum(text_lower.count(w) for w in pos_words)
+        if neg_count > pos_count * 2:
+            sentiment = 'negative'  # emo / dark
+        elif pos_count > neg_count * 2:
+            sentiment = 'positive'  # hype
+        else:
+            sentiment = 'neutral'
+        result = {
+            'enabled': True, 'transcript': transcript, 'confidence': confidence,
+            'word_count': len(words), 'duration_s': duration,
+            'cadence_wps': cadence_wps, 'classification': classification,
+            'sentiment': sentiment, 'neg_words': neg_count, 'pos_words': pos_count,
+        }
+        if cache:
+            cache_path.write_text(json.dumps({k: v for k, v in result.items() if k != 'transcript'} | {'transcript': transcript[:5000]}, indent=2), encoding='utf-8')
+        return result
+    except Exception as e:
+        return {'enabled': False, 'reason': f'deepgram error: {e}'}
+
+def override_style_from_intent(audio_style, intent):
+    """Apply intent-based override to audio-derived style."""
+    if not intent.get('enabled'): return audio_style, 'no_override'
+    cls = intent.get('classification')
+    sent = intent.get('sentiment')
+    if cls == 'rap':
+        if audio_style in ('rnb_modern', 'pop_intimate'):
+            # Audio says R&B but cadence is RAP. Likely emo_rap.
+            if sent == 'negative': return 'emo_rap', 'cadence=RAP + sentiment=NEG -> emo_rap (Juice WRLD lane)'
+            return 'modern_trap', 'cadence=RAP overriding R&B'
+        # Already a rap style; refine via sentiment
+        if sent == 'negative' and audio_style not in ('emo_rap',):
+            return 'emo_rap', 'sentiment=NEG -> emo_rap'
+    elif cls == 'sung':
+        if audio_style in ('ny_drill', 'uk_drill', 'hyperpop'):
+            return 'melodic_trap', 'cadence=SUNG overriding drill'
+    return audio_style, 'no_override (cadence matches audio classifier)'
 try:
     from knowledge_index import get_kb
     _KB_AVAILABLE = True
@@ -726,7 +823,74 @@ def log_decision(decisions_log, key, value, citation=None):
     """Append a decision row + source citation to the log dict."""
     decisions_log.append({'key': key, 'value': str(value), 'source': citation or 'general engineering'})
 
-def execute_chain(vocal_path, music_path, output_path, style_override=None, force_full=False, bv_path=None, bv_style='drill', bv_is_ai=True, atmosphere=True):
+# ============================================================
+# PRE-MIXED POLISH — Advanced Polish Pipeline
+# When vocal arrives already-treated (FL preset chain baked in),
+# DON'T skip atmosphere — pivot to mastering work that ADDS value:
+#   1. Low-mid saturation on vocal (150-400 Hz) for "gravel/manliness"
+#   2. M/S beat carving (Mid cut 2k for vocal pocket, Side boost for width)
+#   3. Dynamic resonance suppression (catch vocal-reverb-vs-beat clashes)
+# Sources: classic mastering technique (analog grit + M/S surgery)
+# ============================================================
+def saturate_low_mid(audio, sr, drive_db=2.0, lo=150, hi=400):
+    """Bandpass 150-400 Hz, apply tanh saturation, sum back. Adds harmonics in chest range."""
+    sos = butter(4, [lo, hi], btype='bp', fs=sr, output='sos')
+    band = sosfilt(sos, audio, axis=0).astype(np.float32)
+    drive = 10 ** (drive_db/20)
+    saturated_band = np.tanh(band * drive) / drive
+    # Mix saturated band back IN (add harmonics, don't replace fundamental)
+    rest = audio - band
+    return (rest + saturated_band * 1.0).astype(np.float32)
+
+def ms_beat_carve(music, sr, mid_cut_freq=2000, mid_cut_db=-1.5, side_boost_freq=1500, side_boost_db=1.5):
+    """Mid/Side processing on the music:
+       - Mid channel: gentle cut at 2 kHz (vocal pocket)
+       - Side channel: shelf boost at 1.5 kHz (widen the beat around the vocal)
+    """
+    mid = (music[:,0] + music[:,1]) / 2
+    side = (music[:,0] - music[:,1]) / 2
+    mid_stereo = np.stack([mid, mid], axis=1).astype(np.float32)
+    side_stereo = np.stack([side, side], axis=1).astype(np.float32)
+    # Mid: gentle cut at 2 kHz
+    mid_eq = Pedalboard([PeakFilter(cutoff_frequency_hz=mid_cut_freq, gain_db=mid_cut_db, q=1.0)])
+    mid_processed = mid_eq(mid_stereo, sr)[:,0]
+    # Side: high shelf boost
+    side_eq = Pedalboard([HighShelfFilter(cutoff_frequency_hz=side_boost_freq, gain_db=side_boost_db, q=0.7)])
+    side_processed = side_eq(side_stereo, sr)[:,0]
+    # Recombine: L = M+S, R = M-S
+    L = mid_processed + side_processed
+    R = mid_processed - side_processed
+    return np.stack([L, R], axis=1).astype(np.float32)
+
+def dynamic_resonance_suppress(audio, sr):
+    """Catch resonant peaks in mid range (where reverb tail clashes with beat).
+       3-band split (low/mid/high), gentle compression on mid band only.
+    """
+    sos_lo = butter(4, 250, btype='lp', fs=sr, output='sos')
+    sos_hi = butter(4, 2000, btype='hp', fs=sr, output='sos')
+    low = sosfilt(sos_lo, audio, axis=0).astype(np.float32)
+    high = sosfilt(sos_hi, audio, axis=0).astype(np.float32)
+    mid = audio - low - high
+    # Compress only the mid band (resonances live here)
+    mid_rms = np.sqrt(np.mean(mid**2)) + 1e-12
+    mid_rms_db = 20*np.log10(mid_rms)
+    mid_compressed = Pedalboard([
+        Compressor(threshold_db=max(mid_rms_db + 3.0, -40), ratio=2.5, attack_ms=10, release_ms=80)
+    ])(mid.astype(np.float32), sr)
+    return (low + mid_compressed + high).astype(np.float32)
+
+def pre_mixed_polish(vocal, music, sr):
+    """Run the Advanced Polish pipeline. Vocal in, vocal+music out (still separate, summed by caller).
+       Saturation on vocal + M/S carving on music + resonance suppression."""
+    print("  [polish] low-mid saturation on vocal (150-400 Hz, +2 dB drive) -> gravel + chest")
+    vocal_polished = saturate_low_mid(vocal, sr, drive_db=2.0, lo=150, hi=400)
+    print("  [polish] M/S beat carving: Mid -1.5 dB @ 2 kHz (pocket), Side +1.5 dB @ 1.5 kHz (widen)")
+    music_polished = ms_beat_carve(music, sr)
+    print("  [polish] dynamic resonance suppression on music (mid-band, 2.5:1)")
+    music_polished = dynamic_resonance_suppress(music_polished, sr)
+    return vocal_polished, music_polished
+
+def execute_chain(vocal_path, music_path, output_path, style_override=None, force_full=False, bv_path=None, bv_style='drill', bv_is_ai=True, atmosphere=True, use_intent=True):
     # Initialize decisions log (saved per render)
     decisions = []
 
@@ -784,12 +948,44 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
     print(f"  BPM: {feats['tempo']:.1f} | Key: {feats['key']} (conf {feats['key_confidence']:.2f})")
     print(f"  Centroid: {feats['centroid']:.0f} Hz | Sub: {feats['sub_ratio']:.2f} | Onsets: {feats['onset_rate']:.1f}/s")
 
+    # V18: Deepgram intent parsing OVERRIDES BPM-only classification
+    # Load key from user env if not already in process env (Windows User scope)
+    if not os.environ.get('DEEPGRAM_API_KEY'):
+        try:
+            import subprocess
+            result = subprocess.run(['powershell','-Command',
+                "[Environment]::GetEnvironmentVariable('DEEPGRAM_API_KEY','User')"],
+                capture_output=True, text=True, timeout=5)
+            key = result.stdout.strip()
+            if key: os.environ['DEEPGRAM_API_KEY'] = key
+        except: pass
+    intent = {}
+    if use_intent and not style_override:
+        print(f"\n=== DEEPGRAM INTENT PARSE ===")
+        intent = parse_vocal_intent(vocal_path)
+        if intent.get('enabled'):
+            print(f"  Words: {intent['word_count']} | Cadence: {intent['cadence_wps']:.2f} wps -> {intent['classification'].upper()}")
+            print(f"  Sentiment: {intent['sentiment']} (neg={intent['neg_words']}, pos={intent['pos_words']})")
+            print(f"  Confidence: {intent['confidence']:.2f}")
+        else:
+            print(f"  (intent disabled: {intent.get('reason','unknown')})")
+
     print(f"\n=== STYLE CLASSIFICATION ===")
     if style_override:
         style, conf = style_override, 1.0
+        print(f"  CLI override -> {style}")
     else:
-        style, conf = classify_style(feats)
-    print(f"  Style: {style} (conf {conf:.2f}) — {STYLES[style]['description']}")
+        audio_style, conf = classify_style(feats)
+        if intent.get('enabled'):
+            style, reason = override_style_from_intent(audio_style, intent)
+            if style != audio_style:
+                print(f"  Audio classifier: {audio_style} -> Intent OVERRIDE -> {style}")
+                print(f"    Reason: {reason}")
+            else:
+                print(f"  Style: {audio_style} (intent confirmed)")
+        else:
+            style = audio_style
+    print(f"  Final style: {style} (conf {conf:.2f}) — {STYLES[style]['description']}")
 
     S = STYLES[style]
 
@@ -952,9 +1148,99 @@ def execute_chain(vocal_path, music_path, output_path, style_override=None, forc
     # Prevents lead/BV clash and phase issues.
     # ====================================================
     # =========================================================
-    # ATMOSPHERE BUS — generate stereo aura from lead vocal
-    # Added BEFORE backing vocals so the BV chain doesn't trigger on the wet send
+    # V18 BAKED-REVERB DETECTOR — proper decay-slope analysis
     # =========================================================
+    # Method: Find ALL moments where vocal energy peaks. For each peak,
+    # measure how quickly energy decays in the next 1.5 seconds.
+    # - DRY vocals: cliff-off, decay reaches -45 dB in <100 ms
+    # - REVERB'd vocals: gradual fade, decay takes 300-2000+ ms
+    # Use the MEDIAN decay across all detected peaks for robustness against
+    # overlapping clips (in merged vocals).
+    print(f"\n=== BAKED-REVERB DETECTOR ===")
+    voc_mono_dbg = np.mean(voc, axis=1) if voc.ndim > 1 else voc
+    abs_v_dbg = np.abs(voc_mono_dbg.astype(np.float32))
+    env_w = max(1, int(sr * 0.025))  # 25ms smoothing
+    env_dbg = np.convolve(abs_v_dbg, np.ones(env_w, dtype=np.float32)/env_w, mode='same')
+    env_db = 20*np.log10(env_dbg + 1e-9)
+
+    # Find local maxima (peaks) where env > -20 dB (loud moments)
+    threshold_peak = -20.0
+    threshold_decay = -45.0
+    max_decay_window = int(sr * 1.5)  # 1.5s after peak
+
+    # Sample every 100ms looking for peaks
+    decay_times_ms = []
+    step = int(sr * 0.1)
+    for i in range(step, len(env_db) - max_decay_window, step):
+        if env_db[i] > threshold_peak:
+            # Check that this is a LOCAL peak (not still rising)
+            if i + step < len(env_db) and env_db[i+step] < env_db[i]:
+                # Find time until env < threshold_decay (or never)
+                for j in range(i, min(i + max_decay_window, len(env_db))):
+                    if env_db[j] < threshold_decay:
+                        decay_ms = (j - i) / sr * 1000
+                        decay_times_ms.append(decay_ms)
+                        break
+
+    has_baked_reverb = False
+    if len(decay_times_ms) >= 5:
+        sorted_decays = sorted(decay_times_ms)
+        median_decay = sorted_decays[len(sorted_decays)//2]
+        # Use 25th percentile too — robust against momentary overlap
+        p25_decay = sorted_decays[len(sorted_decays)//4]
+        has_baked_reverb = p25_decay > 250  # even the FASTEST 25% of decays are > 250ms
+        print(f"  Found {len(decay_times_ms)} peak-decay measurements")
+        print(f"  Decay 25th %ile: {p25_decay:.0f} ms | median: {median_decay:.0f} ms")
+        print(f"  -> {'BAKED-IN REVERB DETECTED' if has_baked_reverb else 'mostly dry (no significant tail)'}")
+    else:
+        print(f"  Only {len(decay_times_ms)} measurements — too few for reliable detection. Falling back to premix indicator.")
+        has_baked_reverb = glue_mode  # fall back to premix detector signal
+
+    # =========================================================
+    # ROUTING DECISION: Advanced Polish vs Atmosphere Bus
+    # =========================================================
+    if has_baked_reverb and glue_mode:
+        # ADVANCED POLISH PATH: vocal already has reverb → enhance instead of stack
+        print(f"\n=== ADVANCED POLISH (vocal pre-reverbed, no atmosphere) ===")
+        voc_polished, mus_polished = pre_mixed_polish(voc_processed, mus, sr)
+        # Recompute the music_pocketed step with polished music
+        m_len = min(len(voc_polished), len(mus_polished), len(mix))
+        # Recreate mix with polished elements
+        # Apply same pocket envelope to polished music
+        voc_mono_p = np.mean(voc_polished[:m_len], axis=1)
+        sos_voc_bp = butter(4, [200, 4000], btype='bp', fs=sr, output='sos')
+        voc_band_p = sosfilt(sos_voc_bp, voc_mono_p).astype(np.float32)
+        abs_voc_p = np.abs(voc_band_p)
+        win_p = int(sr * 0.020)
+        cs_p = np.cumsum(abs_voc_p**2)
+        env_p = np.zeros_like(abs_voc_p)
+        for i in range(len(env_p)):
+            a = max(0, i - win_p)
+            env_p[i] = np.sqrt((cs_p[i] - cs_p[a]) / (i - a + 1))
+        aA = np.exp(-1.0/(sr*0.005)); aR = np.exp(-1.0/(sr*0.175))
+        smoothed_p = np.zeros_like(env_p); prev = 0
+        for i in range(len(env_p)):
+            a = aA if env_p[i] > prev else aR
+            prev = a * prev + (1-a) * env_p[i]
+            smoothed_p[i] = prev
+        peak95 = np.percentile(smoothed_p, 95) + 1e-9
+        env_norm_p = np.clip(smoothed_p / peak95, 0, 1)
+        env_norm_p = np.where(env_norm_p > 0.10, env_norm_p, 0)
+        sos_pocket_p = butter(6, [S['pocket']['lo'], S['pocket']['hi']], btype='bp', fs=sr, output='sos')
+        pocket_band_p = sosfilt(sos_pocket_p, mus_polished[:m_len], axis=0).astype(np.float32)
+        rest_mus_p = mus_polished[:m_len] - pocket_band_p
+        duck_lin_p = 10**((-min(2.5, S['pocket']['duck_db'])*env_norm_p)/20)
+        mus_pocketed_p = rest_mus_p + pocket_band_p * duck_lin_p[:, None]
+        # Balance
+        DEFAULT_LEAD_DB = -1.5
+        voc_rms_p = rdb(voc_polished[:m_len]); mus_rms_p = rdb(mus_pocketed_p)
+        gap_p = voc_rms_p - mus_rms_p
+        bed_atten_p = -(DEFAULT_LEAD_DB - gap_p) if gap_p < DEFAULT_LEAD_DB else 0
+        bed_atten_p = max(bed_atten_p, -6.0)
+        mix = voc_polished[:m_len] + mus_pocketed_p * (10**(bed_atten_p/20))
+        atmosphere = False  # disable atmosphere bus since polish is in
+        print(f"  Advanced Polish summed. Atmosphere BUS disabled (vocal pre-reverbed).")
+
     if atmosphere:
         print(f"\n=== ATMOSPHERE BUS (3D aura) ===")
         # Compute BPM for delay timing — use detected feats tempo
