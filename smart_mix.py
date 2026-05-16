@@ -851,7 +851,16 @@ def log_decision(decisions_log, key, value, citation=None):
 #   3. Dynamic resonance suppression (catch vocal-reverb-vs-beat clashes)
 # Sources: classic mastering technique (analog grit + M/S surgery)
 # ============================================================
-def saturate_low_mid(audio, sr, drive_db=2.0, lo=150, hi=400):
+def dehum_vocal(audio, sr, hum_freqs=(60, 120, 180, 240, 300), depth_db=-12, q=20):
+    """Surgical notch filters at electrical hum harmonics.
+    Default targets 60Hz mains + harmonics (120/180/240/300).
+    High Q (20) keeps notch narrow — kills hum without touching musical content.
+    """
+    out = audio.astype(np.float32).copy()
+    notches = [PeakFilter(cutoff_frequency_hz=f, gain_db=depth_db, q=q) for f in hum_freqs]
+    return Pedalboard(notches)(out, sr)
+
+def saturate_low_mid(audio, sr, drive_db=2.0, lo=200, hi=400):
     """Bandpass 150-400 Hz, apply tanh saturation, sum back. Adds harmonics in chest range."""
     sos = butter(4, [lo, hi], btype='bp', fs=sr, output='sos')
     band = sosfilt(sos, audio, axis=0).astype(np.float32)
@@ -900,9 +909,11 @@ def dynamic_resonance_suppress(audio, sr):
 
 def pre_mixed_polish(vocal, music, sr):
     """Run the Advanced Polish pipeline. Vocal in, vocal+music out (still separate, summed by caller).
-       Saturation on vocal + M/S carving on music + resonance suppression."""
-    print("  [polish] low-mid saturation on vocal (150-400 Hz, +2 dB drive) -> gravel + chest")
-    vocal_polished = saturate_low_mid(vocal, sr, drive_db=2.0, lo=150, hi=400)
+       Dehum -> Saturation on vocal + M/S carving on music + resonance suppression."""
+    print("  [polish] dehum vocal: -12 dB notches @ 60/120/180/240/300 Hz (kill electrical hum)")
+    vocal_polished = dehum_vocal(vocal, sr)
+    print("  [polish] low-mid saturation on vocal (200-400 Hz, +2 dB drive) -> gravel + chest (skips hum zone)")
+    vocal_polished = saturate_low_mid(vocal_polished, sr, drive_db=2.0, lo=200, hi=400)
     print("  [polish] M/S beat carving: Mid -1.5 dB @ 2 kHz (pocket), Side +1.5 dB @ 1.5 kHz (widen)")
     music_polished = ms_beat_carve(music, sr)
     print("  [polish] dynamic resonance suppression on music (mid-band, 2.5:1)")
